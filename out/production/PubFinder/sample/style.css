@@ -1,3 +1,6 @@
+@font-face {
+ src: url("fonts/GreatVibes.ttf");
+}
 #welcome{
     -fx-background-image: url("pictures/image2.jpg");
     -fx-background-repeat: no-repeat;
@@ -112,21 +115,23 @@
 }
 
 #pub-grid{
-    -fx-padding: 90px 20px 90px 20px;
+    -fx-padding: 130px 20px 90px 20px;
 }
 #pub-button{
+    -fx-min-width: 550px;
+    -fx-min-height: 350px;
+    -fx-background-color: transparent;
     -fx-padding: 15 55 15 55;
-    -fx-background-color:#fff;
     -fx-font-weight: bold;
-    -fx-font-size: 1.1em;
-    -fx-text-fill: #731a2b;
-        -fx-background-repeat: no-repeat;
-        -fx-background-size: 200 300;
-        -fx-background-position: center center;
+    -fx-font-size: 70px;
+    -fx-font-family: 'Great Vibes';
+    -fx-text-fill: #fff;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
 }
 #pub-button:hover {
-    -fx-background-color:#731a2b;
-    -fx-text-fill: #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.4), 20, 0, 0, 0);
 }
 #pub_name{
     -fx-font-size: 100px;
@@ -196,6 +201,14 @@
 #button-logout:hover {
     -fx-background-color:#731a2b;
     -fx-text-fill:#fff;
+}
+
+#scroll {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
 }
 
 

@@ -291,13 +291,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
+        ScrollPane pubScroll = new ScrollPane();
+        pubScroll.setId("scroll");
+        pubScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
         pubs = new GridPane();
+        pubScroll.setContent(pubs);
         pubs.setId("pub-grid");
         pubs.setAlignment(Pos.CENTER);
-        pubs.setHgap(10);
-        pubs.setVgap(10);
-
-        pubLayout.getChildren().add(pubs);
+        pubLayout.getChildren().add(pubScroll);
         pubLayout.getChildren().add(search);
         pubLayout.getChildren().add(searchInput);
         noPub = new Label("No pubs found");
@@ -310,7 +312,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         /*Pub scene*/
 
-        javafx.scene.control.ScrollPane pubPageLayout = new ScrollPane();
+        ScrollPane pubPageLayout = new ScrollPane();
         pubPageLayout.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pubPageLayout.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pubPageLayout.setFitToWidth(true);
@@ -379,13 +381,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public void searchForPubs(){
         pubLayout.getChildren().remove(noPub);
         System.out.println("Search was pressed");
-        int y = 0;
-        int x = 0;
+        int y = 1;
+        int x = 1;
         searchStreet = searchInput.getText();
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))) {
-                pubButton = new Button(pub.name);
+                pubButton = new Button("- " + pub.name + " -");
                 pubButton.setId("pub-button");
                 pubButton.setMinWidth(230);
                 pubButton.setMinHeight(100);
@@ -394,16 +396,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                     primaryStage.setScene(pubPage);
                     setPubScene();
                 });
-            /*pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");*/
-
+                pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                pubButton.setAlignment(Pos.CENTER);
                 pubs.getChildren().add(pubButton);
+
                 pubs.setRowIndex(pubButton, y);
                 pubs.setColumnIndex(pubButton, x);
                 x++;
-                if (x == 4) {
-                    y++;
-                    x = 0;
-                }
             }
         }
         if (pubs.getChildren().size() == 0){
@@ -413,7 +412,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         /* new elements */
 
-        pubs.setHgap(10);
-        pubs.setVgap(10);
+        pubs.setHgap(30);
     }
 }
