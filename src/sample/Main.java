@@ -137,7 +137,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         login.setHalignment(loginButton, HPos.CENTER);
 
         Button backBtn = new Button("BACK");
-        backBtn.setId("button");
+        backBtn.setId("adminButton");
         login.setHalignment(backBtn, HPos.CENTER);
 
         backBtn.setOnAction(e -> {
@@ -186,7 +186,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         });
         logOut.setId("button-logout");
         choiceLabel.setId("login_message");
-        
+
 
         adminLayout.setAlignment(Pos.CENTER);
         adminLayout.setAlignment(choiceLabel,Pos.TOP_CENTER);
