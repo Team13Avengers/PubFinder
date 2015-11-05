@@ -3,6 +3,7 @@ package sample;
 import com.sun.javafx.geom.*;
 import com.sun.javafx.geom.Rectangle;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -39,7 +40,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
-    Scene pubScene, pubPage, adminLoginScene, adminScene;
+    Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene;
 
     int pubId;
     public int id;
@@ -115,7 +116,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         adminLoginLayout.setId("pubs");
         GridPane login = new GridPane();
         login.setAlignment(Pos.TOP_CENTER);
-        Label loginLabel = new Label("Login to gain admin access");
+        Label loginLabel = new Label("Login to admin panel");
         Label error = new Label("Your credentials are invalid. Please try again!");
 
         loginLabel.setId("login_message");
@@ -151,7 +152,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         loginButton.setOnAction(e -> {
             if (Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(), "password")){
-                primaryStage.setScene(adminScene);
+                username.clear();
+                password.clear();
+                primaryStage.setScene(adminChoiceScene);
             }
             else
                 if (!login.getChildren().contains(error)) {
@@ -164,12 +167,107 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         adminLoginScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         /*Admin login scene*/
 
-        /*Admin scene*/
-        GridPane adminLayout = new GridPane();
+        /*Admin choice scene*/
+        StackPane adminLayout = new StackPane();
         adminLayout.setId("welcome");
-        adminScene = new Scene(adminLayout, 1000, 600);
-        adminScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-        /*Admin scene*/
+        Button add = new Button("Add pub");
+        add.setOnAction(e -> {
+            primaryStage.setScene(adminAddScene);
+        });
+
+        add.setId("admin_button");
+        Button delete = new Button("Delete pub");
+        delete.setId("admin_button");
+        Button logOut = new Button("LOG OUT");
+        logOut.setOnAction(e -> {
+            primaryStage.setScene(welcomeScene);
+        });
+        logOut.setId("button-logout");
+
+        adminLayout.setAlignment(Pos.CENTER);
+        adminLayout.getChildren().addAll(logOut,add);
+
+        adminLayout.setAlignment(logOut, Pos.TOP_LEFT);
+        adminLayout.setAlignment(add,Pos.CENTER);
+
+        adminChoiceScene = new Scene(adminLayout, 1000, 600);
+        adminChoiceScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        /*Admin choice scene*/
+
+        /*Admin add scene*/
+        StackPane addLayout = new StackPane();
+        GridPane fields = new GridPane();
+        Button backToAdmin = new Button("BACK");
+        Label addLabel = new Label("Add a new pub");
+        addLabel.setId("login_message");
+
+        /*INPUT FIELDS*/
+        TextField nameOfPub = new TextField();
+        TextField ageOfPub = new TextField();
+        TextField openTime = new TextField();
+        TextField closeTime = new TextField();
+        TextField streetOfPub = new TextField();
+        ComboBox city = new ComboBox(FXCollections.observableArrayList(
+                "Gothenburg"));
+        ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
+                "Sport", "Karaoke", "Club"));
+        Button addBtn = new Button("ADD PUB");
+
+        addBtn.setOnAction(e -> {
+            /*
+            * Add action to the database goes here
+             */
+            System.out.println("Pub was added");
+        });
+
+        addBtn.setId("add_button");
+        nameOfPub.setId("add_fields");
+        nameOfPub.setPromptText("Name of pub");
+        ageOfPub.setId("add_fields");
+        ageOfPub.setPromptText("Age limit of the pub");
+        openTime.setId("add_fields");
+        openTime.setPromptText("Time when the pub opens");
+        closeTime.setId("add_fields");
+        closeTime.setPromptText("Time when the pub closes");
+        streetOfPub.setId("add_fields");
+        streetOfPub.setPromptText("The street");
+        city.setTooltip(new Tooltip(""));
+
+        city.setTooltip(new Tooltip("Select the city"));
+        city.setPromptText("Select the city");
+        city.setId("comboBox");
+        typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
+        typeOfPub.setPromptText("Select the type of pub");
+        typeOfPub.setId("comboBox");
+
+        fields.add(nameOfPub, 1, 1);
+        fields.add(ageOfPub, 1, 2);
+        fields.add(openTime, 1, 3);
+        fields.add(closeTime, 1, 4);
+        fields.add(streetOfPub, 2, 1);
+        fields.add(city, 2, 2);
+        fields.add(typeOfPub, 2, 3);
+        fields.add(addBtn, 2, 4);
+        /*INPUT FIELDS*/
+
+
+        backToAdmin.setId("button-logout");
+        backToAdmin.setOnAction(e -> {
+            primaryStage.setScene(adminChoiceScene);
+        });
+
+        fields.setAlignment(Pos.CENTER);
+        addLayout.setAlignment(backToAdmin, Pos.TOP_LEFT);
+        addLayout.setAlignment(addLabel, Pos.TOP_CENTER);
+
+        addLayout.setId("welcome");
+
+
+        addLayout.getChildren().addAll(fields,backToAdmin, addLabel);
+        adminAddScene = new Scene(addLayout, 1000, 600);
+        adminAddScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+        /*Admin add scene*/
 
         /*Pub button scene*/
         pubLayout = new StackPane();

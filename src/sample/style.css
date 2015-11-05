@@ -25,7 +25,7 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-family: helvetica;
-    -fx-padding: 70px 20px 20px 20px;
+    -fx-padding: 50px 20px 20px 20px;
 }
 #login_fields{
     -fx-max-width: 300px;
@@ -33,6 +33,35 @@
     -fx-background-insets: 15px;
     -fx-text-fill: #731a2b;
     -fx-prompt-text-fill: #731a2b;
+}
+#add_fields{
+    -fx-min-width: 400px;
+    -fx-padding: 30;
+    -fx-background-insets: 15px;
+    -fx-text-fill: #731a2b;
+    -fx-prompt-text-fill: #731a2b;
+}
+
+#comboBox{
+    -fx-min-width: 400px;
+    -fx-padding: 24 30 24 30;
+    -fx-background-insets: 15px;
+    -fx-text-fill: #731a2b;
+    -fx-prompt-text-fill: #731a2b;
+}
+
+#add_button {
+    -fx-min-width: 400px;
+    -fx-padding: 30px;
+    -fx-background-insets: 15px;
+    -fx-background-color:#fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #731a2b;
+}
+#add_button:hover {
+    -fx-background-color:#731a2b;
+    -fx-text-fill: #fff;
 }
 #nopubs_message{
     -fx-font-size: 60px;
@@ -140,3 +169,34 @@
     -fx-background-color:#731a2b;
     -fx-text-fill: #fff;
 }
+
+#admin_button {
+    -fx-padding: 30 60 30 60;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-color:#fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #731a2b;
+    -fx-width: 300px;
+}
+#admin_button:hover {
+    -fx-background-color:#731a2b;
+    -fx-text-fill: #fff;
+}
+
+#button-logout {
+    -fx-padding: 25 45 25 45;
+    -fx-background-insets: 10 10 10 10;
+    -fx-background-color:#fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #731a2b;
+}
+
+#button-logout:hover {
+    -fx-background-color:#731a2b;
+    -fx-text-fill:#fff;
+}
+
+
+
