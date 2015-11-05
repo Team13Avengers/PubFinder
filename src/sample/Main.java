@@ -171,6 +171,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         StackPane adminLayout = new StackPane();
         adminLayout.setId("welcome");
         Button add = new Button("Add pub");
+        Label choiceLabel = new Label("Options");
+
         add.setOnAction(e -> {
             primaryStage.setScene(adminAddScene);
         });
@@ -183,9 +185,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             primaryStage.setScene(welcomeScene);
         });
         logOut.setId("button-logout");
+        choiceLabel.setId("login_message");
+        
 
         adminLayout.setAlignment(Pos.CENTER);
-        adminLayout.getChildren().addAll(logOut,add);
+        adminLayout.setAlignment(choiceLabel,Pos.TOP_CENTER);
+        adminLayout.getChildren().addAll(logOut,add, choiceLabel);
 
         adminLayout.setAlignment(logOut, Pos.TOP_LEFT);
         adminLayout.setAlignment(add,Pos.CENTER);
