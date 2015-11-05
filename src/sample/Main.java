@@ -37,9 +37,10 @@ import javafx.scene.input.KeyEvent;
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
 
-    Button btn;
+    Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
-    Scene pubScene, pubPage;
+    Scene pubScene, pubPage, adminLoginScene, adminScene;
+
     int pubId;
     public int id;
     public Button pubButton;
@@ -59,8 +60,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label open = new Label();
     Label age = new Label();
     Label adress = new Label();
-
+    Label type = new Label();
     /* PUB SCENE */
+
+    /* ADMIN SCENE */
+    StackPane adminLoginLayout;
+    /* ADMIN SCENE */
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -71,34 +76,100 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Welcome scene*/
         StackPane layout = new StackPane();
         layout.setId("welcome");
-        
-        //test101
+
         
         /*Button*/
-        btn = new Button("ENTER");
-        btn.setOnAction(this);
-        btn.setId("button");
-        btn.setOnAction(e -> primaryStage.setScene(pubScene));
-        btn.setOnKeyReleased(e -> {
+        btnEnter = new Button("ENTER");
+        btnEnter.setOnAction(this);
+        btnEnter.setId("button");
+        btnEnter.setOnAction(e -> primaryStage.setScene(pubScene));
+        btnEnter.setOnKeyReleased(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 primaryStage.setScene(pubScene);
             }
         });
         /*Button*/
 
+        /*Button*/
+        btnAdmin = new Button("Settings");
+        btnAdmin.setId("adminButton");
+        btnAdmin.setOnAction(e -> primaryStage.setScene(adminLoginScene));
+        /*Button*/
+
         welcome = new Label("Welcome to PubFinder");
         warning = new Label("Under 18? Don't enter!");
         welcome.setId("welcome_message");
         warning.setId("warning_message");
-        layout.getChildren().add(btn);
-        layout.getChildren().add(welcome);
-        layout.getChildren().add(warning);
+        layout.getChildren().addAll(btnEnter,welcome,warning, btnAdmin);
         layout.setAlignment(welcome, Pos.TOP_CENTER);
-        layout.setAlignment(btn, Pos.CENTER);
+        layout.setAlignment(btnEnter, Pos.CENTER);
         layout.setAlignment(warning, Pos.BOTTOM_CENTER);
+        layout.setAlignment(btnAdmin, Pos.TOP_RIGHT);
         Scene welcomeScene = new Scene(layout ,1000, 600);
         welcomeScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         /*Welcome scene*/
+
+
+        /*Admin login scene*/
+        adminLoginLayout = new StackPane();
+        adminLoginLayout.setId("pubs");
+        GridPane login = new GridPane();
+        login.setAlignment(Pos.TOP_CENTER);
+        Label loginLabel = new Label("Login to gain admin access");
+        Label error = new Label("Your credentials are invalid. Please try again!");
+
+        loginLabel.setId("login_message");
+        login.setHalignment(error,HPos.CENTER);
+        error.setId("error");
+
+        TextField username = new TextField();
+        username.setId("login_fields");
+        login.setHalignment(username,HPos.CENTER);
+        username.setPromptText("USERNAME");
+        PasswordField password = new PasswordField();
+        password.setId("login_fields");
+        login.setHalignment(password, HPos.CENTER);
+        password.setPromptText("PASSWORD");
+
+        Button loginButton = new Button("LOGIN");
+        loginButton.setId("login_button");
+        login.setHalignment(loginButton, HPos.CENTER);
+
+        Button backBtn = new Button("BACK");
+        backBtn.setId("button");
+        login.setHalignment(backBtn, HPos.CENTER);
+
+        backBtn.setOnAction(e -> {
+            primaryStage.setScene(welcomeScene);
+        });
+
+        login.add(loginLabel,1,1);
+        login.add(username,1,2);
+        login.add(password,1,3);
+        login.add(loginButton,1,4);
+        login.add(backBtn, 1, 5);
+
+        loginButton.setOnAction(e -> {
+            if (Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(), "password")){
+                primaryStage.setScene(adminScene);
+            }
+            else
+                if (!login.getChildren().contains(error)) {
+                    login.add(error, 1, 6);
+                }
+        });
+
+        adminLoginLayout.getChildren().addAll(login);
+        adminLoginScene = new Scene(adminLoginLayout ,1000, 600);
+        adminLoginScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        /*Admin login scene*/
+
+        /*Admin scene*/
+        GridPane adminLayout = new GridPane();
+        adminLayout.setId("welcome");
+        adminScene = new Scene(adminLayout, 1000, 600);
+        adminScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        /*Admin scene*/
 
         /*Pub button scene*/
         pubLayout = new StackPane();
@@ -145,7 +216,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(header, back, overlay, pubName, age, open, adress);
+            xPane.getChildren().removeAll(header, back, overlay, pubName, age, open, adress, type);
         });
 
         overlay.setHeight(header.getFitHeight());
@@ -181,6 +252,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         age = new Label("" + Pub.getAge(Pub.getIndexById(this.id)));
         open = new Label(Pub.getOpening(Pub.getIndexById(this.id)));
         adress = new Label(Pub.getAdress(Pub.getIndexById(this.id)));
+        type = new Label(Pub.getType(Pub.getIndexById(this.id)));
+
+
         //xPane.getChildren().addAll(header, pubInfo);
         xPane.add(header, 1, 1);
         xPane.add(overlay, 1, 1);
@@ -188,6 +262,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(age, 1, 3);
         xPane.add(open, 1, 4);
         xPane.add(adress, 1, 5);
+        xPane.add(type, 1, 6);
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);
         xPane.setValignment(pubName, VPos.TOP);

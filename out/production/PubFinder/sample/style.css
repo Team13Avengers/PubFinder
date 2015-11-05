@@ -19,6 +19,21 @@
     -fx-font-family: helvetica;
     -fx-padding: 150px 20px 20px 20px;
 }
+#login_message{
+    -fx-font-size: 60px;
+    -fx-color: #fff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: helvetica;
+    -fx-padding: 70px 20px 20px 20px;
+}
+#login_fields{
+    -fx-max-width: 300px;
+    -fx-padding: 30px;
+    -fx-background-insets: 15px;
+    -fx-text-fill: #731a2b;
+    -fx-prompt-text-fill: #731a2b;
+}
 #nopubs_message{
     -fx-font-size: 60px;
     -fx-color: #fff;
@@ -94,4 +109,34 @@
 #input-field{
     -fx-padding: 15 35 15 35;
     -fx-max-width: 120px;
+    -fx-prompt-text-fill: #731a2b;
+}
+
+#error{
+    -fx-text-fill: #fff;
+    -fx-font-family: helvetica;
+    -fx-font-size: 18px;
+    -fx-padding: 20px;
+}
+
+#adminButton{
+    -fx-text-fill: #fff;
+    -fx-background-color: transparent;
+    -fx-font-family: helvetica;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 20px;
+}
+
+#login_button {
+    -fx-padding: 45 75 45 75;
+    -fx-background-color:#fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #731a2b;
+    -fx-background-insets: 30px;
+}
+#login_button:hover {
+    -fx-background-color:#731a2b;
+    -fx-text-fill: #fff;
 }

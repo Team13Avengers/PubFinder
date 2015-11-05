@@ -1,4 +1,7 @@
 package sample;
+
+import java.awt.*;
+
 /**
  * Created by Marco on 15-09-27.
  */
@@ -71,5 +74,8 @@ public class Pub {
     }
     public static String getImage(int index){
         return PubDataAccessor.pubs.get(index).picture;
+    }
+    public static String getType(int index){
+        return PubDataAccessor.pubs.get(index).type;
     }
 }

@@ -11,8 +11,8 @@ import java.util.Map;
  */
 public class PubDataAccessor {
     public static List<Pub> pubs = new ArrayList<>();
-    public static Map<Integer, Pub> pubsById = new HashMap<>();
-    public static Map<Integer, Integer> pubIndexesByid = new HashMap<>();
+    //public static Map<Integer, Pub> pubsById = new HashMap<>();
+    //public static Map<Integer, Integer> pubIndexesByid = new HashMap<>();
 
     public static void PubDataAccessor() {
         String driver = "com.mysql.jdbc.Driver";
