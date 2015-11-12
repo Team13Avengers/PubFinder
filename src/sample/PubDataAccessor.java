@@ -78,7 +78,7 @@ public class PubDataAccessor {
             st.setString(7, pub.getStreet());
             st.setInt(6, 0);
 
-            // execute the preparedstatement insert
+            // execute the prepared statement insert
             st.executeUpdate();
             st.close();
             conn.close();

@@ -360,6 +360,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(open, 1, 4);
         xPane.add(adress, 1, 5);
         xPane.add(type, 1, 6);
+
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);
         xPane.setValignment(pubName, VPos.TOP);
