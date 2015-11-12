@@ -14,6 +14,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import java.util.Objects;
 import javafx.scene.input.KeyCode;
@@ -306,7 +308,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         ScrollPane pubPageLayout = new ScrollPane();
         pubPageLayout.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        pubPageLayout.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        pubPageLayout.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pubPageLayout.setFitToWidth(true);
         pubPageLayout.setContent(xPane);
         pubPageLayout.setId("gej");
@@ -350,7 +352,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         open = new Label(Pub.getOpening(Pub.getIndexById(this.id)));
         adress = new Label(Pub.getAdress(Pub.getIndexById(this.id)));
         type = new Label(Pub.getType(Pub.getIndexById(this.id)));
-
+        WebView map = new WebView();
+        WebEngine browser = map.getEngine();
+        map.setMaxWidth(1000);
+        map.setMaxHeight(400);
+        browser.load("https://www.google.se/maps/@57.7075138,11.9928783,13z");
 
         //xPane.getChildren().addAll(header, pubInfo);
         xPane.add(header, 1, 1);
@@ -360,6 +366,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(open, 1, 4);
         xPane.add(adress, 1, 5);
         xPane.add(type, 1, 6);
+        xPane.add(map, 1, 7);
 
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);

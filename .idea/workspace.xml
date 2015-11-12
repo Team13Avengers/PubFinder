@@ -2,11 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44d537bb-e8dd-42df-b9e7-a948110dd049" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Map.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/ArrayTester.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/GoogleMapView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/MainApp.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/MapComponentInitializedListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/MapNotInitializedException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/MapReadyListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/IJavascriptRuntime.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/IWebEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavaFxWebEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptArray.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptEnum.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptFunction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptFunctionLine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptObject.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/JavascriptRuntime.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/EventHandlers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/GFXEventHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/MapStateEventType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/StateEventHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/UIEventHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/event/UIEventType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/Animation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/GMapObjectType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/GMapPoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/GoogleMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/InfoWindow.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/InfoWindowOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/LatLong.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/LatLongBounds.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/MVCArray.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/MapOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/MapShape.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/MapTypeIdEnum.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/Marker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/MarkerOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/Polyline.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/PolylineOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/Projection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/Size.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/ElevationResult.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/ElevationService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/ElevationServiceCallback.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/ElevationStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/LocationElevationRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/elevation/PathElevationRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/service/geocoding/GeocodingService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/ArcBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/CircleOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/FillableMapShapeOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/MapShapeOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/Polygon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/PolygonOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/Polyline.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/PolylineOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/RectangleOptions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/shapes/StrokePosition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/zoom/MaxZoomResult.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/zoom/MaxZoomService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/zoom/MaxZoomServiceCallback.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/lynden/gmapsfx/zoom/MaxZoomStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/Map.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/PubFinder/sample/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/PubDataAccessor.java" afterPath="$PROJECT_DIR$/src/sample/PubDataAccessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PubFinder.iml" afterPath="$PROJECT_DIR$/PubFinder.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PubFinder.iws" />
@@ -33,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+              <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="396" column="38" selection-start-line="396" selection-start-column="38" selection-end-line="396" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.35344827">
+              <caret line="357" column="30" selection-start-line="357" selection-start-column="30" selection-end-line="357" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#handle#0;class#Main#0" expanded="false" />
@@ -57,14 +117,14 @@
       </file>
       <file leaf-file-name="sample.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -77,18 +137,6 @@
                 <element signature="method#getIndexById#0;class#Pub#0" expanded="false" />
                 <element signature="method#getOpening#0;class#Pub#0" expanded="false" />
                 <element signature="method#getAdress#0;class#Pub#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34801137">
-              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,8 +232,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -223,22 +269,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,7 +472,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="824" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="824" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,10 +483,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1416309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -463,7 +498,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989071" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -483,7 +517,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1416309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -878,23 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lynden/gmapsfx/javascript/object/GoogleMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33189654">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -904,14 +921,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
@@ -926,31 +943,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lynden/gmapsfx/GoogleMapView.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1637931">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="396" column="38" selection-start-line="396" selection-start-column="38" selection-end-line="396" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.35344827">
+          <caret line="357" column="30" selection-start-line="357" selection-start-column="30" selection-end-line="357" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handle#0;class#Main#0" expanded="false" />
             <element signature="method#idOfButton#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34801137">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
