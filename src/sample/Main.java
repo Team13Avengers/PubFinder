@@ -1,39 +1,22 @@
 package sample;
 
-import com.sun.javafx.geom.*;
-import com.sun.javafx.geom.Rectangle;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.EventListener;
 import java.util.Objects;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
@@ -219,15 +202,24 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         Button addBtn = new Button("ADD PUB");
 
         addBtn.setOnAction(e -> {
-            /*
-            * Add action to the database goes here
-             */
-            System.out.println("Pub was added");
+            Pub pub = new Pub(20, Integer.valueOf(ageOfPub.getText()),
+                    Integer.valueOf(openTime.getText()),
+                    Integer.valueOf(closeTime.getText()),
+                    nameOfPub.getText(),
+                    "",
+                    typeOfPub.getValue().toString(),
+                    streetOfPub.getText(),
+                    "",
+                    41451);
+            PubDataAccessor.addPub(pub);
+
+            PubDataAccessor.PubDataAccessor();
         });
 
         addBtn.setId("add_button");
         nameOfPub.setId("add_fields");
         nameOfPub.setPromptText("Name of pub");
+
         ageOfPub.setId("add_fields");
         ageOfPub.setPromptText("Age limit of the pub");
         openTime.setId("add_fields");

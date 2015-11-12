@@ -1,7 +1,5 @@
 package sample;
 
-import java.awt.*;
-
 /**
  * Created by Marco on 15-09-27.
  */
@@ -18,21 +16,58 @@ public class Pub {
     String city;
     int zip;
 
-    public Pub(int id, int age, int open, int close, String name, String picture, String location, String type, String street, String city, int zip) {
+    public Pub(int id, int age, int open, int close, String name, String picture, String type, String street, String city, int zip) {
         this.id = id;
         this.age = age;
         this.open = open;
         this.close = close;
         this.name = name;
         this.picture = picture;
-        this.location = location;
         this.type = type;
         this.street = street;
         this.city = city;
         this.zip = zip;
     }
 
+    public int getAge() {
+        return age;
+    }
 
+    public int getOpen() {
+        return open;
+    }
+
+    public int getClose() {
+        return close;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getZip() {
+        return zip;
+    }
 
     public static int getIndexById(int id)
     {
