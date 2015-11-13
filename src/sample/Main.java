@@ -47,6 +47,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label age = new Label();
     Label adress = new Label();
     Label type = new Label();
+    WebView map = new WebView();
+    WebEngine browser = map.getEngine();
     /* PUB SCENE */
 
     /* ADMIN SCENE */
@@ -352,11 +354,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         open = new Label(Pub.getOpening(Pub.getIndexById(this.id)));
         adress = new Label(Pub.getAdress(Pub.getIndexById(this.id)));
         type = new Label(Pub.getType(Pub.getIndexById(this.id)));
-        WebView map = new WebView();
-        WebEngine browser = map.getEngine();
         map.setMaxWidth(1000);
         map.setMaxHeight(400);
-        browser.load("https://www.google.se/maps/@57.7075138,11.9928783,13z");
+        browser.load("http://locateme.marcokoivisto.me/?lat=" + 57.708870 + "&lon=" + 11.974560);
 
         //xPane.getChildren().addAll(header, pubInfo);
         xPane.add(header, 1, 1);
