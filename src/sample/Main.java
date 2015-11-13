@@ -317,7 +317,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(header, back, overlay, pubName, age, open, adress, type);
+            xPane.getChildren().removeAll(header, back, overlay, pubName, age, open, adress, type, map);
         });
 
         overlay.setHeight(header.getFitHeight());
