@@ -34,8 +34,8 @@ public class PubDataAccessor {
 
             while (res.next()) {
                 String name = res.getString("name");
-                pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getInt("open"), res.getInt("close"),
-                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip")));
+                pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
+                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon")));
 
             }
 
@@ -69,8 +69,8 @@ public class PubDataAccessor {
             PreparedStatement st = conn.prepareStatement(query);
 
             st.setInt(1, pub.getAge());
-            st.setInt(2, pub.getOpen());
-            st.setInt(3, pub.getClose());
+            st.setString(2, pub.getOpen());
+            st.setString(3, pub.getClose());
             st.setString(4, pub.getName());
             st.setString(5, pub.getPicture());
             //st.setString(6, pub.getLocation());

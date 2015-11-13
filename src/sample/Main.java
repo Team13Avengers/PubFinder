@@ -207,14 +207,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         addBtn.setOnAction(e -> {
             Pub pub = new Pub(20, Integer.valueOf(ageOfPub.getText()),
-                    Integer.valueOf(openTime.getText()),
-                    Integer.valueOf(closeTime.getText()),
+                    openTime.getText(),
+                    closeTime.getText(),
                     nameOfPub.getText(),
                     "",
                     typeOfPub.getValue().toString(),
                     streetOfPub.getText(),
                     "",
-                    41451);
+                    41451,
+                    0,
+                    0
+            );
             PubDataAccessor.addPub(pub);
 
             PubDataAccessor.PubDataAccessor();

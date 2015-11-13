@@ -6,8 +6,8 @@ package sample;
 public class Pub {
     int id;
     int age;
-    int open;
-    int close;
+    String open;
+    String close;
     String name;
     String picture;
     String location;
@@ -15,8 +15,10 @@ public class Pub {
     String street;
     String city;
     int zip;
+    double lat;
+    double lon;
 
-    public Pub(int id, int age, int open, int close, String name, String picture, String type, String street, String city, int zip) {
+    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon) {
         this.id = id;
         this.age = age;
         this.open = open;
@@ -27,17 +29,19 @@ public class Pub {
         this.street = street;
         this.city = city;
         this.zip = zip;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     public int getAge() {
         return age;
     }
 
-    public int getOpen() {
+    public String getOpen() {
         return open;
     }
 
-    public int getClose() {
+    public String getClose() {
         return close;
     }
 
