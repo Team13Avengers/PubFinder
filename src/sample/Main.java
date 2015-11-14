@@ -210,20 +210,20 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         Button addBtn = new Button("ADD PUB");
 
         addBtn.setOnAction(e -> {
-            Pub pub = new Pub(20, Integer.valueOf(ageOfPub.getText()),
-                    openTime.getText(),
-                    closeTime.getText(),
-                    nameOfPub.getText(),
-                    "",
-                    typeOfPub.getValue().toString(),
-                    streetOfPub.getText(),
-                    "",
-                    41451,
-                    0,
-                    0
-            );
-            PubDataAccessor.addPub(pub);
-
+//            Pub pub = new Pub(20, Integer.valueOf(ageOfPub.getText()),
+//                    openTime.getText(),
+//                    closeTime.getText(),
+//                    nameOfPub.getText(),
+//                    "",
+//                    typeOfPub.getValue().toString(),
+//                    streetOfPub.getText(),
+//                    "",
+//                    41451,
+//                    0,
+//                    0
+//            );
+            PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText(),Integer.parseInt(closeTime.getText(),
+                    streetOfPub.getText(), Double.parseDouble(lat.getText(),Double.parseDouble(lon.getText(),city.getValue().toString(),typeOfPub.getValue().toString())))));
             PubDataAccessor.PubDataAccessor();
         });
 

@@ -4,9 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+ import java.util.Map;
 
-/**
+ /**
  * Created by Marco on 15-09-25.
  */
 public class PubDataAccessor {
@@ -49,41 +49,45 @@ public class PubDataAccessor {
         }
     }
 
-    public static void addPub(Pub pub) {
-        Connection conn = getConnection();
+     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id, int location_id) {
+         Connection conn = getConnection();
 
-        //int id, int age, int open, int close, String name, String picture, String location, String type, String street, String city, int zip
-        String query = "INSERT INTO pubs ("
-                + " age,"
-                + " open,"
-                + " close,"
-                + " name,"
-                + " picture,"
-                //+ " type,"
-                + " location_id,"
-                + " street ) VALUES ("
-                + "?, ?, ?, ?, ?, ?, ?)";
+         //int id, int age, int open, int close, String name, String picture, String location, String type, String street, String city, int zip
+         String query = "INSERT INTO pubs ("
+                 + " name,"
+                 + " picture,"
+                 + " age,"
+                 + " open,"
+                 + " close,"
+                 + " street,"
+                 + " lat,"
+                 + " lon,"
+                 + " type_id,"
+                 + " location_id ) VALUES ("
+                 + "?, ?, ?, ?, ?, ?, ? , ? , ? , ?)";
 
-        try {
-            // set all the preparedstatement parameters
-            PreparedStatement st = conn.prepareStatement(query);
+         try {
+             // set all the preparedstatement parameters
+             PreparedStatement st = conn.prepareStatement(query);
 
-            st.setInt(1, pub.getAge());
-            st.setString(2, pub.getOpen());
-            st.setString(3, pub.getClose());
-            st.setString(4, pub.getName());
-            st.setString(5, pub.getPicture());
-            //st.setString(6, pub.getLocation());
-            //st.setString(7, pub.getType());
-            st.setString(7, pub.getStreet());
-            st.setInt(6, 0);
+             st.setString(1, name);
+             st.setString(2, picture);
+             st.setInt(3, age);
+             st.setInt(4, open);
+             st.setInt(5, close);
+             st.setString(6, street);
+             st.setDouble(7, lat);
+             st.setDouble(8, lon);
+             st.setInt(9, type_id);
+             st.setInt(10, location_id);
 
-            // execute the prepared statement insert
-            st.executeUpdate();
-            st.close();
-            conn.close();
-        } catch (SQLException se) {
-        }
-    }
-}
+             // execute the prepared statement insert
+             st.executeUpdate();
+             st.close();
+             conn.close();
+         } catch (SQLException se) {
+         }
+     }
+ }
+
 
