@@ -45,6 +45,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
     Button back = new Button("Back");
+    Button star = new Button();
     javafx.scene.shape.Rectangle overlay = new javafx.scene.shape.Rectangle();
     Label pubName = new Label();
     Label open = new Label();
@@ -337,11 +338,19 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubPageLayout.setContent(xPane);
         xPane.setId("pubScene");
         pubPageLayout.setId("gej");
+        star.setText("0 \uF08A");
+        star.setId("starButton");
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(back, description, overlay, pubName, map);
+            xPane.getChildren().removeAll(back, description, overlay, pubName, map, star);
             descriptionGrid.getChildren().removeAll(age, open, address, type);
+            star.setText("0 \uF08A");
+            star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
+        });
+        star.setOnAction(event -> {
+            star.setText("1 \uF004");
+            star.setStyle("-fx-text-fill: #731a2b;");
         });
 
         overlay.setHeight(header.getFitHeight());
@@ -406,7 +415,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.setHalignment(pubName, HPos.CENTER);
         xPane.setValignment(pubName, VPos.TOP);
         xPane.setValignment(back, VPos.TOP);
+        xPane.setHalignment(star, HPos.RIGHT);
+        xPane.setValignment(star, VPos.TOP);
 
+        xPane.add(star, 1, 1);
         xPane.add(back, 1, 1);
         back.setId("button-logout");
         header.setFitWidth(1000);
