@@ -117,4 +117,10 @@ public class Pub {
     public static String getType(int index){
         return PubDataAccessor.pubs.get(index).type;
     }
+    public static double getLat(int index){
+        return PubDataAccessor.pubs.get(index).lat;
+    }
+    public static double getLon(int index){
+        return PubDataAccessor.pubs.get(index).lon;
+    }
 }

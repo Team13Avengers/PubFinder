@@ -359,7 +359,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         type = new Label(Pub.getType(Pub.getIndexById(this.id)));
         map.setMaxWidth(1000);
         map.setMaxHeight(400);
-        browser.load("http://locateme.marcokoivisto.me/?lat=" + 57.708870 + "&lon=" + 11.974560);
+        browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
 
         //xPane.getChildren().addAll(header, pubInfo);
         xPane.add(header, 1, 1);
