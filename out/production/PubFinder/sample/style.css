@@ -1,6 +1,9 @@
 @font-face {
  src: url("fonts/GreatVibes.ttf");
 }
+@font-face {
+   src: url("resources/fa/fontawesome-webfont.ttf");
+}
 #welcome{
     -fx-background-image: url("pictures/image2.jpg");
     -fx-background-repeat: no-repeat;
@@ -139,11 +142,11 @@
     -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.4), 20, 0, 0, 0);
 }
 #pub_name{
+    -fx-padding: 70px 0px 150px 0px;
     -fx-font-size: 100px;
-    -fx-text-fill: #731a2b;
+    -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-font-family: helvetica;
-    -fx-padding: 20px 20px 20px 20px;
+    -fx-font-family: 'Great Vibes';
 }
 #input-field{
     -fx-padding: 15 35 15 35;
@@ -214,6 +217,29 @@
 
 .scroll-pane > .viewport {
    -fx-background-color: transparent;
+}
+#pubScene{
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1000 600;
+    -fx-background-position: top center;
+}
+#description{
+    -fx-background-color:rgba(115,26,43,0.7);
+    -fx-background-position: center center;
+    -fx-min-width: 1000px;
+    -fx-font-family: helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-padding: 30px 20px 30px 20px;
+}
+#description-text{
+    -fx-text-alignment: center;
+}
+#infoLabel{
+    -fx-padding: 0px 20px 0px 20px;
+    -fx-text-fill: #fff;
+    -fx-font-family: 'FontAwesome';
+    -fx-font-weight: bold;
 }
 
 

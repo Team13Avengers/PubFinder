@@ -1,5 +1,7 @@
 package sample;
 
+import com.sun.javafx.font.Glyph;
+import com.sun.javafx.tools.ant.Info;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
@@ -14,6 +16,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -40,15 +43,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     /* PUB SCENE */
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
+    GridPane descriptionGrid = new GridPane();
     Button back = new Button("Back");
     javafx.scene.shape.Rectangle overlay = new javafx.scene.shape.Rectangle();
     Label pubName = new Label();
     Label open = new Label();
     Label age = new Label();
-    Label adress = new Label();
+    Label address = new Label();
     Label type = new Label();
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
+    StackPane description;
     /* PUB SCENE */
 
     /* ADMIN SCENE */
@@ -56,7 +61,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int typeId;
     public int locationId;
     /* ADMIN SCENE */
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("PubFinder");
@@ -331,11 +335,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubPageLayout.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pubPageLayout.setFitToWidth(true);
         pubPageLayout.setContent(xPane);
+        xPane.setId("pubScene");
         pubPageLayout.setId("gej");
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(header, back, overlay, pubName, age, open, adress, type, map);
+            xPane.getChildren().removeAll(back, description, overlay, pubName, map);
+            descriptionGrid.getChildren().removeAll(age, open, address, type);
         });
 
         overlay.setHeight(header.getFitHeight());
@@ -365,26 +371,36 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         launch(args);
     }
     public void setPubScene(){
-        String upperCaseName = Pub.getName(Pub.getIndexById(this.id));
-        pubName = new Label(upperCaseName.toUpperCase());
-        header = new ImageView(Pub.getImage(Pub.getIndexById(this.id)));
-        age = new Label("" + Pub.getAge(Pub.getIndexById(this.id)));
-        open = new Label(Pub.getOpening(Pub.getIndexById(this.id)));
-        adress = new Label(Pub.getAdress(Pub.getIndexById(this.id)));
-        type = new Label(Pub.getType(Pub.getIndexById(this.id)));
-        map.setMaxWidth(1000);
-        map.setMaxHeight(400);
+        xPane.setStyle("-fx-background-image: url(" + "\"" + Pub.getImage(Pub.getIndexById(this.id)) + "\"" + "); ");
+        description = new StackPane();
+        description.setId("description");
+        descriptionGrid.setId("description-text");
+        pubName = new Label("- " + Pub.getName(Pub.getIndexById(this.id)) + " -");
+        //header = new ImageView(Pub.getImage(Pub.getIndexById(this.id)));
+        age = new Label(Pub.getAge(Pub.getIndexById(this.id)) + " years \uF000");
+        age.setId("infoLabel");
+        open = new Label(Pub.getOpening(Pub.getIndexById(this.id)) + " \uF017");
+        open.setId("infoLabel");
+        address = new Label(Pub.getAdress(Pub.getIndexById(this.id)) + " \uF124");
+        address.setId("infoLabel");
+        type = new Label(Pub.getType(Pub.getIndexById(this.id)) + " \uF005");
+        type.setId("infoLabel");
+
+        map.setMinWidth(1000);
+        map.setMaxHeight(350);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
 
-        //xPane.getChildren().addAll(header, pubInfo);
-        xPane.add(header, 1, 1);
-        xPane.add(overlay, 1, 1);
-        xPane.add(pubName, 1, 2);
-        xPane.add(age, 1, 3);
-        xPane.add(open, 1, 4);
-        xPane.add(adress, 1, 5);
-        xPane.add(type, 1, 6);
-        xPane.add(map, 1, 7);
+        xPane.add(pubName, 1, 1);
+
+        descriptionGrid.add(age, 1, 1);
+        descriptionGrid.add(open, 2, 1);
+        descriptionGrid.add(type, 3, 1);
+        descriptionGrid.add(address, 4, 1);
+
+        descriptionGrid.setAlignment(Pos.CENTER);
+        description.getChildren().addAll(descriptionGrid);
+        xPane.add(description, 1, 2);
+        xPane.add(map, 1, 3);
 
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);
@@ -392,7 +408,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.setValignment(back, VPos.TOP);
 
         xPane.add(back, 1, 1);
-        back.setId("button");
+        back.setId("button-logout");
         header.setFitWidth(1000);
         header.setPreserveRatio(true);
     }

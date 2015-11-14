@@ -106,7 +106,9 @@ public class Pub {
         return PubDataAccessor.pubs.get(index).age;
     }
     public static String getOpening(int index){
-        return PubDataAccessor.pubs.get(index).open + " " + "-" + " " + PubDataAccessor.pubs.get(index).close;
+        String openTime = PubDataAccessor.pubs.get(index).open;
+        String closeTime = PubDataAccessor.pubs.get(index).close;
+        return openTime.substring(0,openTime.length()-3) + " " + "-" + " " + closeTime.substring(0,openTime.length()-3);
     }
     public static String getAdress(int index){
         return PubDataAccessor.pubs.get(index).street + " " + PubDataAccessor.pubs.get(index).city + " " + PubDataAccessor.pubs.get(index).zip ;
