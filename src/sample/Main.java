@@ -53,6 +53,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     /* ADMIN SCENE */
     StackPane adminLoginLayout;
+    public int typeId;
+    public int locationId;
     /* ADMIN SCENE */
 
     @Override
@@ -210,20 +212,20 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         Button addBtn = new Button("ADD PUB");
 
         addBtn.setOnAction(e -> {
-//            Pub pub = new Pub(20, Integer.valueOf(ageOfPub.getText()),
-//                    openTime.getText(),
-//                    closeTime.getText(),
-//                    nameOfPub.getText(),
-//                    "",
-//                    typeOfPub.getValue().toString(),
-//                    streetOfPub.getText(),
-//                    "",
-//                    41451,
-//                    0,
-//                    0
-//            );
-            PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText(),Integer.parseInt(closeTime.getText(),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText(),Double.parseDouble(lon.getText(),city.getValue().toString(),typeOfPub.getValue().toString())))));
+            if (city.getSelectionModel().isSelected(0)){
+                locationId = 0;
+            }
+            if (typeOfPub.getSelectionModel().isSelected(0)){
+                typeId = 0;
+            }
+            else if (typeOfPub.getSelectionModel().isSelected(1)){
+                typeId = 1;
+            }
+            else if (typeOfPub.getSelectionModel().isSelected(2)){
+                typeId = 2;
+            }
+            PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId);
             PubDataAccessor.PubDataAccessor();
         });
 

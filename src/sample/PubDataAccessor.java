@@ -64,7 +64,7 @@ public class PubDataAccessor {
                  + " lon,"
                  + " type_id,"
                  + " location_id ) VALUES ("
-                 + "?, ?, ?, ?, ?, ?, ? , ? , ? , ?)";
+                 + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
          try {
              // set all the preparedstatement parameters
