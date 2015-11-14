@@ -189,6 +189,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Admin add scene*/
         StackPane addLayout = new StackPane();
         GridPane fields = new GridPane();
+        fields.setId("fields");
         Button backToAdmin = new Button("BACK");
         Label addLabel = new Label("Add a new pub");
         addLabel.setId("login_message");
@@ -199,6 +200,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         TextField openTime = new TextField();
         TextField closeTime = new TextField();
         TextField streetOfPub = new TextField();
+        TextField urlImage = new TextField();
+        TextField lat = new TextField();
+        TextField lon = new TextField();
         ComboBox city = new ComboBox(FXCollections.observableArrayList(
                 "Gothenburg"));
         ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
@@ -236,6 +240,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         streetOfPub.setId("add_fields");
         streetOfPub.setPromptText("The street");
         city.setTooltip(new Tooltip(""));
+        urlImage.setId("add_fields");
+        urlImage.setPromptText("URL to image for pub");
+        lat.setId("add_fields");
+        lat.setPromptText("Latitude of pub");
+        lon.setId("add_fields");
+        lon.setPromptText("Longitude of pub");
 
         city.setTooltip(new Tooltip("Select the city"));
         city.setPromptText("Select the city");
@@ -248,10 +258,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         fields.add(ageOfPub, 1, 2);
         fields.add(openTime, 1, 3);
         fields.add(closeTime, 1, 4);
+        fields.add(lat, 1, 5);
         fields.add(streetOfPub, 2, 1);
         fields.add(city, 2, 2);
         fields.add(typeOfPub, 2, 3);
-        fields.add(addBtn, 2, 4);
+        fields.add(urlImage, 2, 4);
+        fields.add(lon, 2, 5);
+        fields.add(addBtn, 2, 6);
         /*INPUT FIELDS*/
 
 
