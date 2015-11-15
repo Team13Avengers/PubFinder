@@ -1,7 +1,5 @@
 package sample;
 
-import com.sun.javafx.font.Glyph;
-import com.sun.javafx.tools.ant.Info;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
@@ -16,7 +14,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -86,8 +83,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Button*/
 
         /*Button*/
-        btnAdmin = new Button("Settings");
-        btnAdmin.setId("adminButton");
+        btnAdmin = new Button("\uF013");
+        btnAdmin.setId("faIcon");
         btnAdmin.setOnAction(e -> primaryStage.setScene(adminLoginScene));
         /*Button*/
 
