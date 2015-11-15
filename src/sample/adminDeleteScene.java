@@ -6,7 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.beans.binding.*;
 import sample.*;
+
+import javax.script.Bindings;
 
 /**
  * Created by Marco on 2015-11-15.
@@ -48,9 +51,16 @@ public class adminDeleteScene {
         for (Pub pub: PubDataAccessor.pubs){
             pubButton = new Button(pub.name);
             pubButton.setId("deletePubButton");
+            pubButton.setMinWidth(200);
             pubButton.setMaxWidth(200);
             pubButton.setMinHeight(70);
             pubButton.setAlignment(Pos.CENTER);
+
+            pubButton.textProperty().bind(
+                    javafx.beans.binding.Bindings.when(pubButton.hoverProperty())
+                            .then("Delete \uF057")
+                            .otherwise(pub.name));
+
             pubs.getChildren().add(pubButton);
 
             pubButton.setOnAction(event -> {
@@ -58,7 +68,6 @@ public class adminDeleteScene {
                 deleteId = pub.id;
                 /* DELETE METHOD GOES HERE */
                 PubDataAccessor.deletePub(deleteId);
-
                 /*To show the pubs that are left...*/
                 showPubsToDelete();
             });

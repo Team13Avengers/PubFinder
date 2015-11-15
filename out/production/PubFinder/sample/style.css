@@ -265,9 +265,10 @@
     -fx-padding: 15 55 15 55;
     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
     -fx-background-color:#fff;
-    -fx-font-weight: bold;
     -fx-font-size: 1.1em;
     -fx-text-fill: #731a2b;
+    -fx-font-family: 'FontAwesome';
+    -fx-font-weight: bolder;
 }
 #deletePubButton:hover {
     -fx-background-color:#731a2b;
