@@ -125,4 +125,7 @@ public class Pub {
     public static double getLon(int index){
         return PubDataAccessor.pubs.get(index).lon;
     }
+    public static int getId(int index){
+        return PubDataAccessor.pubs.get(index).id;
+    }
 }

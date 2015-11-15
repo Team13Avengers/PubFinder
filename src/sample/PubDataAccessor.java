@@ -88,6 +88,9 @@ public class PubDataAccessor {
          } catch (SQLException se) {
          }
      }
+     public static void deletePub(int idOfPub){
+         /* SQL FOR DELETING THE PUB OF ID "idOfPub" */
+     }
  }
 
 

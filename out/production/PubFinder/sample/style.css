@@ -194,12 +194,12 @@
 
 #admin_button {
     -fx-padding: 30 60 30 60;
-    -fx-background-insets: 0 0 0 0;
+    -fx-background-insets: 10 10 10 10;
     -fx-background-color:#fff;
     -fx-font-weight: bold;
     -fx-font-size: 1.1em;
     -fx-text-fill: #731a2b;
-    -fx-width: 300px;
+    -fx-min-width: 200px;
 }
 #admin_button:hover {
     -fx-background-color:#731a2b;
@@ -260,6 +260,20 @@
 #starButton:hover{
     -fx-text-fill: #731a2b;
 }
+
+#deletePubButton {
+    -fx-padding: 15 55 15 55;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-color:#fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #731a2b;
+}
+#deletePubButton:hover {
+    -fx-background-color:#731a2b;
+    -fx-text-fill: #fff;
+}
+
 
 
 

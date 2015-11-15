@@ -25,7 +25,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
-    Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene;
+    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene;
 
     int pubId;
     public int id;
@@ -35,7 +35,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     GridPane pubs;
     Button search;
     TextField searchInput;
-    Stage primaryStage;
+    static Stage primaryStage;
 
     /* PUB SCENE */
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
@@ -69,7 +69,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         StackPane layout = new StackPane();
         layout.setId("welcome");
 
-        
         /*Button*/
         btnEnter = new Button("ENTER");
         btnEnter.setOnAction(this);
@@ -159,17 +158,22 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Admin login scene*/
 
         /*Admin choice scene*/
+        sample.adminDeleteScene.adminDeleteScene();
+        adminDeleteScene = sample.adminDeleteScene.deleteScene;
         StackPane adminLayout = new StackPane();
         adminLayout.setId("welcome");
+        GridPane adminBtnGrid = new GridPane();
         Button add = new Button("Add pub");
+        Button delete = new Button("Delete pub");
         Label choiceLabel = new Label("Options");
 
         add.setOnAction(e -> {
             primaryStage.setScene(adminAddScene);
         });
-
+        delete.setOnAction(e -> {
+            primaryStage.setScene(adminDeleteScene);
+        });
         add.setId("admin_button");
-        Button delete = new Button("Delete pub");
         delete.setId("admin_button");
         Button logOut = new Button("LOG OUT");
         logOut.setOnAction(e -> {
@@ -178,13 +182,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         logOut.setId("button-logout");
         choiceLabel.setId("login_message");
 
+        adminBtnGrid.add(add, 1, 1);
+        adminBtnGrid.add(delete, 2, 1);
+        adminBtnGrid.setAlignment(Pos.CENTER);
 
         adminLayout.setAlignment(Pos.CENTER);
         adminLayout.setAlignment(choiceLabel,Pos.TOP_CENTER);
-        adminLayout.getChildren().addAll(logOut,add, choiceLabel);
+        adminLayout.getChildren().addAll(adminBtnGrid,choiceLabel,logOut);
 
         adminLayout.setAlignment(logOut, Pos.TOP_LEFT);
-        adminLayout.setAlignment(add,Pos.CENTER);
 
         adminChoiceScene = new Scene(adminLayout, 1000, 600);
         adminChoiceScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -395,6 +401,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         map.setMinWidth(1000);
         map.setMaxHeight(350);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
+
 
         xPane.add(pubName, 1, 1);
 
