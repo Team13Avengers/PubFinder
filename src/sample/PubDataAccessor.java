@@ -9,8 +9,6 @@ import java.util.List;
  /**
  * Created by Marco on 15-09-25.
  */
- /** Author : Shafiq saloum
- */
 public class PubDataAccessor {
     public static List<Pub> pubs = new ArrayList<>();
     //public static Map<Integer, Pub> pubsById = new HashMap<>();
@@ -92,20 +90,7 @@ public class PubDataAccessor {
      }
      public static void deletePub(int idOfPub){
          /* SQL FOR DELETING THE PUB OF ID "idOfPub" */
-             Connection conn = getConnection();
-             String query = "DELETE FROM pubs WHERE (" + " id ) = " + " ?;";
-             try {
-                 // set all the prepared statement parameters
-                 PreparedStatement st = conn.prepareStatement(query);
-
-                 st.setInt(1, idOfPub);
-                 st.executeUpdate();
-                 st.close();
-                 conn.close();
-             } catch (SQLException se) {
-             }
-         }
      }
-
+ }
 
 
