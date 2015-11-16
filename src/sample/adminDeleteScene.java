@@ -69,6 +69,7 @@ public class adminDeleteScene {
                 /* DELETE METHOD GOES HERE */
                 PubDataAccessor.deletePub(deleteId);
                 /*To show the pubs that are left...*/
+                PubDataAccessor.PubDataAccessor();
                 showPubsToDelete();
             });
 
