@@ -105,6 +105,10 @@ public class PubDataAccessor {
          } catch (SQLException se) {
          }
      }
+     public static void clearCache(){
+         pubs.clear();
+         PubDataAccessor();
+     }
  }
 
 

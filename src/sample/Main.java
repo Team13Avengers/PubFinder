@@ -171,6 +171,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             primaryStage.setScene(adminAddScene);
         });
         delete.setOnAction(e -> {
+            PubDataAccessor.clearCache();
+            sample.adminDeleteScene.showPubsToDelete();
             primaryStage.setScene(adminDeleteScene);
         });
         add.setId("admin_button");
