@@ -105,6 +105,39 @@ public class PubDataAccessor {
          } catch (SQLException se) {
          }
      }
+     public static void updateRate(int idOfPub){
+        /* SQL FOR UPDATING the rating of the pub*/
+         Connection conn = getConnection();
+         String query = "UPDATE Pubs.pubs SET "
+                 + " rate = rate+1  WHERE  pubs.id = "
+                 + "?;";
+         try {
+             // set all the prepared statement parameters
+             PreparedStatement st = conn.prepareStatement(query);
+             System.out.println("method called");
+
+             st.setInt(1, idOfPub);
+             st.executeUpdate();
+             st.close();
+             conn.close();
+         } catch (SQLException se) {
+         }
+     }
+     public static int checkRate (int pubID) {
+         Connection conn = getConnection();
+         try {
+             System.out.println("rating is being checked in DB");
+             Statement st = conn.createStatement();
+             ResultSet rs = st.executeQuery(
+                     "SELECT rate FROM pubs WHERE id = " + pubID
+             );
+             if (rs.next()) return rs.getInt("rate");
+         } catch (SQLException se) {
+             se.printStackTrace();
+         }
+         return 0;
+     }
+
      public static void clearCache(){
          pubs.clear();
          PubDataAccessor();

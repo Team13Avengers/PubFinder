@@ -27,7 +27,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label welcome, warning, noPub;
     public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene;
 
-    int pubId;
     public int id;
     public Button pubButton;
     String searchStreet = "";
@@ -343,7 +342,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubPageLayout.setContent(xPane);
         xPane.setId("pubScene");
         pubPageLayout.setId("gej");
-        star.setText("0 \uF08A");
         star.setId("starButton");
 
         back.setOnAction((event) ->{
@@ -354,7 +352,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
         });
         star.setOnAction(event -> {
-            star.setText("1 \uF004");
+            int rate = PubDataAccessor.checkRate(this.id);
+            int rateUpdate = rate+1;
+            star.setText((rateUpdate) + " \uF004");
+            PubDataAccessor.updateRate(this.id);
             star.setStyle("-fx-text-fill: #731a2b;");
         });
 
@@ -429,6 +430,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         back.setId("button-logout");
         header.setFitWidth(1000);
         header.setPreserveRatio(true);
+
+        int rate = PubDataAccessor.checkRate(this.id);
+        star.setText(rate + " \uF08A");
     }
     public void searchForPubs(){
         pubLayout.getChildren().remove(noPub);
