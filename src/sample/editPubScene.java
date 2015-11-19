@@ -142,18 +142,20 @@ public class editPubScene {
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
         lon.setText("" + Pub.getLon(Pub.getIndexById(thisID)));
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
-        streetOfPub.setText(Pub.getAdress(Pub.getIndexById(thisID)));
+        streetOfPub.setText(Pub.getStreet(Pub.getIndexById(thisID)));
         urlImage.setText(Pub.getImage(Pub.getIndexById(thisID)));
-        System.out.println(Pub.getType(Pub.getIndexById(thisID)));
 
-        if (Pub.getType(Pub.getIndexById(thisID)) == "Sport"){
-            typeOfPub.setValue("Sport");
+        if (Pub.getType(Pub.getIndexById(thisID)).equals("Sport")){
+            typeOfPub.getSelectionModel().select(0);
         }
-        if (Pub.getType(Pub.getIndexById(thisID)) == "Karaoke"){
-            typeOfPub.setValue("Karaoke");
+        else if (Pub.getType(Pub.getIndexById(thisID)).equals("Karaoke")){
+            typeOfPub.getSelectionModel().select(1);
         }
-        if (Pub.getType(Pub.getIndexById(thisID)) == "Club"){
-            typeOfPub.setValue("Club");
+        else
+            typeOfPub.getSelectionModel().select(2);
+
+        if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gothenburg")){
+            city.getSelectionModel().select(0);
         }
 
         /* FIND OUT HOW, AND DO THE SAME FOR CITY!*/

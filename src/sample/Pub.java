@@ -119,6 +119,12 @@ public class Pub {
     public static String getAdress(int index){
         return PubDataAccessor.pubs.get(index).street + " " + PubDataAccessor.pubs.get(index).city + " " + PubDataAccessor.pubs.get(index).zip ;
     }
+    public static String getCity(int index){
+        return PubDataAccessor.pubs.get(index).city;
+    }
+    public static String getStreet(int index){
+        return PubDataAccessor.pubs.get(index).street;
+    }
     public static String getImage(int index){
         return PubDataAccessor.pubs.get(index).picture;
     }
