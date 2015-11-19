@@ -30,10 +30,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int id;
     public Button pubButton;
     String searchStreet = "";
+    String searchName = "";
+    int searchAge;
     StackPane pubLayout;
     GridPane pubs;
     Button search;
-    TextField searchInput;
+    TextField searchStreetInput;
+    TextField searchNameInput;
+    TextField searchAgeInput;
     static Stage primaryStage;
 
     /* PUB SCENE */
@@ -299,17 +303,36 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         /*Pub button scene*/
         pubLayout = new StackPane();
-        searchInput = new TextField();
-        searchInput.setId("input-field");
-        searchInput.setPromptText("STREET");
+        searchNameInput = new TextField();
+        searchNameInput.setId("input-field");
+        searchNameInput.setPromptText("NAME");
+        searchStreetInput = new TextField();
+        searchStreetInput.setId("input-field");
+        searchStreetInput.setPromptText("STREET");
+        searchAgeInput = new TextField();
+        searchAgeInput.setId("input-field");
+        searchAgeInput.setPromptText("AGE");       
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
-        pubLayout.setAlignment(searchInput, Pos.TOP_LEFT);
+        pubLayout.setAlignment(searchNameInput, Pos.TOP_LEFT);
+        pubLayout.setAlignment(searchStreetInput, Pos.BOTTOM_LEFT);
+        pubLayout.setAlignment(searchAgeInput, Pos.BOTTOM_RIGHT);
         search.setOnAction(e -> searchForPubs());
-        searchInput.setOnKeyReleased(event1 -> {
+        searchNameInput.setOnKeyReleased(event1 -> {
             if (event1.getCode() == KeyCode.ENTER) {
+                searchForPubs();
+            }
+        });
+        searchStreetInput.setOnKeyReleased(event2 -> {
+            if (event2.getCode() == KeyCode.ENTER) {
+                searchForPubs();
+            }
+        });
+       
+        searchAgeInput.setOnKeyReleased(event3 -> {
+            if (event3.getCode() == KeyCode.ENTER) {
                 searchForPubs();
             }
         });
@@ -324,7 +347,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setAlignment(Pos.CENTER);
         pubLayout.getChildren().add(pubScroll);
         pubLayout.getChildren().add(search);
-        pubLayout.getChildren().add(searchInput);
+        pubLayout.getChildren().add(searchNameInput);
+        pubLayout.getChildren().add(searchStreetInput);
+        pubLayout.getChildren().add(searchAgeInput);
         noPub = new Label("No pubs found");
         searchForPubs();
 
@@ -439,10 +464,16 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         System.out.println("Search was pressed");
         int y = 1;
         int x = 1;
-        searchStreet = searchInput.getText();
+        searchName = searchNameInput.getText();
+        searchStreet = searchStreetInput.getText();  
+        searchAge = Integer.valueOf(searchAgeInput.getText());
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
-            if (pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))) {
+            if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+            		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase())))
+            		            	
+//             &&	(Integer.toString(pub.age) != null && pub.age <= searchAge)))
+            {
                 pubButton = new Button("- " + pub.name + " -");
                 pubButton.setId("pub-button");
                 pubButton.setMinWidth(230);
@@ -460,6 +491,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 pubs.setColumnIndex(pubButton, x);
                 x++;
             }
+ 
         }
         if (pubs.getChildren().size() == 0){
             pubLayout.getChildren().add(noPub);
