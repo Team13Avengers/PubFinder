@@ -25,7 +25,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
-    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene;
+    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene, adminEditScene,
+    editPubScene;
 
     public int id;
     public Button pubButton;
@@ -106,7 +107,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         /*Admin login scene*/
         adminLoginLayout = new StackPane();
-        adminLoginLayout.setId("pubs");
+        adminLoginLayout.setId("welcome");
         GridPane login = new GridPane();
         login.setAlignment(Pos.TOP_CENTER);
         Label loginLabel = new Label("Login to admin panel");
@@ -162,12 +163,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         /*Admin choice scene*/
         sample.adminDeleteScene.adminDeleteScene();
+        sample.adminEditScene.adminEditScene();
+        sample.editPubScene.editPubScene();
         adminDeleteScene = sample.adminDeleteScene.deleteScene;
+        adminEditScene = sample.adminEditScene.editScene;
+        editPubScene = sample.editPubScene.editPubScene;
+
         StackPane adminLayout = new StackPane();
         adminLayout.setId("welcome");
         GridPane adminBtnGrid = new GridPane();
         Button add = new Button("Add pub");
         Button delete = new Button("Delete pub");
+        Button edit = new Button("Edit pub");
         Label choiceLabel = new Label("Options");
 
         add.setOnAction(e -> {
@@ -178,8 +185,16 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             sample.adminDeleteScene.showPubsToDelete();
             primaryStage.setScene(adminDeleteScene);
         });
+        edit.setOnAction(e -> {
+            PubDataAccessor.clearCache();
+            sample.adminEditScene.showPubsToEdit();
+            primaryStage.setScene(adminEditScene);
+        });
+
         add.setId("admin_button");
         delete.setId("admin_button");
+        edit.setId("admin_button");
+
         Button logOut = new Button("LOG OUT");
         logOut.setOnAction(e -> {
             primaryStage.setScene(welcomeScene);
@@ -189,6 +204,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         adminBtnGrid.add(add, 1, 1);
         adminBtnGrid.add(delete, 2, 1);
+        adminBtnGrid.add(edit, 3, 1);
         adminBtnGrid.setAlignment(Pos.CENTER);
 
         adminLayout.setAlignment(Pos.CENTER);
@@ -311,14 +327,16 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchStreetInput.setPromptText("STREET");
         searchAgeInput = new TextField();
         searchAgeInput.setId("input-field");
-        searchAgeInput.setPromptText("AGE");       
+        searchAgeInput.setPromptText("AGE");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
+        GridPane inputGrid = new GridPane();
+        inputGrid.setMaxHeight(100);
+        inputGrid.setHgap(10);
+        pubLayout.setAlignment(inputGrid,Pos.TOP_LEFT);
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
-        pubLayout.setAlignment(searchNameInput, Pos.TOP_LEFT);
-        pubLayout.setAlignment(searchStreetInput, Pos.BOTTOM_LEFT);
-        pubLayout.setAlignment(searchAgeInput, Pos.BOTTOM_RIGHT);
+
         search.setOnAction(e -> searchForPubs());
         searchNameInput.setOnKeyReleased(event1 -> {
             if (event1.getCode() == KeyCode.ENTER) {
@@ -346,10 +364,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setId("pub-grid");
         pubs.setAlignment(Pos.CENTER);
         pubLayout.getChildren().add(pubScroll);
+        inputGrid.add(searchNameInput, 1, 1);
+        inputGrid.add(searchStreetInput, 2, 1);
+        inputGrid.add(searchAgeInput, 3, 1);
+        pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
-        pubLayout.getChildren().add(searchNameInput);
+        /*pubLayout.getChildren().add(searchNameInput);
         pubLayout.getChildren().add(searchStreetInput);
-        pubLayout.getChildren().add(searchAgeInput);
+        pubLayout.getChildren().add(searchAgeInput);*/
         noPub = new Label("No pubs found");
         searchForPubs();
 
@@ -466,7 +488,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         int x = 1;
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();  
-        searchAge = Integer.valueOf(searchAgeInput.getText());
+        //searchAge = Integer.valueOf(searchAgeInput.getText());
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))

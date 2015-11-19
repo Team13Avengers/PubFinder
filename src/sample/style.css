@@ -9,6 +9,7 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 1000 600;
     -fx-background-position: center center;
+    -fx-padding: 10px;
 }
 #pubs{
     -fx-background-image: url("resources/pictures/image-pubs.jpg");
