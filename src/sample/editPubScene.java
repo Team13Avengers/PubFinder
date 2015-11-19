@@ -144,7 +144,19 @@ public class editPubScene {
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
         streetOfPub.setText(Pub.getAdress(Pub.getIndexById(thisID)));
         urlImage.setText(Pub.getImage(Pub.getIndexById(thisID)));
+        System.out.println(Pub.getType(Pub.getIndexById(thisID)));
 
+        if (Pub.getType(Pub.getIndexById(thisID)) == "Sport"){
+            typeOfPub.setValue("Sport");
+        }
+        if (Pub.getType(Pub.getIndexById(thisID)) == "Karaoke"){
+            typeOfPub.setValue("Karaoke");
+        }
+        if (Pub.getType(Pub.getIndexById(thisID)) == "Club"){
+            typeOfPub.setValue("Club");
+        }
+
+        /* FIND OUT HOW, AND DO THE SAME FOR CITY!*/
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }
