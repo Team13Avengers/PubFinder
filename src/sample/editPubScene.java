@@ -18,6 +18,19 @@ public class editPubScene {
     public static Label editLabel;
     public static Button backToAdmin;
     public static GridPane fields;
+    public static TextField nameOfPub;
+    public static TextField ageOfPub;
+    public static TextField openTime;
+    public static TextField closeTime;
+    public static TextField streetOfPub;
+    public static TextField urlImage;
+    public static TextField lat;
+    public static TextField lon;
+    public static ComboBox city;
+    public static ComboBox typeOfPub;
+
+
+
 
     public static void editPubScene(){
         fields = new GridPane();
@@ -26,17 +39,17 @@ public class editPubScene {
         editLabel = new Label("");
 
         /*INPUT FIELDS*/
-        TextField nameOfPub = new TextField();
-        TextField ageOfPub = new TextField();
-        TextField openTime = new TextField();
-        TextField closeTime = new TextField();
-        TextField streetOfPub = new TextField();
-        TextField urlImage = new TextField();
-        TextField lat = new TextField();
-        TextField lon = new TextField();
-        ComboBox city = new ComboBox(FXCollections.observableArrayList(
+        nameOfPub = new TextField();
+        ageOfPub = new TextField();
+        openTime = new TextField();
+        closeTime = new TextField();
+        streetOfPub = new TextField();
+        urlImage = new TextField();
+        lat = new TextField();
+        lon = new TextField();
+        city = new ComboBox(FXCollections.observableArrayList(
                 "Gothenburg"));
-        ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
+        typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
         Button editBtn = new Button("EDIT PUB");
 
@@ -116,10 +129,24 @@ public class editPubScene {
         editPubScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
     public static void updateEditScene(){
-        editLabel = new Label("Edit " + Pub.getName(Pub.getIndexById(adminEditScene.editId)));
+        int thisID = adminEditScene.editId;
+        editLabel = new Label("Edit " + Pub.getName(Pub.getIndexById(thisID)));
         editLabel.setId("login_message");
         editLayout.setAlignment(editLabel, Pos.TOP_CENTER);
-        editLayout.getChildren().addAll(fields,backToAdmin, editLabel);
+
+        /*Inputs*/
+        nameOfPub.setText(Pub.getName(Pub.getIndexById(thisID)));
+        ageOfPub.setText("" + Pub.getAge(Pub.getIndexById(thisID)));
+        openTime.setText(Pub.getOpen(Pub.getIndexById(thisID)));
+        closeTime.setText(Pub.getClose(Pub.getIndexById(thisID)));
+        lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
+        lon.setText("" + Pub.getLon(Pub.getIndexById(thisID)));
+        lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
+        streetOfPub.setText(Pub.getAdress(Pub.getIndexById(thisID)));
+        urlImage.setText(Pub.getImage(Pub.getIndexById(thisID)));
+
+
+        editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }
     public static void deleteComponents(){
         editLayout.getChildren().removeAll(fields,backToAdmin, editLabel);

@@ -110,6 +110,12 @@ public class Pub {
         String closeTime = PubDataAccessor.pubs.get(index).close;
         return openTime.substring(0,openTime.length()-3) + " " + "-" + " " + closeTime.substring(0,openTime.length()-3);
     }
+    public static String getOpen(int index) {
+        return PubDataAccessor.pubs.get(index).open;
+    }
+    public static String getClose(int index){
+        return PubDataAccessor.pubs.get(index).close;
+    }
     public static String getAdress(int index){
         return PubDataAccessor.pubs.get(index).street + " " + PubDataAccessor.pubs.get(index).city + " " + PubDataAccessor.pubs.get(index).zip ;
     }
