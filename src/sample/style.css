@@ -245,6 +245,13 @@
 #description-text{
     -fx-text-alignment: center;
 }
+#rating{
+    -fx-background-color:rgba(255,255,255,0.7);
+    -fx-min-width: 1000px;
+    -fx-padding: 10px 10px 10px 10px;
+    -fx-min-height: 20px;
+}
+
 #infoLabel{
     -fx-padding: 0px 15px 0px 15px;
     -fx-text-fill: #fff;
@@ -276,6 +283,11 @@
     -fx-text-fill: #fff;
 }
 
+#ratingStars{
+    -fx-text-fill: #731a2b;
+    -fx-font-size: 20px;
+    -fx-font-family: 'FontAwesome';
+}
 
 
 

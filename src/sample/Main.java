@@ -56,6 +56,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
     StackPane description;
+    StackPane rating;
+    Label rates;
     /* PUB SCENE */
 
     /* ADMIN SCENE */
@@ -393,7 +395,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(back, description, overlay, pubName, map, star);
+            xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates);
             descriptionGrid.getChildren().removeAll(age, open, address, type);
             star.setText("0 \uF08A");
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
@@ -435,6 +437,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public void setPubScene(){
         xPane.setStyle("-fx-background-image: url(" + "\"" + Pub.getImage(Pub.getIndexById(this.id)) + "\"" + "); ");
         description = new StackPane();
+        rating = new StackPane();
+        rating.setId("rating");
         description.setId("description");
         descriptionGrid.setId("description-text");
         pubName = new Label("- " + Pub.getName(Pub.getIndexById(this.id)) + " -");
@@ -452,7 +456,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         map.setMaxHeight(350);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
 
+        int nrStars = Pub.getNrStars(Pub.getIndexById(this.id));
+        String stars = "";
 
+        for (int i=0; i < nrStars; i++){
+            stars += "\uF005 ";
+        }
+
+        rates = new Label(stars);
+        rates.setId("ratingStars");
+        rating.getChildren().add(rates);
+        rating.setAlignment(Pos.CENTER);
         xPane.add(pubName, 1, 1);
 
         descriptionGrid.add(age, 1, 1);
@@ -462,8 +476,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);
-        xPane.add(description, 1, 2);
-        xPane.add(map, 1, 3);
+        xPane.add(rating, 1, 2);
+        xPane.add(description, 1, 3);
+        xPane.add(map, 1, 4);
 
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);

@@ -35,7 +35,7 @@ public class PubDataAccessor {
             while (res.next()) {
                 String name = res.getString("name");
                 pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
-                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon")));
+                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars")));
 
             }
 

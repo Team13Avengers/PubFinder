@@ -158,8 +158,6 @@ public class editPubScene {
             city.getSelectionModel().select(0);
         }
 
-        /* FIND OUT HOW, AND DO THE SAME FOR CITY!*/
-
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }
     public static void deleteComponents(){
