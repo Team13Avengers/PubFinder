@@ -26,13 +26,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
     public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene, adminEditScene,
-    editPubScene;
+            editPubScene;
 
     public int id;
     public Button pubButton;
     String searchStreet = "";
     String searchName = "";
     int searchAge;
+    int highestRated;
+    int lowestRated;
     StackPane pubLayout;
     GridPane pubs;
     Button search;
@@ -153,9 +155,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 primaryStage.setScene(adminChoiceScene);
             }
             else
-                if (!login.getChildren().contains(error)) {
-                    login.add(error, 1, 6);
-                }
+            if (!login.getChildren().contains(error)) {
+                login.add(error, 1, 6);
+            }
         });
 
         adminLoginLayout.getChildren().addAll(login);
@@ -330,13 +332,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchAgeInput = new TextField();
         searchAgeInput.setId("input-field");
         searchAgeInput.setPromptText("AGE");
+        ComboBox searchByRating = new ComboBox(FXCollections.observableArrayList(
+                "Highest Rated", "Lowest Rated"));
+        searchByRating.setTooltip(new Tooltip("Search by Rating"));
+        searchByRating.setPromptText("Search by Rating");
+        searchByRating.setId("comboBox");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
         GridPane inputGrid = new GridPane();
         inputGrid.setMaxHeight(100);
         inputGrid.setHgap(10);
-        pubLayout.setAlignment(inputGrid,Pos.TOP_LEFT);
+        pubLayout.setAlignment(inputGrid, Pos.TOP_LEFT);
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
 
         search.setOnAction(e -> searchForPubs());
@@ -350,12 +357,21 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 searchForPubs();
             }
         });
-       
+
         searchAgeInput.setOnKeyReleased(event3 -> {
             if (event3.getCode() == KeyCode.ENTER) {
                 searchForPubs();
             }
         });
+
+        searchByRating.setOnKeyReleased(event4 -> {
+            if (searchByRating.getSelectionModel().isSelected(0)) {
+                highestRated = 0;
+            } else if (searchByRating.getSelectionModel().isSelected(1)) {
+                lowestRated = 1;
+            }
+        });
+
 
         ScrollPane pubScroll = new ScrollPane();
         pubScroll.setId("scroll");
@@ -369,6 +385,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchNameInput, 1, 1);
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
+        inputGrid.add(searchByRating, 4, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         /*pubLayout.getChildren().add(searchNameInput);
@@ -377,7 +394,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         noPub = new Label("No pubs found");
         searchForPubs();
 
-        pubScene = new Scene(pubLayout ,1000, 600);
+        pubScene = new Scene(pubLayout, 1000, 600);
         pubScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
         /*Pub button scene*/
@@ -393,7 +410,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubPageLayout.setId("gej");
         star.setId("starButton");
 
-        back.setOnAction((event) ->{
+        back.setOnAction((event) -> {
             primaryStage.setScene(pubScene);
             xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates);
             descriptionGrid.getChildren().removeAll(age, open, address, type);
@@ -402,7 +419,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         });
         star.setOnAction(event -> {
             int rate = PubDataAccessor.checkRate(this.id);
-            int rateUpdate = rate+1;
+            int rateUpdate = rate + 1;
             star.setText((rateUpdate) + " \uF004");
             PubDataAccessor.updateRate(this.id);
             star.setStyle("-fx-text-fill: #731a2b;");
@@ -414,7 +431,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         overlay.setY(0);
         overlay.fillProperty().set(javafx.scene.paint.Color.rgb(115, 26, 43, 0.3));
 
-        pubPage = new Scene(pubPageLayout ,1000, 600);
+        pubPage = new Scene(pubPageLayout, 1000, 600);
         pubPage.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         /*Pub scene*/
 
@@ -502,13 +519,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         int y = 1;
         int x = 1;
         searchName = searchNameInput.getText();
-        searchStreet = searchStreetInput.getText();  
+        searchStreet = searchStreetInput.getText();
         //searchAge = Integer.valueOf(searchAgeInput.getText());
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-            		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase())))
-            		            	
+                    && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase())))
+
 //             &&	(Integer.toString(pub.age) != null && pub.age <= searchAge)))
             {
                 pubButton = new Button("- " + pub.name + " -");
@@ -528,7 +545,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 pubs.setColumnIndex(pubButton, x);
                 x++;
             }
- 
+
         }
         if (pubs.getChildren().size() == 0){
             pubLayout.getChildren().add(noPub);
