@@ -502,14 +502,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         int y = 1;
         int x = 1;
         searchName = searchNameInput.getText();
-        searchStreet = searchStreetInput.getText();  
-        //searchAge = Integer.valueOf(searchAgeInput.getText());
+        searchStreet = searchStreetInput.getText();
+        if (!searchAgeInput.getText().equals("")){
+            searchAge = Integer.valueOf(searchAgeInput.getText());
+        }
+        else searchAge = 100;
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-            		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase())))
-            		            	
-//             &&	(Integer.toString(pub.age) != null && pub.age <= searchAge)))
+            		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                        && pub.age <= searchAge)
+
             {
                 pubButton = new Button("- " + pub.name + " -");
                 pubButton.setId("pub-button");
