@@ -53,6 +53,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label age = new Label();
     Label address = new Label();
     Label type = new Label();
+    Label discountForStudents = new Label();
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
     StackPane description;
@@ -64,6 +65,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     StackPane adminLoginLayout;
     public int typeId;
     public int locationId;
+    public int discount;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -240,6 +242,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 "Gothenburg"));
         ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
+        ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
+                "No", "Yes"));
         Button addBtn = new Button("ADD PUB");
 
         addBtn.setOnAction(e -> {
@@ -255,8 +259,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (typeOfPub.getSelectionModel().isSelected(2)){
                 typeId = 2;
             }
+            if (studentDiscount.getSelectionModel().isSelected(0)){
+                discount = 0;
+            }
+            else if (studentDiscount.getSelectionModel().isSelected(1)){
+                discount = 1;
+            }
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, discount);
             PubDataAccessor.PubDataAccessor();
         });
 
@@ -286,12 +296,16 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
         typeOfPub.setPromptText("Select the type of pub");
         typeOfPub.setId("comboBox");
+        studentDiscount.setTooltip(new Tooltip("We offer student discounts."));
+        studentDiscount.setPromptText("We offer student discounts.");
+        studentDiscount.setId("comboBox");
 
         fields.add(nameOfPub, 1, 1);
         fields.add(ageOfPub, 1, 2);
         fields.add(openTime, 1, 3);
         fields.add(closeTime, 1, 4);
         fields.add(lat, 1, 5);
+        fields.add(studentDiscount, 1, 6);
         fields.add(streetOfPub, 2, 1);
         fields.add(city, 2, 2);
         fields.add(typeOfPub, 2, 3);
@@ -396,7 +410,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
             xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates);
-            descriptionGrid.getChildren().removeAll(age, open, address, type);
+            descriptionGrid.getChildren().removeAll(age, open, address, type, discountForStudents);
             star.setText("0 \uF08A");
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
         });
@@ -451,6 +465,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         address.setId("infoLabel");
         type = new Label(Pub.getType(Pub.getIndexById(this.id)) + " \uF005");
         type.setId("infoLabel");
+        discountForStudents = new Label(Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) + " \uF02D");
+        discountForStudents.setId("infoLabel");
 
         map.setMinWidth(1000);
         map.setMaxHeight(350);
@@ -468,11 +484,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         rating.getChildren().add(rates);
         rating.setAlignment(Pos.CENTER);
         xPane.add(pubName, 1, 1);
-
-        descriptionGrid.add(age, 1, 1);
-        descriptionGrid.add(open, 2, 1);
-        descriptionGrid.add(type, 3, 1);
-        descriptionGrid.add(address, 4, 1);
+        descriptionGrid.add(discountForStudents, 1, 1);
+        descriptionGrid.add(age, 2, 1);
+        descriptionGrid.add(open, 3, 1);
+        descriptionGrid.add(type, 4, 1);
+        descriptionGrid.add(address, 5, 1);
 
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);

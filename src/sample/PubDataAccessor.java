@@ -35,7 +35,7 @@ public class PubDataAccessor {
             while (res.next()) {
                 String name = res.getString("name");
                 pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
-                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars")));
+                        res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"), res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars"), res.getInt("hasStudentDiscount")));
 
             }
 
@@ -49,7 +49,7 @@ public class PubDataAccessor {
         }
     }
 
-     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id, int location_id) {
+     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id, int location_id, int hasStudentDiscount) {
          Connection conn = getConnection();
 
          //int id, int age, int open, int close, String name, String picture, String location, String type, String street, String city, int zip
@@ -63,8 +63,10 @@ public class PubDataAccessor {
                  + " lat,"
                  + " lon,"
                  + " type_id,"
-                 + " location_id ) VALUES ("
-                 + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                 + " location_id,"
+                 + " hasStudentDiscount ) VALUES ("
+
+                 + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
          try {
              // set all the preparedstatement parameters
@@ -80,6 +82,7 @@ public class PubDataAccessor {
              st.setDouble(8, lon);
              st.setInt(9, type_id);
              st.setInt(10, location_id);
+             st.setInt(11, hasStudentDiscount);
 
              // execute the prepared statement insert
              st.executeUpdate();
@@ -139,7 +142,7 @@ public class PubDataAccessor {
      }
 
      public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon,
-                                 int type_id, int location_id , int pubID) {
+                                 int type_id, int location_id , int pubID, int hasStudentDiscount) {
          Connection conn = getConnection();
          //Statement statement = conn;
 
@@ -153,7 +156,9 @@ public class PubDataAccessor {
                  + "',  lat =  '"+lat
                  + "', lon = '"+lon
                  + "', type_id= '"+type_id
-                 + "', location_id=  '"+location_id+"' WHERE id = '"+pubID+"';";
+                 + "', location_id=  '"+location_id
+                 + "', hasStudentDiscount=  '"+hasStudentDiscount+"' WHERE id = '"+pubID+"';";
+
          System.out.println(Update);
          try {
              // set all the preparedstatement parameters

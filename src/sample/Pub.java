@@ -18,8 +18,9 @@ public class Pub {
     double lat;
     double lon;
     int nrStars;
+    int hasStudentDiscount;
 
-    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon, int nrStars) {
+    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon, int nrStars, int hasStudentDiscount) {
         this.id = id;
         this.age = age;
         this.open = open;
@@ -33,6 +34,7 @@ public class Pub {
         this.lat = lat;
         this.lon = lon;
         this.nrStars = nrStars;
+        this.hasStudentDiscount = hasStudentDiscount;
     }
 
     public int getAge() {
@@ -73,6 +75,10 @@ public class Pub {
 
     public int getZip() {
         return zip;
+    }
+
+    public int getHasStudentDiscount() {
+        return hasStudentDiscount;
     }
 
     public static int getIndexById(int id)
@@ -145,4 +151,8 @@ public class Pub {
     public static int getNrStars(int index){
         return PubDataAccessor.pubs.get(index).nrStars;
     }
+    public static int getHasStudentDiscount(int index) {
+        return PubDataAccessor.pubs.get(index).hasStudentDiscount;
+    }
+
 }

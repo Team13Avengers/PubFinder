@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.control.Control;
+import javafx.scene.control.ComboBoxBase;
+import javafx.scene.control.ComboBox;
 
 /**
  * Created by Marco on 2015-11-19.
@@ -16,6 +19,7 @@ public class editPubScene {
     public static int pubID;
     public static int locationId;
     public static int typeId;
+    public static int discount;
     public static Label editLabel;
     public static Button backToAdmin;
     public static GridPane fields;
@@ -29,6 +33,7 @@ public class editPubScene {
     public static TextField lon;
     public static ComboBox city;
     public static ComboBox typeOfPub;
+    public static ComboBox studentDiscount;
 
 
 
@@ -52,6 +57,8 @@ public class editPubScene {
                 "Gothenburg"));
         typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
+        studentDiscount = new ComboBox(FXCollections.observableArrayList(
+                "No", "Yes"));
         Button editBtn = new Button("EDIT PUB");
 
         editBtn.setOnAction(e -> {
@@ -67,12 +74,18 @@ public class editPubScene {
             else if (typeOfPub.getSelectionModel().isSelected(2)){
                 typeId = 2;
             }
+           if (studentDiscount.getSelectionModel().isSelected(0)){
+                discount = 0;
+            }
+            else if (studentDiscount.getSelectionModel().isSelected(1)){
+                discount = 1;
+            }
 
             /* EDIT PUB SQL QUERY........*/
             String pubNameTmp = nameOfPub.getText();
             pubID = adminEditScene.editId;
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID );
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID, discount);
             PubDataAccessor.PubDataAccessor();
 
         });
@@ -103,12 +116,16 @@ public class editPubScene {
         typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
         typeOfPub.setPromptText("Select the type of pub");
         typeOfPub.setId("comboBox");
+        studentDiscount.setTooltip(new Tooltip("We offer student discounts."));
+        studentDiscount.setPromptText("We offer student discounts.");
+        studentDiscount.setId("comboBox");
 
         fields.add(nameOfPub, 1, 1);
         fields.add(ageOfPub, 1, 2);
         fields.add(openTime, 1, 3);
         fields.add(closeTime, 1, 4);
         fields.add(lat, 1, 5);
+        fields.add(studentDiscount, 1, 6);
         fields.add(streetOfPub, 2, 1);
         fields.add(city, 2, 2);
         fields.add(typeOfPub, 2, 3);
@@ -162,6 +179,13 @@ public class editPubScene {
         if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gothenburg")){
             city.getSelectionModel().select(0);
         }
+       /* if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)).equals("No"));{
+            studentDiscount.getSelectionModel().select(0);
+        }
+        else (Pub.getHasStudentDiscount(Pub.getIndexById(thisID))String.valueOf("Yes")){
+            studentDiscount.getSelectionModel().select(1);
+        }*/
+
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }
