@@ -70,7 +70,7 @@ public class editPubScene {
 
             /* EDIT PUB SQL QUERY........*/
             String pubNameTmp = nameOfPub.getText();
-            pubID = PubDataAccessor.getPubID(pubNameTmp);
+            pubID = adminEditScene.editId;
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
                     streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID );
             PubDataAccessor.PubDataAccessor();
@@ -142,8 +142,8 @@ public class editPubScene {
         /*Inputs*/
         nameOfPub.setText(Pub.getName(Pub.getIndexById(thisID)));
         ageOfPub.setText("" + Pub.getAge(Pub.getIndexById(thisID)));
-        openTime.setText(Pub.getOpen(Pub.getIndexById(thisID)));
-        closeTime.setText(Pub.getClose(Pub.getIndexById(thisID)));
+        openTime.setText(Pub.getOpen(Pub.getIndexById(thisID)).substring(0, Pub.getOpen(Pub.getIndexById(thisID)).length()-6));
+        closeTime.setText(Pub.getClose(Pub.getIndexById(thisID)).substring(0, Pub.getClose(Pub.getIndexById(thisID)).length()-6));
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
         lon.setText("" + Pub.getLon(Pub.getIndexById(thisID)));
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));

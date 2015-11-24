@@ -61,6 +61,7 @@ public class adminEditScene {
 
             pubButton.setOnAction(event -> {
                 editId = pub.id;
+                System.out.println(editId);
                 editPubScene.deleteComponents();
                 editPubScene.updateEditScene();
                 Main.primaryStage.setScene(editPubScene.editPubScene);
