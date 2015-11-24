@@ -138,6 +138,58 @@ public class PubDataAccessor {
          return 0;
      }
 
+     /**
+      *
+      * Author : Shafiq saloum
+
+      */
+     public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon,
+                                 int type_id, int location_id , int pubID) {
+         Connection conn = getConnection();
+         System.out.println("Connected to Edit!");
+         //Statement statement = conn;
+
+         String Update = "UPDATE pubs "
+                 + "SET name =  '" + name
+                 + "',  picture = '" + picture
+                 + "', age =  '" + age
+                 + "',  open =  '" + open
+                 + "', close =  '" + close
+                 + "', street =  '" +street
+                 + "',  lat =  '"+lat
+                 + "', lon = '"+lon
+                 + "', type_id= '"+type_id
+                 + "', location_id=  '"+location_id+"' WHERE id = '"+pubID+"';";
+         System.out.println(Update);
+         try {
+             // set all the preparedstatement parameters
+             PreparedStatement st = conn.prepareStatement(Update);
+             st.executeUpdate(Update);
+             System.out.println("method is called ");
+             System.out.println(Update);
+         } catch (SQLException se) {
+         }
+     }
+
+     public static int getPubID(String name){
+         int res;
+         try(Connection conn = getConnection()) {
+
+             Statement statement = conn.createStatement();
+             ResultSet rs = statement.executeQuery(
+                     "SELECT id FROM pubs WHERE name='"+name+"';"
+             );
+             System.out.println("SELECT id FROM pubs WHERE name='"+name+"';");
+             while(rs.next()){
+                 return rs.getInt("id");}
+
+         }catch(SQLException e){
+             e.printStackTrace();
+         }
+         return 0;
+     }
+
+     //* End of work
      public static void clearCache(){
          pubs.clear();
          PubDataAccessor();

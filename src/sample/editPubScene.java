@@ -13,6 +13,7 @@ import javafx.scene.layout.StackPane;
 public class editPubScene {
     public static Scene editPubScene;
     static StackPane editLayout = new StackPane();
+    public static int pubID;
     public static int locationId;
     public static int typeId;
     public static Label editLabel;
@@ -68,8 +69,12 @@ public class editPubScene {
             }
 
             /* EDIT PUB SQL QUERY........*/
-
+            String pubNameTmp = nameOfPub.getText();
+            pubID = PubDataAccessor.getPubID(pubNameTmp);
+            PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID );
             PubDataAccessor.PubDataAccessor();
+
         });
 
         editBtn.setId("add_button");
