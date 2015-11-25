@@ -21,7 +21,6 @@ import java.util.Objects;
 import javafx.scene.input.KeyCode;
 import javafx.scene.control.CheckBox;
 
-
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
 
     Button btnEnter, btnAdmin;
@@ -33,6 +32,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public Button pubButton;
     String searchStreet = "";
     String searchName = "";
+    boolean searchDiscounts;
     int searchAge;
     StackPane pubLayout;
     GridPane pubs;
@@ -40,6 +40,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
+    CheckBox searchStudentDiscounts;
     static Stage primaryStage;
 
     /* PUB SCENE */
@@ -345,16 +346,20 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchAgeInput = new TextField();
         searchAgeInput.setId("input-field");
         searchAgeInput.setPromptText("AGE");
-        CheckBox searchStudentDiscount = new CheckBox("Student Discounts");
+        CheckBox searchStudentDiscount = new CheckBox("Discounts");
         CheckBox searchBySpecialEvents = new CheckBox("Special Events");
-        CheckBox searchWihtoutFess = new CheckBox("No Fess");
+        CheckBox searchWithoutFess = new CheckBox("No Fess");
+        ComboBox searchByRating = new ComboBox(FXCollections.observableArrayList(
+                "One", "Two", "Three", "Four", "Five"));
+        searchByRating.setTooltip(new Tooltip("Rating"));
+        searchByRating.setPromptText("Rating");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
         GridPane inputGrid = new GridPane();
         inputGrid.setMaxHeight(100);
         inputGrid.setHgap(10);
-        pubLayout.setAlignment(inputGrid,Pos.TOP_LEFT);
+        pubLayout.setAlignment(inputGrid, Pos.TOP_LEFT);
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
 
         search.setOnAction(e -> searchForPubs());
@@ -375,6 +380,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
+        searchStudentDiscount.setOnKeyReleased(event4 -> {
+            if (event4.getCode() == KeyCode.ENTER) {
+                searchForPubs();
+            }
+        });
+
         ScrollPane pubScroll = new ScrollPane();
         pubScroll.setId("scroll");
         pubScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -387,9 +398,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchNameInput, 1, 1);
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
-        inputGrid.add(searchStudentDiscount, 4, 1);
-        inputGrid.add(searchBySpecialEvents, 5, 1);
-        inputGrid.add(searchWihtoutFess, 6, 1);
+        inputGrid.add(searchByRating, 4, 1);
+        inputGrid.add(searchStudentDiscount, 5, 1);
+        inputGrid.add(searchBySpecialEvents, 6, 1);
+        inputGrid.add(searchWithoutFess, 7, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         /*pubLayout.getChildren().add(searchNameInput);
@@ -473,6 +485,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         type = new Label(Pub.getType(Pub.getIndexById(this.id)) + " \uF005");
         type.setId("infoLabel");
         discountForStudents = new Label(Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) + " \uF02D");
+        if (Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) == 1) {
+            discountForStudents = new Label("Discounts " + " \uF02D");
+        }
+        else if (Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) == 0) {
+            discountForStudents = new Label("No Discounts " + "\uF02D");
+        }
         discountForStudents.setId("infoLabel");
 
         map.setMinWidth(1000);
@@ -530,11 +548,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             searchAge = Integer.valueOf(searchAgeInput.getText());
         }
         else searchAge = 100;
+
         pubs.getChildren().clear();
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge)
+                  // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
+
 
             {
                 pubButton = new Button("- " + pub.name + " -");
