@@ -19,6 +19,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import java.util.Objects;
 import javafx.scene.input.KeyCode;
+import javafx.scene.control.CheckBox;
 
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
@@ -344,6 +345,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchAgeInput = new TextField();
         searchAgeInput.setId("input-field");
         searchAgeInput.setPromptText("AGE");
+        CheckBox searchStudentDiscount = new CheckBox("Student Discounts");
+        CheckBox searchBySpecialEvents = new CheckBox("Special Events");
+        CheckBox searchWihtoutFess = new CheckBox("No Fess");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
@@ -383,6 +387,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchNameInput, 1, 1);
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
+        inputGrid.add(searchStudentDiscount, 4, 1);
+        inputGrid.add(searchBySpecialEvents, 5, 1);
+        inputGrid.add(searchWihtoutFess, 6, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         /*pubLayout.getChildren().add(searchNameInput);
