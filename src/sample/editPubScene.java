@@ -179,12 +179,12 @@ public class editPubScene {
         if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gothenburg")){
             city.getSelectionModel().select(0);
         }
-       /* if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)).equals("No"));{
+        if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)) == 0){
             studentDiscount.getSelectionModel().select(0);
         }
-        else (Pub.getHasStudentDiscount(Pub.getIndexById(thisID))String.valueOf("Yes")){
+        else {
             studentDiscount.getSelectionModel().select(1);
-        }*/
+        }
 
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
