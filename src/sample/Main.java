@@ -41,13 +41,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
-    CheckBox searchStudentDiscounts;
+    CheckBox searchStudentDiscount;
 
     static Stage primaryStage;
 
     /* PUB SCENE */
-    public int numberofStars;
-    public int startRate = 0;
+    public int numberofStars = 0;
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
@@ -385,9 +384,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
-        searchStudentDiscount.setOnKeyReleased(event4 -> {
-            if (event4.getCode() == KeyCode.ENTER) {
-                searchForPubs();
+
+
+        searchStudentDiscount.setOnAction(event4 -> {
+            if(searchStudentDiscount.isSelected()) {
+                discount = 1;
+            }
+            if(!searchStudentDiscount.isSelected()) {
+                discount = 0;
             }
         });
 
@@ -586,7 +590,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars )
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount)
                 //pub.nrStars >= numberofStars
                   // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
 
