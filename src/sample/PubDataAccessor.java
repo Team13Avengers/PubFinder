@@ -141,6 +141,8 @@ public class PubDataAccessor {
          return 0;
      }
 
+
+     //public static void ratingSearch ()
      public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon,
                                  int type_id, int location_id , int pubID, int hasStudentDiscount) {
          Connection conn = getConnection();

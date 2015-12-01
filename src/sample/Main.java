@@ -34,6 +34,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     String searchName = "";
     boolean searchDiscounts;
     int searchAge;
+    //int searchRatings;
     StackPane pubLayout;
     GridPane pubs;
     Button search;
@@ -41,9 +42,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchNameInput;
     TextField searchAgeInput;
     CheckBox searchStudentDiscounts;
+
     static Stage primaryStage;
 
     /* PUB SCENE */
+    public int numberofStars;
+    public int startRate = 0;
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
@@ -61,6 +65,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     StackPane description;
     StackPane rating;
     Label rates;
+    ComboBox searchByRating;
     /* PUB SCENE */
 
     /* ADMIN SCENE */
@@ -386,9 +391,36 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
+
+        searchByRating.setOnAction(event5 -> {
+            if (searchByRating.getSelectionModel().isSelected(0)){
+                numberofStars = 1;
+
+            }
+            else if (searchByRating.getSelectionModel().isSelected(1)){
+                numberofStars = 2;
+
+            }
+            else if (searchByRating.getSelectionModel().isSelected(2)) {
+                numberofStars = 3;
+
+            }
+            else if (searchByRating.getSelectionModel().isSelected(3)) {
+                numberofStars = 4;
+
+            }
+            else if (searchByRating.getSelectionModel().isSelected(4)){
+                numberofStars = 5;
+
+            }
+        });
+
+
+
         ScrollPane pubScroll = new ScrollPane();
         pubScroll.setId("scroll");
-        pubScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        pubScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        pubScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         pubs = new GridPane();
         pubScroll.setContent(pubs);
@@ -542,6 +574,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         System.out.println("Search was pressed");
         int y = 1;
         int x = 1;
+
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();
         if (!searchAgeInput.getText().equals("")){
@@ -553,7 +586,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge)
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars )
+                //pub.nrStars >= numberofStars
                   // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
 
 
