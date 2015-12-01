@@ -155,6 +155,42 @@
     -fx-prompt-text-fill: #731a2b;
 }
 
+#search-field{
+    -fx-padding: 10 30 10 30;
+    -fx-max-width: 110px;
+    -fx-prompt-text-fill: #731a2b;
+}
+#combo-search{
+    -fx-font-family: FontAwesome;
+    -fx-prompt-text-fill: #731a2b;
+    -fx-text-fill: #731a2b;
+    -fx-max-width: 110px;
+    -fx-padding: 6 0 5 0;
+    -fx-background-color: #fff;
+}
+#combo-search .list-cell{
+    -fx-text-fill: #731a2b;
+}
+#combo-search .list-view .list-cell:filled:hover {
+    -fx-background-color: #731a2b;
+    -fx-text-fill: #fff;
+}
+#check-search{
+    -fx-text-fill: #731a2b;
+}
+
+#check-search .box{
+    -fx-text-fill: #731a2b;
+    -fx-background-color: #fff;
+}
+
+#check-search:selected .mark {
+    -fx-mark-color:#731a2b;
+}
+#searchGrid{
+    -fx-padding: 5 0 0 0;
+}
+
 #error{
     -fx-text-fill: #fff;
     -fx-font-family: helvetica;
@@ -287,6 +323,14 @@
     -fx-text-fill: #731a2b;
     -fx-font-size: 20px;
     -fx-font-family: 'FontAwesome';
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb{
+     -fx-background-radius: 3em;
+     -fx-background-color: rgba(0,0,0, 0.3);
 }
 
 

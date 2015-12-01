@@ -342,27 +342,32 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Pub button scene*/
         pubLayout = new StackPane();
         searchNameInput = new TextField();
-        searchNameInput.setId("input-field");
+        searchNameInput.setId("search-field");
         searchNameInput.setPromptText("NAME");
         searchStreetInput = new TextField();
-        searchStreetInput.setId("input-field");
+        searchStreetInput.setId("search-field");
         searchStreetInput.setPromptText("STREET");
         searchAgeInput = new TextField();
-        searchAgeInput.setId("input-field");
+        searchAgeInput.setId("search-field");
         searchAgeInput.setPromptText("AGE");
-        CheckBox searchStudentDiscount = new CheckBox("Discounts");
-        CheckBox searchBySpecialEvents = new CheckBox("Special Events");
-        CheckBox searchWithoutFess = new CheckBox("No Fess");
+        CheckBox searchStudentDiscount = new CheckBox("DISCOUNTS");
+        CheckBox searchBySpecialEvents = new CheckBox("EVENTS");
+        CheckBox searchWithoutFees = new CheckBox("NO FEES");
+        searchStudentDiscount.setId("check-search");
+        searchBySpecialEvents.setId("check-search");
+        searchWithoutFees.setId("check-search");
         ComboBox searchByRating = new ComboBox(FXCollections.observableArrayList(
-                "One", "Two", "Three", "Four", "Five"));
-        searchByRating.setTooltip(new Tooltip("Rating"));
-        searchByRating.setPromptText("Rating");
+                "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
+        searchByRating.setTooltip(new Tooltip("RATING"));
+        searchByRating.setPromptText("RATING");
+        searchByRating.setId("combo-search");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
         GridPane inputGrid = new GridPane();
         inputGrid.setMaxHeight(100);
         inputGrid.setHgap(10);
+        inputGrid.setId("searchGrid");
         pubLayout.setAlignment(inputGrid, Pos.TOP_LEFT);
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
 
@@ -437,7 +442,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchByRating, 4, 1);
         inputGrid.add(searchStudentDiscount, 5, 1);
         inputGrid.add(searchBySpecialEvents, 6, 1);
-        inputGrid.add(searchWithoutFess, 7, 1);
+        inputGrid.add(searchWithoutFees, 7, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         /*pubLayout.getChildren().add(searchNameInput);
