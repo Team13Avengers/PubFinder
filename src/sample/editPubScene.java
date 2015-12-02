@@ -20,6 +20,7 @@ public class editPubScene {
     public static int locationId;
     public static int typeId;
     public static int discount;
+    public static int fee;
     public static Label editLabel;
     public static Button backToAdmin;
     public static GridPane fields;
@@ -34,6 +35,7 @@ public class editPubScene {
     public static ComboBox city;
     public static ComboBox typeOfPub;
     public static ComboBox studentDiscount;
+    public static ComboBox pubFee;
 
 
 
@@ -59,6 +61,8 @@ public class editPubScene {
                 "Sport", "Karaoke", "Club"));
         studentDiscount = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
+        pubFee = new ComboBox(FXCollections.observableArrayList(
+                "No", "Yes"));
         Button editBtn = new Button("EDIT PUB");
 
         editBtn.setOnAction(e -> {
@@ -80,12 +84,17 @@ public class editPubScene {
             else if (studentDiscount.getSelectionModel().isSelected(1)){
                 discount = 1;
             }
-
+            if (pubFee.getSelectionModel().isSelected(0)){
+                fee = 0;
+            }
+            else if (pubFee.getSelectionModel().isSelected(1)){
+                fee = 1;
+            }
             /* EDIT PUB SQL QUERY........*/
             String pubNameTmp = nameOfPub.getText();
             pubID = adminEditScene.editId;
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID, discount);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID, discount, fee);
             PubDataAccessor.PubDataAccessor();
 
         });
@@ -119,6 +128,9 @@ public class editPubScene {
         studentDiscount.setTooltip(new Tooltip("We offer student discounts."));
         studentDiscount.setPromptText("We offer student discounts.");
         studentDiscount.setId("comboBox");
+        pubFee.setTooltip(new Tooltip("Entrance Fee"));
+        pubFee.setPromptText("Entrance Fee");
+        pubFee.setId("comboBox");
 
         fields.add(nameOfPub, 1, 1);
         fields.add(ageOfPub, 1, 2);
@@ -126,6 +138,7 @@ public class editPubScene {
         fields.add(closeTime, 1, 4);
         fields.add(lat, 1, 5);
         fields.add(studentDiscount, 1, 6);
+        fields.add(pubFee, 1, 7);
         fields.add(streetOfPub, 2, 1);
         fields.add(city, 2, 2);
         fields.add(typeOfPub, 2, 3);
@@ -185,7 +198,12 @@ public class editPubScene {
         else {
             studentDiscount.getSelectionModel().select(1);
         }
-
+        if (Pub.getHasFee(Pub.getIndexById(thisID)) == 0){
+            pubFee.getSelectionModel().select(0);
+        }
+        else {
+            pubFee.getSelectionModel().select(1);
+        }
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }

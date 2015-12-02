@@ -72,6 +72,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int typeId;
     public int locationId;
     public int discount;
+    public int fee = 2;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -250,6 +251,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 "Sport", "Karaoke", "Club"));
         ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
+        ComboBox pubFee = new ComboBox(FXCollections.observableArrayList(
+                "No", "Yes"));
+
         Button addBtn = new Button("ADD PUB");
 
         addBtn.setOnAction(e -> {
@@ -271,8 +275,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (studentDiscount.getSelectionModel().isSelected(1)){
                 discount = 1;
             }
+            if (pubFee.getSelectionModel().isSelected(0)){
+                fee = 1;
+            }
+            else if (pubFee.getSelectionModel().isSelected(1)){
+                fee = 0;
+            }
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, discount);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, discount, fee);
             PubDataAccessor.PubDataAccessor();
         });
 
@@ -306,12 +316,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         studentDiscount.setPromptText("We offer student discounts.");
         studentDiscount.setId("comboBox");
 
+        pubFee.setTooltip(new Tooltip("Entrance Fee"));
+        pubFee.setPromptText("Entrance Fee");
+        pubFee.setId("comboBox");
+
+
         fields.add(nameOfPub, 1, 1);
         fields.add(ageOfPub, 1, 2);
         fields.add(openTime, 1, 3);
         fields.add(closeTime, 1, 4);
         fields.add(lat, 1, 5);
         fields.add(studentDiscount, 1, 6);
+        fields.add(pubFee, 1, 7);
         fields.add(streetOfPub, 2, 1);
         fields.add(city, 2, 2);
         fields.add(typeOfPub, 2, 3);
@@ -400,8 +416,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
+        searchWithoutFees.setOnAction(event5 -> {
+            if(searchWithoutFees.isSelected()) {
+                fee = 0;
+            }
+            if(!searchWithoutFees.isSelected()) {
+                fee = 1;
+            }
+        });
 
-        searchByRating.setOnAction(event5 -> {
+
+        searchByRating.setOnAction(event6 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
                 numberofStars = 1;
 
@@ -595,7 +620,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         for (Pub pub: PubDataAccessor.pubs){
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount)
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                        && pub.hasFee <= fee)
                 //pub.nrStars >= numberofStars
                   // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
 
