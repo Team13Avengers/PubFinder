@@ -65,7 +65,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     StackPane description;
     StackPane rating;
     StackPane events;
-    Label eventLabel = new Label("- Available Events -");
+    Label eventLabel = new Label("Events");
     Label rates;
     ComboBox searchByRating;
     Label eventDescription = new Label("rgjoeoioejqew efq wfe qwfe ew qfq wfqew");
@@ -620,6 +620,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         xPane.add(map, 1, 4);
         xPane.add(events, 1, 5);
+
 
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);

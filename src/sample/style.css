@@ -333,12 +333,13 @@
      -fx-background-color: rgba(0,0,0, 0.3);
 }
 #eventField{
-    -fx-padding: 30;
-    -fx-background-image: url("resources/pictures/background.jpg");
+    -fx-padding: 30 20 30 20;
+    -fx-background-color: #731a2b;
+    -fx-background-image: url("resources/pictures/background.png");
     -fx-background-position: top center;
 }
 #eventLabel{
-    -fx-text-fill: #000;
+    -fx-text-fill: #fff;
     -fx-font-size: 30px;
     -fx-font-family: helvetica;
     -fx-font-weight: bold;
@@ -346,20 +347,20 @@
 }
 
 #event{
-    -fx-max-width: 500px;
-    -fx-background-color: rgba(115, 26, 43, 1);
-    -fx-padding: 30px;
-    -fx-radius: 10px;
+    -fx-max-width: 1000px;
+    -fx-background-color: #fff;
+    -fx-padding: 20px;
+    -fx-background-radius: 2;
 }
 #eventName{
     -fx-font-family: helvetica;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #fff;
+    -fx-text-fill: #000;
 }
 #eventDescription{
     -fx-font-family: helvetica;
     -fx-font-size: 16px;
-    -fx-text-fill: #fff;
+    -fx-text-fill: #000;
 }
 
