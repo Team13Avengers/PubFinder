@@ -2,9 +2,7 @@ package sample;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
- import java.util.Map;
 
  /**
  * Created by Marco on 15-09-25.
@@ -40,11 +38,6 @@ public class PubDataAccessor {
                         res.getInt("hasStudentDiscount"), res.getInt("entranceFee"), res.getString("eventname"), res.getString("description")));
 
             }
-
-            for (Pub pub: pubs) {
-                System.out.println(pub.name + " " + pub.age + " " + pub.street + " " + pub.eventName);
-            }
-
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,7 +114,6 @@ public class PubDataAccessor {
          try {
              // set all the prepared statement parameters
              PreparedStatement st = conn.prepareStatement(query);
-             System.out.println("method called");
 
              st.setInt(1, idOfPub);
              st.executeUpdate();
@@ -133,7 +125,6 @@ public class PubDataAccessor {
      public static int checkRate (int pubID) {
          Connection conn = getConnection();
          try {
-             System.out.println("rating is being checked in DB");
              Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(
                      "SELECT rate FROM pubs WHERE id = " + pubID
@@ -167,13 +158,10 @@ public class PubDataAccessor {
                  + "', entranceFee=  '"+ hasFee
                  + "' WHERE id = '"+pubID+"';";
 
-         System.out.println(Update);
          try {
              // set all the preparedstatement parameters
              PreparedStatement st = conn.prepareStatement(Update);
              st.executeUpdate(Update);
-             System.out.println("method is called ");
-             System.out.println(Update);
          } catch (SQLException se) {
          }
      }

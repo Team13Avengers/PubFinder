@@ -6,10 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.beans.binding.*;
-import sample.*;
-
-import javax.script.Bindings;
 
 /**
  * Created by Marco on 2015-11-15.

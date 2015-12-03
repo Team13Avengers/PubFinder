@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.control.Control;
-import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.ComboBox;
 
 /**

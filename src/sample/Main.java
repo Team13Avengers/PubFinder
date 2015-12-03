@@ -14,7 +14,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -542,7 +541,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     }
     public void idOfButton(int idOfButton){
         this.id = idOfButton;
-        System.out.println(id);
     }
     public static void main(String[] args) {
         launch(args);
@@ -640,7 +638,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     }
     public void searchForPubs(){
         pubLayout.getChildren().remove(noPub);
-        System.out.println("Search was pressed");
         int y = 1;
         int x = 1;
 
