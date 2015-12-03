@@ -14,6 +14,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -63,8 +64,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     WebEngine browser = map.getEngine();
     StackPane description;
     StackPane rating;
+    StackPane events;
+    Label eventLabel = new Label("- Available Events -");
     Label rates;
     ComboBox searchByRating;
+    Label eventDescription = new Label("rgjoeoioejqew efq wfe qwfe ew qfq wfqew");
+    Label eventName = new Label("Karaoke");
+    StackPane eventPane = new StackPane();
+    GridPane eventDescriptionGrid = new GridPane();
+    GridPane eventGrid = new GridPane();
     /* PUB SCENE */
 
     /* ADMIN SCENE */
@@ -491,11 +499,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.setId("pubScene");
         pubPageLayout.setId("gej");
         star.setId("starButton");
+        eventLabel.setId("eventLabel");
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates);
+            xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates, events);
             descriptionGrid.getChildren().removeAll(age, open, address, type, discountForStudents);
+            events.getChildren().removeAll(eventDescriptionGrid);
+            eventDescriptionGrid.getChildren().removeAll(eventLabel, eventPane);
+            eventPane.getChildren().removeAll(eventGrid);
+            eventGrid.getChildren().removeAll(eventName, eventDescription);
+
             star.setText("0 \uF08A");
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
         });
@@ -536,6 +550,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public void setPubScene(){
         xPane.setStyle("-fx-background-image: url(" + "\"" + Pub.getImage(Pub.getIndexById(this.id)) + "\"" + "); ");
         description = new StackPane();
+        events = new StackPane();
         rating = new StackPane();
         rating.setId("rating");
         description.setId("description");
@@ -560,7 +575,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         discountForStudents.setId("infoLabel");
 
         map.setMinWidth(1000);
-        map.setMaxHeight(350);
+        map.setMaxHeight(250);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
 
         int nrStars = Pub.getNrStars(Pub.getIndexById(this.id));
@@ -583,9 +598,28 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);
+        eventDescriptionGrid.add(eventLabel, 1, 1);
+        eventDescriptionGrid.add(eventPane, 1, 2);
+        eventDescriptionGrid.setHalignment(eventLabel, HPos.CENTER);
+        eventDescriptionGrid.setAlignment(Pos.CENTER);
+
+        events.getChildren().addAll(eventDescriptionGrid);
+
+        eventName = new Label(Pub.getEventName(Pub.getIndexById(this.id)));
+        eventDescription = new Label(Pub.getEventDescription(Pub.getIndexById(this.id)));
+        eventGrid.add(eventName, 1, 1);
+        eventGrid.add(eventDescription, 1, 2);
+        eventName.setId("eventName");
+        eventDescription.setId("eventDescription");
+        eventPane.getChildren().add(eventGrid);
+        eventGrid.setId("event");
+
+        events.setId("eventField");
         xPane.add(rating, 1, 2);
         xPane.add(description, 1, 3);
+
         xPane.add(map, 1, 4);
+        xPane.add(events, 1, 5);
 
         pubName.setId("pub_name");
         xPane.setHalignment(pubName, HPos.CENTER);

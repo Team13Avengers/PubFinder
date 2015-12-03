@@ -30,19 +30,19 @@ public class PubDataAccessor {
         try {
             Connection conn = getConnection();
             Statement st = conn.createStatement();
-            ResultSet res = st.executeQuery("SELECT * FROM pubs LEFT OUTER JOIN type ON pubs.type_id = type.id JOIN location ON pubs.location_id = location.id");
+            ResultSet res = st.executeQuery("SELECT * FROM pubs LEFT OUTER JOIN type ON pubs.type_id = type.id JOIN location ON pubs.location_id = location.id JOIN events ON pubs.event_id = events.id");
 
             while (res.next()) {
                 String name = res.getString("name");
                 pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
                         res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"),
                         res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars"),
-                        res.getInt("hasStudentDiscount"), res.getInt("entranceFee")));
+                        res.getInt("hasStudentDiscount"), res.getInt("entranceFee"), res.getString("eventname"), res.getString("description")));
 
             }
 
             for (Pub pub: pubs) {
-                System.out.println(pub.name + " " + pub.age + " " + pub.street);
+                System.out.println(pub.name + " " + pub.age + " " + pub.street + " " + pub.eventName);
             }
 
             conn.close();

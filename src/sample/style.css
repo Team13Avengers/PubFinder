@@ -332,6 +332,34 @@
      -fx-background-radius: 3em;
      -fx-background-color: rgba(0,0,0, 0.3);
 }
+#eventField{
+    -fx-padding: 30;
+    -fx-background-image: url("resources/pictures/background.jpg");
+    -fx-background-position: top center;
+}
+#eventLabel{
+    -fx-text-fill: #000;
+    -fx-font-size: 30px;
+    -fx-font-family: helvetica;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
 
-
+#event{
+    -fx-max-width: 500px;
+    -fx-background-color: rgba(115, 26, 43, 1);
+    -fx-padding: 30px;
+    -fx-radius: 10px;
+}
+#eventName{
+    -fx-font-family: helvetica;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+}
+#eventDescription{
+    -fx-font-family: helvetica;
+    -fx-font-size: 16px;
+    -fx-text-fill: #fff;
+}
 
