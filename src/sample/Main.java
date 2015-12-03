@@ -42,6 +42,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchNameInput;
     TextField searchAgeInput;
     CheckBox searchStudentDiscount;
+    TextField nameOfevent;
+    TextField descriptionOfevent;
 
     static Stage primaryStage;
 
@@ -260,6 +262,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 "No", "Yes"));
         ComboBox pubFee = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
+        nameOfevent = new TextField();
+        descriptionOfevent = new TextField();
 
         Button addBtn = new Button("ADD PUB");
 
@@ -312,6 +316,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         lat.setPromptText("Latitude of pub");
         lon.setId("add_fields");
         lon.setPromptText("Longitude of pub");
+        nameOfevent.setId("add_fields");
+        descriptionOfevent.setId("add_fields");
+        nameOfevent.setPromptText("Special event name");
+        descriptionOfevent.setPromptText("Description of the event");
 
         city.setTooltip(new Tooltip("Select the city"));
         city.setPromptText("Select the city");
@@ -328,19 +336,21 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubFee.setId("comboBox");
 
 
-        fields.add(nameOfPub, 1, 1);
-        fields.add(ageOfPub, 1, 2);
-        fields.add(openTime, 1, 3);
-        fields.add(closeTime, 1, 4);
-        fields.add(lat, 1, 5);
-        fields.add(studentDiscount, 1, 6);
-        fields.add(pubFee, 1, 7);
-        fields.add(streetOfPub, 2, 1);
-        fields.add(city, 2, 2);
-        fields.add(typeOfPub, 2, 3);
-        fields.add(urlImage, 2, 4);
-        fields.add(lon, 2, 5);
-        fields.add(addBtn, 2, 6);
+        fields.add(nameOfPub, 0, 1);
+        fields.add(ageOfPub, 0, 2);
+        fields.add(openTime, 0, 3);
+        fields.add(closeTime, 0, 4);
+        fields.add(streetOfPub, 0, 5);
+        fields.add(studentDiscount, 1, 1);
+        fields.add(pubFee, 1, 2);
+        fields.add(city, 1, 3);
+        fields.add(typeOfPub, 1, 4);
+        fields.add(urlImage, 1, 5);
+        fields.add(lat, 2, 1);
+        fields.add(lon, 2, 2);
+        fields.add(nameOfevent ,2,3);
+        fields.add(descriptionOfevent,2,4);
+        fields.add(addBtn, 2, 5);
         /*INPUT FIELDS*/
 
 

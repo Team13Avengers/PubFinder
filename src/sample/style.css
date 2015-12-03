@@ -47,7 +47,7 @@
 }
 
 #add_fields{
-    -fx-min-width: 400px;
+    -fx-min-width: 300px;
     -fx-padding: 25;
     -fx-background-insets: 10px;
     -fx-text-fill: #731a2b;
@@ -55,7 +55,7 @@
 }
 
 #comboBox{
-    -fx-min-width: 400px;
+    -fx-min-width: 300px;
     -fx-padding: 23 30 23 30;
     -fx-background-insets: 13px;
     -fx-text-fill: #731a2b;
@@ -63,9 +63,9 @@
 }
 
 #add_button {
-    -fx-min-width: 400px;
+    -fx-min-width: 300px;
     -fx-padding: 30px;
-    -fx-background-insets: 15px;
+    -fx-background-insets: 16 10 16 10;
     -fx-background-color:#fff;
     -fx-font-weight: bold;
     -fx-font-size: 1.1em;

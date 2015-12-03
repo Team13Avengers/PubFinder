@@ -34,6 +34,9 @@ public class editPubScene {
     public static ComboBox typeOfPub;
     public static ComboBox studentDiscount;
     public static ComboBox pubFee;
+    public static TextField nameOfevent;
+    public static TextField descriptionOfevent;
+
 
 
 
@@ -61,6 +64,8 @@ public class editPubScene {
                 "No", "Yes"));
         pubFee = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
+        nameOfevent = new TextField();
+        descriptionOfevent = new TextField();
         Button editBtn = new Button("EDIT PUB");
 
         editBtn.setOnAction(e -> {
@@ -129,20 +134,27 @@ public class editPubScene {
         pubFee.setTooltip(new Tooltip("Entrance Fee"));
         pubFee.setPromptText("Entrance Fee");
         pubFee.setId("comboBox");
+        nameOfevent.setId("add_fields");
+        descriptionOfevent.setId("add_fields");
+        nameOfevent.setPromptText("Special event name");
+        descriptionOfevent.setPromptText("Description of the event");
 
-        fields.add(nameOfPub, 1, 1);
-        fields.add(ageOfPub, 1, 2);
-        fields.add(openTime, 1, 3);
-        fields.add(closeTime, 1, 4);
-        fields.add(lat, 1, 5);
-        fields.add(studentDiscount, 1, 6);
-        fields.add(pubFee, 1, 7);
-        fields.add(streetOfPub, 2, 1);
-        fields.add(city, 2, 2);
-        fields.add(typeOfPub, 2, 3);
-        fields.add(urlImage, 2, 4);
-        fields.add(lon, 2, 5);
-        fields.add(editBtn, 2, 6);
+        fields.add(nameOfPub, 0, 1);
+        fields.add(ageOfPub, 0, 2);
+        fields.add(openTime, 0, 3);
+        fields.add(closeTime, 0, 4);
+        fields.add(streetOfPub, 0, 5);
+        fields.add(studentDiscount, 1, 1);
+        fields.add(pubFee, 1, 2);
+        fields.add(city, 1, 3);
+        fields.add(typeOfPub, 1, 4);
+        fields.add(urlImage, 1, 5);
+        fields.add(lat, 2, 1);
+        fields.add(lon, 2, 2);
+        fields.add(nameOfevent ,2,3);
+        fields.add(descriptionOfevent,2,4);
+        fields.add(editBtn, 2, 5);
+
         /*INPUT FIELDS*/
 
 
