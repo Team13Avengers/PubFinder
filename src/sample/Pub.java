@@ -22,8 +22,9 @@ public class Pub {
     int nrStars;
     int hasStudentDiscount;
     int hasFee;
+    int location_id;
 
-    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon, int nrStars, int hasStudentDiscount, int hasFee, String eventName, String eventDescription) {
+    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon, int nrStars, int hasStudentDiscount, int hasFee, String eventName, String eventDescription, int location_id) {
         this.id = id;
         this.age = age;
         this.open = open;
@@ -41,6 +42,7 @@ public class Pub {
         this.hasFee = hasFee;
         this.eventDescription = eventDescription;
         this.eventName = eventName;
+        this.location_id = location_id;
     }
 
     public int getAge() {
@@ -85,6 +87,10 @@ public class Pub {
 
     public int getHasStudentDiscount() {
         return hasStudentDiscount;
+    }
+
+    public int getLocation_id() {
+        return location_id;
     }
 
     public static int getIndexById(int id)
@@ -168,6 +174,9 @@ public class Pub {
     }
     public static String getEventDescription(int index){
         return PubDataAccessor.pubs.get(index).eventDescription;
+    }
+    public static int getLocation_id(int index) {
+        return PubDataAccessor.pubs.get(index).location_id;
     }
 
 }

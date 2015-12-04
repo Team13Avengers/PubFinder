@@ -49,6 +49,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     /* PUB SCENE */
     public int numberofStars = 0;
+    public int area;
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
@@ -424,6 +425,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByRating.setTooltip(new Tooltip("RATING"));
         searchByRating.setPromptText("RATING");
         searchByRating.setId("combo-search");
+        ComboBox searchByArea = new ComboBox(FXCollections.observableArrayList(
+                "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
+        searchByArea.setTooltip(new Tooltip("AREA"));
+        searchByArea.setPromptText("AREA");
+        searchByArea.setId("combo-search");
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
@@ -495,7 +501,50 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
             }
         });
+        searchByArea.setOnAction(event7 -> {
+            if (searchByArea.getSelectionModel().isSelected(0)){
+                area = 0;
 
+            }
+            else if (searchByArea.getSelectionModel().isSelected(1)){
+                area = 2;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(2)) {
+                area = 3;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(3)) {
+                area = 4;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(4)){
+                area = 5;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(5)){
+                area = 6;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(6)) {
+                area = 7;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(7)) {
+                area = 8;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(8)){
+                area = 9;
+            }
+            else if (searchByArea.getSelectionModel().isSelected(9)) {
+                area = 10;
+
+            }
+            else if (searchByArea.getSelectionModel().isSelected(10)) {
+                area = 11;
+            }
+        });
 
 
         ScrollPane pubScroll = new ScrollPane();
@@ -512,6 +561,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
         inputGrid.add(searchByRating, 4, 1);
+        inputGrid.add(searchByArea, 5, 1);
         inputGrid.add(searchStudentDiscount, 5, 1);
         inputGrid.add(searchBySpecialEvents, 6, 1);
         inputGrid.add(searchWithoutFees, 7, 1);
@@ -693,7 +743,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee)
+                        && pub.hasFee <= fee && pub.location_id == area)
                 //pub.nrStars >= numberofStars
                   // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
 

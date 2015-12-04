@@ -35,7 +35,7 @@ public class PubDataAccessor {
                 pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
                         res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"),
                         res.getString("city"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars"),
-                        res.getInt("hasStudentDiscount"), res.getInt("entranceFee"), res.getString("eventname"), res.getString("description")));
+                        res.getInt("hasStudentDiscount"), res.getInt("entranceFee"), res.getString("eventname"), res.getString("description"), res.getInt("location_id")));
 
             }
             conn.close();
@@ -88,6 +88,7 @@ public class PubDataAccessor {
          } catch (SQLException se) {
          }
      }
+
      public static void deletePub(int idOfPub){
          /* SQL FOR DELETING THE PUB OF ID "idOfPub" */
          Connection conn = getConnection();
