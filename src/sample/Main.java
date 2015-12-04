@@ -436,6 +436,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         GridPane inputGrid = new GridPane();
         inputGrid.setMaxHeight(100);
         inputGrid.setHgap(10);
+        inputGrid.setVgap(10);
         inputGrid.setId("searchGrid");
         pubLayout.setAlignment(inputGrid, Pos.TOP_LEFT);
         pubLayout.setAlignment(search, Pos.TOP_RIGHT);
@@ -562,9 +563,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchAgeInput, 3, 1);
         inputGrid.add(searchByRating, 4, 1);
         inputGrid.add(searchByArea, 5, 1);
-        inputGrid.add(searchStudentDiscount, 5, 1);
-        inputGrid.add(searchBySpecialEvents, 6, 1);
-        inputGrid.add(searchWithoutFees, 7, 1);
+        inputGrid.add(searchStudentDiscount, 6, 1);
+        inputGrid.add(searchBySpecialEvents, 7, 1);
+        inputGrid.add(searchWithoutFees, 8, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         /*pubLayout.getChildren().add(searchNameInput);
@@ -745,8 +746,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
                         && pub.hasFee <= fee && pub.location_id == area)
                 //pub.nrStars >= numberofStars
-                  // && pub.hasStudentDiscount == 1 && searchStudentDiscounts.isSelected());
-
 
             {
                 pubButton = new Button("- " + pub.name + " -");

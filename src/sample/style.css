@@ -150,14 +150,14 @@
     -fx-font-family: 'Great Vibes';
 }
 #input-field{
-    -fx-padding: 15 35 15 35;
-    -fx-max-width: 120px;
+    -fx-padding: 10 10 10 10;
+    -fx-max-width: 70px;
     -fx-prompt-text-fill: #731a2b;
 }
 
 #search-field{
-    -fx-padding: 10 30 10 30;
-    -fx-max-width: 110px;
+    -fx-padding: 10 10 10 10;
+    -fx-max-width: 70px;
     -fx-prompt-text-fill: #731a2b;
 }
 #combo-search{
