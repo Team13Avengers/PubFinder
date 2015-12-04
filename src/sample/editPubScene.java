@@ -57,7 +57,7 @@ public class editPubScene {
         lat = new TextField();
         lon = new TextField();
         city = new ComboBox(FXCollections.observableArrayList(
-                "Gothenburg"));
+                "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
         typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
         studentDiscount = new ComboBox(FXCollections.observableArrayList(
@@ -71,6 +71,36 @@ public class editPubScene {
         editBtn.setOnAction(e -> {
             if (city.getSelectionModel().isSelected(0)){
                 locationId = 0;
+            }
+            else if (city.getSelectionModel().isSelected(1)){
+                locationId = 2;
+            }
+            else if (city.getSelectionModel().isSelected(2)){
+                locationId = 3;
+            }
+            else if (city.getSelectionModel().isSelected(3)){
+                locationId = 4;
+            }
+            else if (city.getSelectionModel().isSelected(4)){
+                locationId = 5;
+            }
+            else if (city.getSelectionModel().isSelected(5)){
+                locationId = 6;
+            }
+            else if (city.getSelectionModel().isSelected(6)){
+                locationId = 7;
+            }
+            else if (city.getSelectionModel().isSelected(7)){
+                locationId = 8;
+            }
+            else if (city.getSelectionModel().isSelected(8)){
+                locationId = 9;
+            }
+            else if (city.getSelectionModel().isSelected(9)){
+                locationId = 10;
+            }
+            else if (city.getSelectionModel().isSelected(10)){
+                locationId = 11;
             }
             if (typeOfPub.getSelectionModel().isSelected(0)){
                 typeId = 0;
@@ -122,8 +152,8 @@ public class editPubScene {
         lon.setId("add_fields");
         lon.setPromptText("Longitude of pub");
 
-        city.setTooltip(new Tooltip("Select the city"));
-        city.setPromptText("Select the city");
+        city.setTooltip(new Tooltip("Select the Area"));
+        city.setPromptText("Select the Area");
         city.setId("comboBox");
         typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
         typeOfPub.setPromptText("Select the type of pub");
@@ -199,9 +229,40 @@ public class editPubScene {
         else
             typeOfPub.getSelectionModel().select(2);
 
-        if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gothenburg")){
+        if (Pub.getCity(Pub.getIndexById(thisID)).equals("Avenyn")){
             city.getSelectionModel().select(0);
         }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Linné")){
+            city.getSelectionModel().select(1);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Haga")){
+            city.getSelectionModel().select(2);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Järntorget")){
+            city.getSelectionModel().select(3);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Magasinsgatan")){
+            city.getSelectionModel().select(4);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Vasastaden")){
+            city.getSelectionModel().select(5);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gamlestaden")){
+            city.getSelectionModel().select(6);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Heden")){
+            city.getSelectionModel().select(7);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Masthugget")){
+            city.getSelectionModel().select(8);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Stigberget")){
+            city.getSelectionModel().select(9);
+        }
+        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Other")){
+            city.getSelectionModel().select(10);
+        }
+
         if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)) == 0){
             studentDiscount.getSelectionModel().select(0);
         }

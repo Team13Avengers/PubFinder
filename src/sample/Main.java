@@ -255,7 +255,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         TextField lat = new TextField();
         TextField lon = new TextField();
         ComboBox city = new ComboBox(FXCollections.observableArrayList(
-                "Gothenburg"));
+                "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
         ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
         ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
@@ -270,6 +270,36 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         addBtn.setOnAction(e -> {
             if (city.getSelectionModel().isSelected(0)){
                 locationId = 0;
+            }
+            else if (city.getSelectionModel().isSelected(1)){
+                locationId = 2;
+            }
+            else if (city.getSelectionModel().isSelected(2)){
+                locationId = 3;
+            }
+            else if (city.getSelectionModel().isSelected(3)){
+                locationId = 4;
+            }
+            else if (city.getSelectionModel().isSelected(4)){
+                locationId = 5;
+            }
+            else if (city.getSelectionModel().isSelected(5)){
+                locationId = 6;
+            }
+            else if (city.getSelectionModel().isSelected(6)){
+                locationId = 7;
+            }
+            else if (city.getSelectionModel().isSelected(7)){
+                locationId = 8;
+            }
+            else if (city.getSelectionModel().isSelected(8)){
+                locationId = 9;
+            }
+            else if (city.getSelectionModel().isSelected(9)){
+                locationId = 10;
+            }
+            else if (city.getSelectionModel().isSelected(10)){
+                locationId = 11;
             }
             if (typeOfPub.getSelectionModel().isSelected(0)){
                 typeId = 0;
@@ -321,8 +351,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         nameOfevent.setPromptText("Special event name");
         descriptionOfevent.setPromptText("Description of the event");
 
-        city.setTooltip(new Tooltip("Select the city"));
-        city.setPromptText("Select the city");
+        city.setTooltip(new Tooltip("Select the Area"));
+        city.setPromptText("Select the Area");
         city.setId("comboBox");
         typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
         typeOfPub.setPromptText("Select the type of pub");
