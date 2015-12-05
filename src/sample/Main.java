@@ -427,7 +427,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByRating.setPromptText("RATING");
         searchByRating.setId("combo-search");
         ComboBox searchByArea = new ComboBox(FXCollections.observableArrayList(
-                "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
+                "All", "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
         searchByArea.setTooltip(new Tooltip("AREA"));
         searchByArea.setPromptText("AREA");
         searchByArea.setId("combo-search");
@@ -505,46 +505,49 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         });
         searchByArea.setOnAction(event7 -> {
             if (searchByArea.getSelectionModel().isSelected(0)){
+                area_checker = 2;
+            }
+            if (searchByArea.getSelectionModel().isSelected(1)){
                 area = 0;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(1)){
+            else if (searchByArea.getSelectionModel().isSelected(2)){
                 area = 2;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(2)) {
+            else if (searchByArea.getSelectionModel().isSelected(3)) {
                 area = 3;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(3)) {
+            else if (searchByArea.getSelectionModel().isSelected(4)) {
                 area = 4;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(4)){
+            else if (searchByArea.getSelectionModel().isSelected(5)){
                 area = 5;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(5)){
+            else if (searchByArea.getSelectionModel().isSelected(6)){
                 area = 6;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(6)) {
+            else if (searchByArea.getSelectionModel().isSelected(7)) {
                 area = 7;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(7)) {
+            else if (searchByArea.getSelectionModel().isSelected(8)) {
                 area = 8;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(8)){
+            else if (searchByArea.getSelectionModel().isSelected(9)){
                 area = 9;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(9)) {
+            else if (searchByArea.getSelectionModel().isSelected(10)) {
                 area = 10;
                 area_checker = 1;
             }
-            else if (searchByArea.getSelectionModel().isSelected(10)) {
+            else if (searchByArea.getSelectionModel().isSelected(11)) {
                 area = 11;
                 area_checker = 1;
             }
