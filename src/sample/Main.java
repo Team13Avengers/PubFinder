@@ -49,7 +49,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     /* PUB SCENE */
     public int numberofStars = 0;
-    public int area;
+    public int area =255;
+    public int area_checker = 2;
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
@@ -505,45 +506,47 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByArea.setOnAction(event7 -> {
             if (searchByArea.getSelectionModel().isSelected(0)){
                 area = 0;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(1)){
                 area = 2;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(2)) {
                 area = 3;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(3)) {
                 area = 4;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(4)){
                 area = 5;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(5)){
                 area = 6;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(6)) {
                 area = 7;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(7)) {
                 area = 8;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(8)){
                 area = 9;
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(9)) {
                 area = 10;
-
+                area_checker = 1;
             }
             else if (searchByArea.getSelectionModel().isSelected(10)) {
                 area = 11;
+                area_checker = 1;
             }
         });
 
@@ -744,7 +747,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && pub.location_id == area)
+                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2)
                 //pub.nrStars >= numberofStars
 
             {
@@ -765,7 +768,31 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 pubs.setColumnIndex(pubButton, x);
                 x++;
             }
- 
+
+            else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                    && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                    && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                    && pub.hasFee <= fee && area_checker == 2)
+            //pub.nrStars >= numberofStars
+
+            {
+                pubButton = new Button("- " + pub.name + " -");
+                pubButton.setId("pub-button");
+                pubButton.setMinWidth(230);
+                pubButton.setMinHeight(100);
+                pubButton.setOnAction((event) -> {
+                    idOfButton(pub.id);
+                    primaryStage.setScene(pubPage);
+                    setPubScene();
+                });
+                pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                pubButton.setAlignment(Pos.CENTER);
+                pubs.getChildren().add(pubButton);
+
+                pubs.setRowIndex(pubButton, y);
+                pubs.setColumnIndex(pubButton, x);
+                x++;
+            }
         }
         if (pubs.getChildren().size() == 0){
             pubLayout.getChildren().add(noPub);
