@@ -157,7 +157,7 @@
 
 #search-field{
     -fx-padding: 10 10 10 10;
-    -fx-max-width: 70px;
+    -fx-max-width: 80px;
     -fx-prompt-text-fill: #731a2b;
 }
 #combo-search{
@@ -188,7 +188,7 @@
     -fx-mark-color:#731a2b;
 }
 #searchGrid{
-    -fx-padding: 5 0 0 0;
+    -fx-padding: -5 0 0 0;
 }
 
 #error{
