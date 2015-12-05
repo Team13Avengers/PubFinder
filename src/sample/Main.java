@@ -463,10 +463,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
 
         searchStudentDiscount.setOnAction(event4 -> {
-            if(searchStudentDiscount.isSelected()) {
+            if (searchStudentDiscount.isSelected()) {
                 discount = 1;
             }
-            if(!searchStudentDiscount.isSelected()) {
+            if (!searchStudentDiscount.isSelected()) {
                 discount = 0;
             }
         });
@@ -794,6 +794,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 x++;
             }
         }
+
         if (pubs.getChildren().size() == 0){
             pubLayout.getChildren().add(noPub);
             noPub.setId("nopubs_message");

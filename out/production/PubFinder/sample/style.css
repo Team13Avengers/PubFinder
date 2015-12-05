@@ -127,8 +127,8 @@
     -fx-padding: 130px 20px 90px 20px;
 }
 #pub-button{
-    -fx-min-width: 550px;
-    -fx-min-height: 350px;
+    -fx-min-width: 525px;
+    -fx-min-height: 325px;
     -fx-background-color: transparent;
     -fx-padding: 15 55 15 55;
     -fx-font-weight: bold;
