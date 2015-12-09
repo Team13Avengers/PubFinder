@@ -223,6 +223,8 @@ public class editPubScene {
         lat.setText("" + Pub.getLat(Pub.getIndexById(thisID)));
         streetOfPub.setText(Pub.getStreet(Pub.getIndexById(thisID)));
         urlImage.setText(Pub.getImage(Pub.getIndexById(thisID)));
+        nameOfevent.setText(Pub.getEventName(Pub.getIndexById(thisID)));
+        descriptionOfevent.setText(Pub.getEventDescription(Pub.getIndexById(thisID)));
 
         if (Pub.getType(Pub.getIndexById(thisID)).equals("Sport")){
             typeOfPub.getSelectionModel().select(0);
@@ -281,6 +283,7 @@ public class editPubScene {
         }
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
+//        nameOfevent.getEventName()
     }
     public static void deleteComponents(){
         editLayout.getChildren().removeAll(fields,backToAdmin, editLabel);
