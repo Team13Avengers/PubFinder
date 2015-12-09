@@ -17,6 +17,7 @@ public class adminEditScene {
     static GridPane pubs;
     static int x = 1, y = 1;
     public static int editId;
+    public static int editEventId;
 
     public static void adminEditScene(){
         pubs = new GridPane();
@@ -61,6 +62,7 @@ public class adminEditScene {
 
             pubButton.setOnAction(event -> {
                 editId = pub.id;
+                editEventId = pub.event_id;
                 editPubScene.deleteComponents();
                 editPubScene.updateEditScene();
                 Main.primaryStage.setScene(editPubScene.editPubScene);

@@ -84,6 +84,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int locationId;
     public int discount;
     public int fee = 2;
+    public int eventId;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -324,8 +325,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (pubFee.getSelectionModel().isSelected(1)){
                 fee = 0;
             }
+            PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
+            eventId= PubDataAccessor.countId() + 1;
+            System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, eventId, discount, fee);
             PubDataAccessor.PubDataAccessor();
         });
 

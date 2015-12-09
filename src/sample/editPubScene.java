@@ -16,6 +16,7 @@ public class editPubScene {
     static StackPane editLayout = new StackPane();
     public static int pubID;
     public static int locationId;
+    public static int eventId;
     public static int typeId;
     public static int discount;
     public static int fee;
@@ -126,8 +127,11 @@ public class editPubScene {
             /* EDIT PUB SQL QUERY........*/
             String pubNameTmp = nameOfPub.getText();
             pubID = adminEditScene.editId;
+            eventId = adminEditScene.editEventId;
+            System.out.println(eventId);
+            PubDataAccessor.editEvent(nameOfevent.getText(), descriptionOfevent.getText(), eventId);
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, pubID, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, eventId, pubID, discount, fee);
             PubDataAccessor.PubDataAccessor();
 
         });
