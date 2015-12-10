@@ -32,6 +32,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public Button pubButton;
     String searchStreet = "";
     String searchName = "";
+    boolean searchEvent = false;
     boolean searchDiscounts;
     int searchAge;
     //int searchRatings;
@@ -85,6 +86,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int discount;
     public int fee = 2;
     public int eventId=0;
+    public int event = 0;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -325,6 +327,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (pubFee.getSelectionModel().isSelected(1)){
                 fee = 0;
             }
+
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
             eventId= PubDataAccessor.countId() + 1;
             System.out.println(eventId);
@@ -457,7 +460,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 searchForPubs();
             }
         });
-       
+
         searchAgeInput.setOnKeyReleased(event3 -> {
             if (event3.getCode() == KeyCode.ENTER) {
                 searchForPubs();
@@ -484,20 +487,20 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
-        searchBySpecialEvents.setOnAction(event8 ->{
+        searchBySpecialEvents.setOnAction(event6 ->{
             if (searchBySpecialEvents.isSelected()) {
-                eventId=1;
 
+                        searchEvent = true;
             }
             if (!searchBySpecialEvents.isSelected()) {
-                eventId=0;
+                        searchEvent = false;
             }
         });
 
 
 
 
-        searchByRating.setOnAction(event6 -> {
+        searchByRating.setOnAction(event7 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
                 numberofStars = 1;
 
@@ -519,7 +522,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
             }
         });
-        searchByArea.setOnAction(event7 -> {
+        searchByArea.setOnAction(event8 -> {
             if (searchByArea.getSelectionModel().isSelected(0)){
                 area_checker = 2;
             }
@@ -756,61 +759,115 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();
+
         if (!searchAgeInput.getText().equals("")){
             searchAge = Integer.valueOf(searchAgeInput.getText());
         }
         else searchAge = 100;
 
         pubs.getChildren().clear();
-        for (Pub pub: PubDataAccessor.pubs){
-            if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-            		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+        for (Pub pub: PubDataAccessor.pubs) {
+
+            if (searchEvent == true) {
+                if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2 && pub.event_id > eventId)
+                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2 && !pub.eventName.isEmpty())
                 //pub.nrStars >= numberofStars
 
-            {
-                pubButton = new Button("- " + pub.name + " -");
-                pubButton.setId("pub-button");
-                pubButton.setMinWidth(230);
-                pubButton.setMinHeight(100);
-                pubButton.setOnAction((event) -> {
-                    idOfButton(pub.id);
-                    primaryStage.setScene(pubPage);
-                    setPubScene();
-                });
-                pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                pubButton.setAlignment(Pos.CENTER);
-                pubs.getChildren().add(pubButton);
+                {
+                    System.out.println("You selected with events");
+                    pubButton = new Button("- " + pub.name + " -");
+                    pubButton.setId("pub-button");
+                    pubButton.setMinWidth(230);
+                    pubButton.setMinHeight(100);
+                    pubButton.setOnAction((event) -> {
+                        idOfButton(pub.id);
+                        primaryStage.setScene(pubPage);
+                        setPubScene();
+                    });
+                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                    pubButton.setAlignment(Pos.CENTER);
+                    pubs.getChildren().add(pubButton);
 
-                pubs.setRowIndex(pubButton, y);
-                pubs.setColumnIndex(pubButton, x);
-                x++;
+                    pubs.setRowIndex(pubButton, y);
+                    pubs.setColumnIndex(pubButton, x);
+                    x++;
+                } else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                        && pub.hasFee <= fee && area_checker == 2 && !pub.eventName.isEmpty())
+                //pub.nrStars >= numberofStars
+
+                {
+                    pubButton = new Button("- " + pub.name + " -");
+                    pubButton.setId("pub-button");
+                    pubButton.setMinWidth(230);
+                    pubButton.setMinHeight(100);
+                    pubButton.setOnAction((event) -> {
+                        idOfButton(pub.id);
+                        primaryStage.setScene(pubPage);
+                        setPubScene();
+                    });
+                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                    pubButton.setAlignment(Pos.CENTER);
+                    pubs.getChildren().add(pubButton);
+
+                    pubs.setRowIndex(pubButton, y);
+                    pubs.setColumnIndex(pubButton, x);
+                    x++;
+                }
             }
+            else if (searchEvent == false) {
+                if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2)
+                //pub.nrStars >= numberofStars
 
-            else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-                    && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                    && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                    && pub.hasFee <= fee && area_checker == 2 && pub.event_id >= eventId)
-            //pub.nrStars >= numberofStars
+                {
+                    System.out.println("You selected with events");
+                    pubButton = new Button("- " + pub.name + " -");
+                    pubButton.setId("pub-button");
+                    pubButton.setMinWidth(230);
+                    pubButton.setMinHeight(100);
+                    pubButton.setOnAction((event) -> {
+                        idOfButton(pub.id);
+                        primaryStage.setScene(pubPage);
+                        setPubScene();
+                    });
+                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                    pubButton.setAlignment(Pos.CENTER);
+                    pubs.getChildren().add(pubButton);
 
-            {
-                pubButton = new Button("- " + pub.name + " -");
-                pubButton.setId("pub-button");
-                pubButton.setMinWidth(230);
-                pubButton.setMinHeight(100);
-                pubButton.setOnAction((event) -> {
-                    idOfButton(pub.id);
-                    primaryStage.setScene(pubPage);
-                    setPubScene();
-                });
-                pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                pubButton.setAlignment(Pos.CENTER);
-                pubs.getChildren().add(pubButton);
+                    pubs.setRowIndex(pubButton, y);
+                    pubs.setColumnIndex(pubButton, x);
+                    x++;
+                } else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                        && pub.hasFee <= fee && area_checker == 2)
+                //pub.nrStars >= numberofStars
 
-                pubs.setRowIndex(pubButton, y);
-                pubs.setColumnIndex(pubButton, x);
-                x++;
+                {
+                    pubButton = new Button("- " + pub.name + " -");
+                    pubButton.setId("pub-button");
+                    pubButton.setMinWidth(230);
+                    pubButton.setMinHeight(100);
+                    pubButton.setOnAction((event) -> {
+                        idOfButton(pub.id);
+                        primaryStage.setScene(pubPage);
+                        setPubScene();
+                    });
+                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                    pubButton.setAlignment(Pos.CENTER);
+                    pubs.getChildren().add(pubButton);
+
+                    pubs.setRowIndex(pubButton, y);
+                    pubs.setColumnIndex(pubButton, x);
+                    x++;
+                }
+
             }
         }
 
@@ -822,5 +879,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /* new elements */
 
         pubs.setHgap(30);
+
     }
 }

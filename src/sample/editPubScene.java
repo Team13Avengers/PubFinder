@@ -124,6 +124,11 @@ public class editPubScene {
             else if (pubFee.getSelectionModel().isSelected(1)){
                 fee = 1;
             }
+            /*
+            if(nameOfevent.getText().isEmpty()){
+                event = 0;
+            }
+            */
             /* EDIT PUB SQL QUERY........*/
             String pubNameTmp = nameOfPub.getText();
             pubID = adminEditScene.editId;

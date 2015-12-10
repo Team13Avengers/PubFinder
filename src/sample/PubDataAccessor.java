@@ -111,7 +111,21 @@ public class PubDataAccessor {
         }
     }
 
-
+    public static String checkEvent (int eventId) {
+        Connection conn = getConnection();
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(
+                    "SELECT eventname FROM Pubs.events WHERE id = " + eventId
+            );
+            while(rs.next()){
+                rs.getNString("eventname");
+            }
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
+        return "";
+    }
     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id, int location_id, int event_id, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
 
