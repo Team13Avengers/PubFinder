@@ -84,7 +84,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int locationId;
     public int discount;
     public int fee = 2;
-    public int eventId;
+    public int eventId=0;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -484,6 +484,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
         });
 
+        searchBySpecialEvents.setOnAction(event8 ->{
+            if (searchBySpecialEvents.isSelected()) {
+                eventId=1;
+
+            }
+            if (!searchBySpecialEvents.isSelected()) {
+                eventId=0;
+            }
+        });
+
+
+
 
         searchByRating.setOnAction(event6 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
@@ -754,7 +766,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
             		&& pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2)
+                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2 && pub.event_id > eventId)
                 //pub.nrStars >= numberofStars
 
             {
@@ -779,7 +791,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
                     && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                     && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                    && pub.hasFee <= fee && area_checker == 2)
+                    && pub.hasFee <= fee && area_checker == 2 && pub.event_id >= eventId)
             //pub.nrStars >= numberofStars
 
             {
