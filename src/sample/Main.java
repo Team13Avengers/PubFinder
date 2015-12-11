@@ -18,6 +18,8 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import java.util.Objects;
+import java.util.Random;
+
 import javafx.scene.input.KeyCode;
 import javafx.scene.control.CheckBox;
 
@@ -30,6 +32,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
     public int id;
     public Button pubButton;
+    public Button randomPub;
     String searchStreet = "";
     String searchName = "";
     boolean searchEvent = false;
@@ -766,6 +769,26 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         else searchAge = 100;
 
         pubs.getChildren().clear();
+        
+       /* Random pub search */
+        
+        randomPub = new Button("- Random Pub -");
+        randomPub.setId("randomPub-button");
+        randomPub.setMinWidth(230);
+        randomPub.setMinHeight(100);
+        Random random = new Random();   		
+    		randomPub.setOnAction((event) -> {
+                idOfButton(random.nextInt(PubDataAccessor.pubs.size()));
+                primaryStage.setScene(pubPage);
+                setPubScene();
+            });
+    		
+    					randomPub.setAlignment(Pos.CENTER);
+                        pubs.getChildren().add(randomPub);
+    					
+    					pubs.setRowIndex(randomPub, 1);
+                        pubs.setColumnIndex(randomPub, 0);
+                        
         for (Pub pub: PubDataAccessor.pubs) {
 
             if (searchEvent == true) {

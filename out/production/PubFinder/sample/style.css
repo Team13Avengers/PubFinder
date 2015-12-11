@@ -142,6 +142,23 @@
 #pub-button:hover {
     -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.4), 20, 0, 0, 0);
 }
+#randomPub-button{
+	-fx-background-image: url("http://abetterlife.marcokoivisto.me/Pub-images/pub9.jpg");
+    -fx-min-width: 525px;
+    -fx-min-height: 325px;
+    -fx-background-color: transparent;
+    -fx-padding: 15 55 15 55;
+    -fx-font-weight: bold;
+    -fx-font-size: 70px;
+    -fx-font-family: 'Great Vibes';
+    -fx-text-fill: #fff;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+#randomPub-button:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.4), 20, 0, 0, 0);
+}
 #pub_name{
     -fx-padding: 70px 0px 150px 0px;
     -fx-font-size: 100px;
