@@ -67,6 +67,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label address = new Label();
     Label type = new Label();
     Label discountForStudents = new Label();
+    Label entranceFees = new Label();
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
     StackPane description;
@@ -622,7 +623,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
             xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates, events);
-            descriptionGrid.getChildren().removeAll(age, open, address, type, discountForStudents);
+            descriptionGrid.getChildren().removeAll(age, open, address, type, discountForStudents, entranceFees);
             events.getChildren().removeAll(eventDescriptionGrid);
             eventDescriptionGrid.getChildren().removeAll(eventLabel, eventPane);
             eventPane.getChildren().removeAll(eventGrid);
@@ -691,6 +692,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         }
         discountForStudents.setId("infoLabel");
 
+        entranceFees = new Label(Pub.getHasFee(Pub.getIndexById(this.id)) + "\uf153");
+        if (Pub.getHasFee(Pub.getIndexById(this.id)) == 1) {
+            entranceFees = new Label("Fees " + " \uF153");
+        }
+        else if (Pub.getHasFee(Pub.getIndexById(this.id)) == 0) {
+            entranceFees = new Label("No Fees " + "\uF153");
+        }
+        entranceFees.setId("infoLabel");
+
         map.setMinWidth(1000);
         map.setMaxHeight(250);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
@@ -708,10 +718,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         rating.setAlignment(Pos.CENTER);
         xPane.add(pubName, 1, 1);
         descriptionGrid.add(discountForStudents, 1, 1);
-        descriptionGrid.add(age, 2, 1);
-        descriptionGrid.add(open, 3, 1);
-        descriptionGrid.add(type, 4, 1);
-        descriptionGrid.add(address, 5, 1);
+        descriptionGrid.add(entranceFees, 2, 1);
+        descriptionGrid.add(age, 3, 1);
+        descriptionGrid.add(open, 4, 1);
+        descriptionGrid.add(type, 5, 1);
+        descriptionGrid.add(address, 6, 1);
 
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);
