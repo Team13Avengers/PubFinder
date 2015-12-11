@@ -333,7 +333,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             }
 
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
+
+            /* THIS SOLUTION WONT WORK. */
             eventId= PubDataAccessor.countId() + 1;
+
             System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
                     streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, eventId, discount, fee);
@@ -909,7 +912,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             pubLayout.getChildren().add(noPub);
             noPub.setId("nopubs_message");
         }
-
         /* new elements */
 
         pubs.setHgap(30);
