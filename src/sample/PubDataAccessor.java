@@ -103,25 +103,6 @@ public class PubDataAccessor {
         }
         return addEventId;
     }
-    public static int countId () {
-        //SELECT COUNT(id) FROM Pubs.events;
-        int numberRow = 0;
-        try {
-            Connection conn = getConnection();
-            String query = "select count(*) from Pubs.events";
-            PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery();
-            while(rs.next()){
-                numberRow = rs.getInt("count(*)");
-            }
-
-            st.executeUpdate();
-            st.close();
-            conn.close();
-        } catch (SQLException se) {
-        }
-        return numberRow;
-    }
 
 
     public static void editEvent (String eventName, String eventDescription, int eventId) {
@@ -141,22 +122,8 @@ public class PubDataAccessor {
         }
     }
 
-    public static String checkEvent (int eventId) {
-        Connection conn = getConnection();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(
-                    "SELECT eventname FROM Pubs.events WHERE id = " + eventId
-            );
-            while(rs.next()){
-                rs.getNString("eventname");
-            }
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-        return "";
-    }
-    public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id,
+
+    public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int nrStars, int type_id,
                               int location_id, int event_id, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
 
@@ -170,13 +137,14 @@ public class PubDataAccessor {
                 + " street,"
                 + " lat,"
                 + " lon,"
+                + " nrStars,"
                 + " type_id,"
                 + " location_id,"
                 + " event_id,"
                 + " hasStudentDiscount,"
                 + " entranceFee ) VALUES ("
 
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
             // set all the preparedstatement parameters
@@ -190,11 +158,12 @@ public class PubDataAccessor {
             st.setString(6, street);
             st.setDouble(7, lat);
             st.setDouble(8, lon);
-            st.setInt(9, type_id);
-            st.setInt(10, location_id);
-            st.setInt(11, event_id);
-            st.setInt(12, hasStudentDiscount);
-            st.setInt(13, hasFee);
+            st.setInt(9, nrStars);
+            st.setInt(10, type_id);
+            st.setInt(11, location_id);
+            st.setInt(12, event_id);
+            st.setInt(13, hasStudentDiscount);
+            st.setInt(14, hasFee);
 
             // execute the prepared statement insert
             st.executeUpdate();
@@ -254,7 +223,7 @@ public class PubDataAccessor {
 
 
     //public static void ratingSearch ()
-    public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon,
+    public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon, int nrStars,
                                 int type_id, int location_id , int event_id , int pubID, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
         //Statement statement = conn;
@@ -268,6 +237,7 @@ public class PubDataAccessor {
                 + "', street =  '" +street
                 + "',  lat =  '"+lat
                 + "', lon = '"+lon
+                + "', nrStars = '"+nrStars
                 + "', type_id= '"+type_id
                 + "', location_id=  '"+location_id
                 + "', event_id=  '"+event_id

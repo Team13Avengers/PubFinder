@@ -89,7 +89,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     public int discount;
     public int fee = 2;
     public int eventId=0;
-    public int event = 0;
+    public int ratingstarts =1;
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -332,6 +332,21 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             else if (pubFee.getSelectionModel().isSelected(1)){
                 fee = 0;
             }
+            if (Rating.getSelectionModel().isSelected(0)){
+                ratingstarts = 1;
+            }
+            else if (Rating.getSelectionModel().isSelected(1)){
+                ratingstarts = 2;
+            }
+            else if (Rating.getSelectionModel().isSelected(2)) {
+                ratingstarts = 3;
+            }
+            else if (Rating.getSelectionModel().isSelected(3)) {
+                ratingstarts = 4;
+            }
+            else if (Rating.getSelectionModel().isSelected(4)){
+                ratingstarts = 5;
+            }
 
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
 
@@ -340,7 +355,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
             System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, eventId, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingstarts, typeId, locationId, eventId, discount, fee);
             PubDataAccessor.PubDataAccessor();
         });
 

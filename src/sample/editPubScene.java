@@ -20,6 +20,7 @@ public class editPubScene {
     public static int typeId;
     public static int discount;
     public static int fee;
+    public static int ratingstarts;
     public static Label editLabel;
     public static Button backToAdmin;
     public static GridPane fields;
@@ -126,6 +127,26 @@ public class editPubScene {
             else if (pubFee.getSelectionModel().isSelected(1)){
                 fee = 1;
             }
+            if (Rating.getSelectionModel().isSelected(0)){
+                ratingstarts = 1;
+
+            }
+            else if (Rating.getSelectionModel().isSelected(1)){
+                ratingstarts = 2;
+
+            }
+            else if (Rating.getSelectionModel().isSelected(2)) {
+                ratingstarts = 3;
+
+            }
+            else if (Rating.getSelectionModel().isSelected(3)) {
+                ratingstarts = 4;
+
+            }
+            else if (Rating.getSelectionModel().isSelected(4)){
+                ratingstarts = 5;
+
+            }
             /*
             if(nameOfevent.getText().isEmpty()){
                 event = 0;
@@ -138,7 +159,7 @@ public class editPubScene {
             System.out.println(eventId);
             PubDataAccessor.editEvent(nameOfevent.getText(), descriptionOfevent.getText(), eventId);
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), typeId, locationId, eventId, pubID, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingstarts, typeId, locationId, eventId, pubID, discount, fee);
             PubDataAccessor.PubDataAccessor();
 
         });
