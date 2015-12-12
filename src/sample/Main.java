@@ -28,7 +28,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Button btnEnter, btnAdmin;
     Label welcome, warning, noPub;
     public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene, adminEditScene,
-    editPubScene;
+            editPubScene;
 
     public int id;
     public Button pubButton;
@@ -75,7 +75,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     StackPane events;
     Label eventLabel = new Label("Events");
     Label rates;
-    ComboBox searchByRating;
     Label eventDescription = new Label("rgjoeoioejqew efq wfe qwfe ew qfq wfqew");
     Label eventName = new Label("Karaoke");
     StackPane eventPane = new StackPane();
@@ -180,9 +179,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 primaryStage.setScene(adminChoiceScene);
             }
             else
-                if (!login.getChildren().contains(error)) {
-                    login.add(error, 1, 6);
-                }
+            if (!login.getChildren().contains(error)) {
+                login.add(error, 1, 6);
+            }
         });
 
         adminLoginLayout.getChildren().addAll(login);
@@ -267,6 +266,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
         ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
+        ComboBox Rating = new ComboBox(FXCollections.observableArrayList(
+                "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
         ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
         ComboBox pubFee = new ComboBox(FXCollections.observableArrayList(
@@ -346,7 +347,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         addBtn.setId("add_button");
         nameOfPub.setId("add_fields");
         nameOfPub.setPromptText("Name of pub");
-
+        Rating.setId("ratingStars");
+        Rating.setPromptText("Rating of the pub");
         ageOfPub.setId("add_fields");
         ageOfPub.setPromptText("Age limit of the pub");
         openTime.setId("add_fields");
@@ -390,13 +392,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         fields.add(studentDiscount, 1, 1);
         fields.add(pubFee, 1, 2);
         fields.add(city, 1, 3);
-        fields.add(typeOfPub, 1, 4);
-        fields.add(urlImage, 1, 5);
-        fields.add(lat, 2, 1);
-        fields.add(lon, 2, 2);
-        fields.add(nameOfevent ,2,3);
-        fields.add(descriptionOfevent,2,4);
-        fields.add(addBtn, 2, 5);
+        fields.add(Rating,1,4);
+        fields.add(typeOfPub, 1, 5);
+        fields.add(urlImage, 2, 1);
+        fields.add(lat, 2, 2);
+        fields.add(lon, 2, 3);
+        fields.add(nameOfevent ,2,4);
+        fields.add(descriptionOfevent,2,5);
+        fields.add(addBtn, 2, 6);
         /*INPUT FIELDS*/
 
 
@@ -497,10 +500,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchBySpecialEvents.setOnAction(event6 ->{
             if (searchBySpecialEvents.isSelected()) {
 
-                        searchEvent = true;
+                searchEvent = true;
             }
             if (!searchBySpecialEvents.isSelected()) {
-                        searchEvent = false;
+                searchEvent = false;
             }
         });
 
@@ -783,26 +786,26 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         else searchAge = 100;
 
         pubs.getChildren().clear();
-        
+
        /* Random pub search */
-        
+
         randomPub = new Button("- Random Pub -");
         randomPub.setId("randomPub-button");
         randomPub.setMinWidth(230);
         randomPub.setMinHeight(100);
-        Random random = new Random();   		
-    		randomPub.setOnAction((event) -> {
-                idOfButton(random.nextInt(PubDataAccessor.pubs.size()));
-                primaryStage.setScene(pubPage);
-                setPubScene();
-            });
-    		
-    					randomPub.setAlignment(Pos.CENTER);
-                        pubs.getChildren().add(randomPub);
-    					
-    					pubs.setRowIndex(randomPub, 1);
-                        pubs.setColumnIndex(randomPub, 0);
-                        
+        Random random = new Random();
+        randomPub.setOnAction((event) -> {
+            idOfButton(random.nextInt(PubDataAccessor.pubs.size()));
+            primaryStage.setScene(pubPage);
+            setPubScene();
+        });
+
+        randomPub.setAlignment(Pos.CENTER);
+        pubs.getChildren().add(randomPub);
+
+        pubs.setRowIndex(randomPub, 1);
+        pubs.setColumnIndex(randomPub, 0);
+
         for (Pub pub: PubDataAccessor.pubs) {
 
             if (searchEvent == true) {
