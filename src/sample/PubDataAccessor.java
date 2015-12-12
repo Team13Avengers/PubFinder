@@ -103,25 +103,6 @@ public class PubDataAccessor {
         }
         return addEventId;
     }
-    public static int countId () {
-        //SELECT COUNT(id) FROM Pubs.events;
-        int numberRow = 0;
-        try {
-            Connection conn = getConnection();
-            String query = "select count(*) from Pubs.events";
-            PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery();
-            while(rs.next()){
-                numberRow = rs.getInt("count(*)");
-            }
-
-            st.executeUpdate();
-            st.close();
-            conn.close();
-        } catch (SQLException se) {
-        }
-        return numberRow;
-    }
 
 
     public static void editEvent (String eventName, String eventDescription, int eventId) {
@@ -141,21 +122,7 @@ public class PubDataAccessor {
         }
     }
 
-    public static String checkEvent (int eventId) {
-        Connection conn = getConnection();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(
-                    "SELECT eventname FROM Pubs.events WHERE id = " + eventId
-            );
-            while(rs.next()){
-                rs.getNString("eventname");
-            }
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-        return "";
-    }
+ 
     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int type_id, int location_id, int event_id, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
 
