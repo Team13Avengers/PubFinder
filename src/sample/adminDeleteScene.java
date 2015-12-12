@@ -17,6 +17,7 @@ public class adminDeleteScene {
     static GridPane pubs;
     static int x = 1, y = 1;
     static int deleteId;
+    static int deleteEvent;
 
     public static void adminDeleteScene(){
         pubs = new GridPane();
@@ -62,8 +63,10 @@ public class adminDeleteScene {
             pubButton.setOnAction(event -> {
                 /* deleteId is the database id that should be deleted --> */
                 deleteId = pub.id;
+                deleteEvent = pub.event_id;
                 /* DELETE METHOD GOES HERE */
                 PubDataAccessor.deletePub(deleteId);
+                PubDataAccessor.deleteEvent(deleteEvent);
                 /*To show the pubs that are left...*/
                 PubDataAccessor.clearCache();
                 showPubsToDelete();

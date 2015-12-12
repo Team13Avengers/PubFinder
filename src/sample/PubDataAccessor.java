@@ -68,7 +68,41 @@ public class PubDataAccessor {
         } catch (SQLException se) {
         }
     }
+    public static void deleteEvent(int idOfEvent) {
+        Connection conn = getConnection();
+        String query = "DELETE FROM Pubs.events WHERE ("
+                + " id ) = "
+                + "?;";
+        try {
+            // set all the prepared statement parameters
+            PreparedStatement st = conn.prepareStatement(query);
 
+            st.setInt(1, idOfEvent);
+            st.executeUpdate();
+            st.close();
+            conn.close();
+        } catch (SQLException se) {
+        }
+    }
+    public static int addingEventId(){
+        int addEventId = 0;
+        try {
+            Connection conn = getConnection();
+
+            String query = "SELECT MAX(id) FROM Pubs.events";
+
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                addEventId = rs.getInt("MAX(id)");
+            }
+            st.executeUpdate();
+            st.close();
+            conn.close();
+        } catch (SQLException se) {
+        }
+        return addEventId;
+    }
     public static int countId () {
         //SELECT COUNT(id) FROM Pubs.events;
         int numberRow = 0;
@@ -80,11 +114,7 @@ public class PubDataAccessor {
             while(rs.next()){
                 numberRow = rs.getInt("count(*)");
             }
-            // String query = "SELECT COUNT(id) FROM Pubs.events";
-            // set all the preparedstatement parameters
-            //  PreparedStatement st = conn.prepareStatement(query);
 
-            // execute the prepared statement insert
             st.executeUpdate();
             st.close();
             conn.close();

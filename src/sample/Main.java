@@ -335,7 +335,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
 
             /* THIS SOLUTION WONT WORK. */
-            eventId= PubDataAccessor.countId() + 1;
+            eventId= PubDataAccessor.addingEventId();
 
             System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
