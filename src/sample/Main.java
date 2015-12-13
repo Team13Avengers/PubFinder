@@ -25,27 +25,22 @@ import javafx.scene.control.CheckBox;
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
 
-    Button btnEnter, btnAdmin;
-    Label welcome, warning, noPub;
-    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminDeleteScene, adminEditScene,
-            editPubScene;
-
+    Label noPub;
+    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene,
+            adminAddScene, adminDeleteScene, adminEditScene, editPubScene, welcomeScene;
     public int id;
     public Button pubButton;
     public Button randomPub;
     String searchStreet = "";
     String searchName = "";
     boolean searchEvent = false;
-    boolean searchDiscounts;
     int searchAge;
-    //int searchRatings;
     StackPane pubLayout;
     GridPane pubs;
     Button search;
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
-    CheckBox searchStudentDiscount;
     TextField nameOfevent;
     TextField descriptionOfevent;
 
@@ -98,38 +93,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         PubDataAccessor.PubDataAccessor();
 
         /*Welcome scene*/
-        StackPane layout = new StackPane();
-        layout.setId("welcome");
-
-        /*Button*/
-        btnEnter = new Button("ENTER");
-        btnEnter.setOnAction(this);
-        btnEnter.setId("button");
-        btnEnter.setOnAction(e -> primaryStage.setScene(pubScene));
-        btnEnter.setOnKeyReleased(e -> {
-            if (e.getCode() == KeyCode.ENTER) {
-                primaryStage.setScene(pubScene);
-            }
-        });
-        /*Button*/
-
-        /*Button*/
-        btnAdmin = new Button("\uF013");
-        btnAdmin.setId("faIcon");
-        btnAdmin.setOnAction(e -> primaryStage.setScene(adminLoginScene));
-        /*Button*/
-
-        welcome = new Label("Welcome to PubFinder");
-        warning = new Label("Under 18? Don't enter!");
-        welcome.setId("welcome_message");
-        warning.setId("warning_message");
-        layout.getChildren().addAll(btnEnter,welcome,warning, btnAdmin);
-        layout.setAlignment(welcome, Pos.TOP_CENTER);
-        layout.setAlignment(btnEnter, Pos.CENTER);
-        layout.setAlignment(warning, Pos.BOTTOM_CENTER);
-        layout.setAlignment(btnAdmin, Pos.TOP_RIGHT);
-        Scene welcomeScene = new Scene(layout ,1000, 600);
-        welcomeScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        sample.welcomeScene.welcomeScene();
+        welcomeScene = sample.welcomeScene.welcomeScene;
         /*Welcome scene*/
 
 
@@ -350,8 +315,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
 
-            /* THIS SOLUTION WONT WORK. */
-            eventId= PubDataAccessor.addingEventId();
+            eventId = PubDataAccessor.addingEventId();
 
             System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(),urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
@@ -618,9 +582,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.add(searchWithoutFees, 8, 1);
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
-        /*pubLayout.getChildren().add(searchNameInput);
-        pubLayout.getChildren().add(searchStreetInput);
-        pubLayout.getChildren().add(searchAgeInput);*/
         noPub = new Label("No pubs found");
         searchForPubs();
 
@@ -828,7 +789,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                         && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                         && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
                         && pub.hasFee <= fee && pub.location_id == area && area_checker != 2 && !pub.eventName.isEmpty())
-                //pub.nrStars >= numberofStars
 
                 {
                     System.out.println("You selected with events");

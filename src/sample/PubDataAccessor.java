@@ -9,8 +9,6 @@ import java.util.List;
  */
 public class PubDataAccessor {
     public static List<Pub> pubs = new ArrayList<>();
-    //public static Map<Integer, Pub> pubsById = new HashMap<>();
-    //public static Map<Integer, Integer> pubIndexesByid = new HashMap<>();
 
     public static Connection getConnection() {
         String driver = "com.mysql.jdbc.Driver";
@@ -55,13 +53,11 @@ public class PubDataAccessor {
                 + "?, ?);";
 
         try {
-            // set all the preparedstatement parameters
             PreparedStatement st = conn.prepareStatement(query);
 
             st.setString(1, eventName);
             st.setString(2, eventDescription);
 
-            // execute the prepared statement insert
             st.executeUpdate();
             st.close();
             conn.close();
@@ -246,7 +242,6 @@ public class PubDataAccessor {
                 + "' WHERE id = '"+pubID+"';";
 
         try {
-            // set all the preparedstatement parameters
             PreparedStatement st = conn.prepareStatement(Update);
             st.executeUpdate(Update);
         } catch (SQLException se) {
