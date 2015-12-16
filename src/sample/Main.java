@@ -591,7 +591,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Pub button scene*/
 
         /*Pub scene*/
-
         ScrollPane pubPageLayout = new ScrollPane();
         pubPageLayout.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pubPageLayout.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -602,9 +601,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         star.setId("starButton");
         eventLabel.setId("eventLabel");
 
+        /*Items*/
+        xPane.add(back, 1, 1);
+        back.setId("button-logout");
+
+
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
-            xPane.getChildren().removeAll(back, description, rating, overlay, pubName, map, star, rates, events);
+            xPane.getChildren().removeAll(description, rating, overlay, pubName, map, star, rates, events);
             descriptionGrid.getChildren().removeAll(age, open, address, type, discountForStudents, entranceFees);
             events.getChildren().removeAll(eventDescriptionGrid);
             eventDescriptionGrid.getChildren().removeAll(eventLabel, eventPane);
@@ -656,7 +660,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         description.setId("description");
         descriptionGrid.setId("description-text");
         pubName = new Label("- " + Pub.getName(Pub.getIndexById(this.id)) + " -");
-        //header = new ImageView(Pub.getImage(Pub.getIndexById(this.id)));
         age = new Label(Pub.getAge(Pub.getIndexById(this.id)) + " years \uF000");
         age.setId("infoLabel");
         open = new Label(Pub.getOpening(Pub.getIndexById(this.id)) + " \uF017");
@@ -729,7 +732,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(description, 1, 3);
 
         xPane.add(map, 1, 4);
-        xPane.add(events, 1, 5);
+        if (Pub.getEventName(Pub.getIndexById(this.id)) != "") {
+            xPane.add(events, 1, 5);
+        }
 
 
         pubName.setId("pub_name");
@@ -740,8 +745,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.setValignment(star, VPos.TOP);
 
         xPane.add(star, 1, 1);
-        xPane.add(back, 1, 1);
-        back.setId("button-logout");
         header.setFitWidth(1000);
         header.setPreserveRatio(true);
 
