@@ -326,7 +326,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         addBtn.setId("add_button");
         nameOfPub.setId("add_fields");
         nameOfPub.setPromptText("Name of pub");
-        Rating.setId("ratingStars");
+        Rating.setId("addRatingStars");
         Rating.setPromptText("Rating of the pub");
         ageOfPub.setId("add_fields");
         ageOfPub.setPromptText("Age limit of the pub");

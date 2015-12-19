@@ -34,6 +34,7 @@ public class editPubScene {
     public static TextField lon;
     public static ComboBox city;
     public static ComboBox typeOfPub;
+    public static ComboBox Rating;
     public static ComboBox studentDiscount;
     public static ComboBox pubFee;
     public static TextField nameOfevent;
@@ -62,7 +63,7 @@ public class editPubScene {
                 "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
         typeOfPub = new ComboBox(FXCollections.observableArrayList(
                 "Sport", "Karaoke", "Club"));
-        ComboBox Rating = new ComboBox(FXCollections.observableArrayList(
+        Rating = new ComboBox(FXCollections.observableArrayList(
                 "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
         studentDiscount = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
@@ -311,6 +312,22 @@ public class editPubScene {
         else {
             pubFee.getSelectionModel().select(1);
         }
+        if (Pub.getNrStars(Pub.getIndexById(thisID))==(1)){
+            Rating.getSelectionModel().select(0);
+        }
+        else if (Pub.getNrStars(Pub.getIndexById(thisID))==(2)){
+            Rating.getSelectionModel().select(1);
+        }
+        else if (Pub.getNrStars(Pub.getIndexById(thisID))==(3)){
+            Rating.getSelectionModel().select(2);
+        }
+        else if (Pub.getNrStars(Pub.getIndexById(thisID))==(4)){
+            Rating.getSelectionModel().select(3);
+        }
+        else if (Pub.getNrStars(Pub.getIndexById(thisID))==(5)) {
+            Rating.getSelectionModel().select(4);
+        }
+
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
 //        nameOfevent.getEventName()
