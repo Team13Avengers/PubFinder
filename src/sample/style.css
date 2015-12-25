@@ -340,21 +340,28 @@
     -fx-text-fill: #731a2b;
     -fx-font-size: 20px;
     -fx-font-family: 'FontAwesome';
-      -fx-min-width: 295px;
-        -fx-padding: 15;
-        -fx-background-insets: 10px;
-        -fx-text-fill: #731a2b;
-        -fx-prompt-text-fill: #731a2b;
+    -fx-min-width: 295px;
+    -fx-padding: 15;
+    -fx-background-insets: 10px;
+    -fx-text-fill: #731a2b;
+    -fx-prompt-text-fill: #731a2b;
 }
 #addRatingStars{
-                   -fx-min-width: 300px;
-                   -fx-padding: 20;
-                       -fx-font-family: 'FontAwesome';
-                   -fx-background-insets: 10px;
-                   -fx-text-fill: #731a2b;
-                   -fx-prompt-text-fill: #731a2b;
-               }
+     -fx-min-width: 300px;
+     -fx-padding: 20;
+     -fx-font-family: 'FontAwesome';
+     -fx-background-insets: 10px;
+     -fx-text-fill: #731a2b;
+     -fx-prompt-text-fill: #731a2b;
+}
+#ratingOfStars {
+      -fx-font-family: 'FontAwesome';
+      -fx-background-position: center center;
+      -fx-padding: 15;
+      -fx-text-fill: #731a2b;
+      -fx-font-size: 20px;
 
+}
 .scroll-bar:horizontal, .scroll-bar:vertical{
     -fx-background-color:transparent;
 }

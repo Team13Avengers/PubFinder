@@ -698,7 +698,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         }
 
         rates = new Label(stars);
-        rates.setId("ratingStars");
+        rates.setId("ratingOfStars");
         rating.getChildren().add(rates);
         rating.setAlignment(Pos.CENTER);
         xPane.add(pubName, 1, 1);
