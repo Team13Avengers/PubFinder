@@ -751,7 +751,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         int rate = PubDataAccessor.checkRate(this.id);
         star.setText(rate + " \uF08A");
     }
-    public void searchForPubs(){
+
+    public void searchForPubs() {
         pubLayout.getChildren().remove(noPub);
         int y = 1;
         int x = 1;
@@ -759,10 +760,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();
 
-        if (!searchAgeInput.getText().equals("")){
+        if (!searchAgeInput.getText().equals("")) {
             searchAge = Integer.valueOf(searchAgeInput.getText());
-        }
-        else searchAge = 100;
+        } else searchAge = 100;
 
         pubs.getChildren().clear();
 
@@ -785,111 +785,41 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setRowIndex(randomPub, 1);
         pubs.setColumnIndex(randomPub, 0);
 
-        for (Pub pub: PubDataAccessor.pubs) {
-
-            if (searchEvent == true) {
-                if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2 && !pub.eventName.isEmpty())
-
-                {
-                    System.out.println("You selected with events");
-                    pubButton = new Button("- " + pub.name + " -");
-                    pubButton.setId("pub-button");
-                    pubButton.setMinWidth(230);
-                    pubButton.setMinHeight(100);
-                    pubButton.setOnAction((event) -> {
-                        idOfButton(pub.id);
-                        primaryStage.setScene(pubPage);
-                        setPubScene();
-                    });
-                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                    pubButton.setAlignment(Pos.CENTER);
-                    pubs.getChildren().add(pubButton);
-
-                    pubs.setRowIndex(pubButton, y);
-                    pubs.setColumnIndex(pubButton, x);
-                    x++;
-                } else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && area_checker == 2 && !pub.eventName.isEmpty())
-                //pub.nrStars >= numberofStars
-
-                {
-                    pubButton = new Button("- " + pub.name + " -");
-                    pubButton.setId("pub-button");
-                    pubButton.setMinWidth(230);
-                    pubButton.setMinHeight(100);
-                    pubButton.setOnAction((event) -> {
-                        idOfButton(pub.id);
-                        primaryStage.setScene(pubPage);
-                        setPubScene();
-                    });
-                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                    pubButton.setAlignment(Pos.CENTER);
-                    pubs.getChildren().add(pubButton);
-
-                    pubs.setRowIndex(pubButton, y);
-                    pubs.setColumnIndex(pubButton, x);
-                    x++;
-                }
+        for (Pub pub : PubDataAccessor.pubs) {
+            if (searchEvent && pub.eventName.isEmpty()) {
+                continue;
             }
-            else if (searchEvent == false) {
-                if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && pub.location_id == area && area_checker != 2)
-                //pub.nrStars >= numberofStars
 
-                {
-                    System.out.println("You selected with events");
-                    pubButton = new Button("- " + pub.name + " -");
-                    pubButton.setId("pub-button");
-                    pubButton.setMinWidth(230);
-                    pubButton.setMinHeight(100);
-                    pubButton.setOnAction((event) -> {
-                        idOfButton(pub.id);
-                        primaryStage.setScene(pubPage);
-                        setPubScene();
-                    });
-                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                    pubButton.setAlignment(Pos.CENTER);
-                    pubs.getChildren().add(pubButton);
+            if (area_checker != 2 && pub.location_id != area) {
+                continue;
+            }
 
-                    pubs.setRowIndex(pubButton, y);
-                    pubs.setColumnIndex(pubButton, x);
-                    x++;
-                } else if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
-                        && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                        && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
-                        && pub.hasFee <= fee && area_checker == 2)
-                //pub.nrStars >= numberofStars
+            if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
+                    && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
+                    && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                    && pub.hasFee <= fee) {
 
-                {
-                    pubButton = new Button("- " + pub.name + " -");
-                    pubButton.setId("pub-button");
-                    pubButton.setMinWidth(230);
-                    pubButton.setMinHeight(100);
-                    pubButton.setOnAction((event) -> {
-                        idOfButton(pub.id);
-                        primaryStage.setScene(pubPage);
-                        setPubScene();
-                    });
-                    pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
-                    pubButton.setAlignment(Pos.CENTER);
-                    pubs.getChildren().add(pubButton);
+                pubButton = new Button("- " + pub.name + " -");
+                pubButton.setId("pub-button");
+                pubButton.setMinWidth(230);
+                pubButton.setMinHeight(100);
+                pubButton.setOnAction((event) -> {
+                    idOfButton(pub.id);
+                    primaryStage.setScene(pubPage);
+                    setPubScene();
+                });
+                pubButton.setStyle("-fx-background-image: url(" + "\"" + pub.picture + "\"" + "); ");
+                pubButton.setAlignment(Pos.CENTER);
+                pubs.getChildren().add(pubButton);
 
-                    pubs.setRowIndex(pubButton, y);
-                    pubs.setColumnIndex(pubButton, x);
-                    x++;
-                }
+                pubs.setRowIndex(pubButton, y);
+                pubs.setColumnIndex(pubButton, x);
 
+                x++;
             }
         }
 
-        if (pubs.getChildren().size() == 0){
+        if (pubs.getChildren().size() == 0) {
             pubLayout.getChildren().add(noPub);
             noPub.setId("nopubs_message");
         }
