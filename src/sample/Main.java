@@ -41,8 +41,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
-    TextField nameOfevent;
-    TextField descriptionOfevent;
 
     static Stage primaryStage;
 
@@ -78,13 +76,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     /* PUB SCENE */
 
 //    /* ADMIN SCENE */
-    StackPane adminLoginLayout;
-//    public int typeId;
-//    public int locationId;
+
     public int discount;
     public int fee = 2;
-//    public int eventId=0;
-//    public int ratingstarts =1;
+
     /* ADMIN SCENE */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -105,60 +100,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
 
         /*Admin login scene*/
-        adminLoginLayout = new StackPane();
-        adminLoginLayout.setId("welcome");
-        GridPane login = new GridPane();
-        login.setAlignment(Pos.TOP_CENTER);
-        Label loginLabel = new Label("Login to admin panel");
-        Label error = new Label("Your credentials are invalid. Please try again!");
-
-        loginLabel.setId("login_message");
-        login.setHalignment(error,HPos.CENTER);
-        error.setId("error");
-
-        TextField username = new TextField();
-        username.setId("login_fields");
-        login.setHalignment(username,HPos.CENTER);
-        username.setPromptText("USERNAME");
-        PasswordField password = new PasswordField();
-        password.setId("login_fields");
-        login.setHalignment(password, HPos.CENTER);
-        password.setPromptText("PASSWORD");
-
-        Button loginButton = new Button("LOGIN");
-        loginButton.setId("login_button");
-        login.setHalignment(loginButton, HPos.CENTER);
-
-        Button backBtn = new Button("BACK");
-        backBtn.setId("adminButton");
-        login.setHalignment(backBtn, HPos.CENTER);
-
-        backBtn.setOnAction(e -> {
-            primaryStage.setScene(welcomeScene);
-        });
-
-        login.add(loginLabel,1,1);
-        login.add(username,1,2);
-        login.add(password,1,3);
-        login.add(loginButton,1,4);
-        login.add(backBtn, 1, 5);
-
-        loginButton.setOnAction(e -> {
-            if (Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(), "password")){
-                username.clear();
-                password.clear();
-                primaryStage.setScene(adminChoiceScene);
-            }
-            else
-            if (!login.getChildren().contains(error)) {
-                login.add(error, 1, 6);
-            }
-        });
-
-        adminLoginLayout.getChildren().addAll(login);
-        adminLoginScene = new Scene(adminLoginLayout ,1000, 600);
-        adminLoginScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-        /*Admin login scene*/
+        sample.adminLoginScene.primaryStage = primaryStage;
+        sample.adminLoginScene.adminloginscene();
+        adminLoginScene = sample.adminLoginScene.adminLoginScene;
+         /*Admin login scene*/
 
         /*Admin choice scene*/
         sample.adminDeleteScene.adminDeleteScene();
@@ -169,6 +114,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         editPubScene = sample.editPubScene.editPubScene;
 
         StackPane adminLayout = new StackPane();
+
         adminLayout.setId("welcome");
         GridPane adminBtnGrid = new GridPane();
         Button add = new Button("Add pub");
@@ -214,6 +160,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         adminChoiceScene = new Scene(adminLayout, 1000, 600);
         sample.adminAddScene.adminChoiceScene = adminChoiceScene;
+        sample.adminLoginScene.adminChoiceScene=adminChoiceScene;
         adminChoiceScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         /*Admin choice scene*/
 
