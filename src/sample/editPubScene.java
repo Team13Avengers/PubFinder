@@ -220,12 +220,13 @@ public class editPubScene {
         fields.add(descriptionOfevent,2,5);
         fields.add(editBtn, 2, 6);
 
-        /*INPUT FIELDS*/
+
 
 
         backToAdmin.setId("button-logout");
         backToAdmin.setOnAction(e -> {
             Main.primaryStage.setScene(Main.adminEditScene);
+            System.out.println("back button ");
         });
 
         fields.setAlignment(Pos.CENTER);

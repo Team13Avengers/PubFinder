@@ -193,8 +193,26 @@ public class adminAddScene {
 
         addLayout.getChildren().addAll(fields, backToAdmin, addLabel);
         adminAddScene = new Scene(addLayout, 1000, 600);
+        sample.adminChoiceScene.adminAddScene= adminAddScene;
         adminAddScene.getStylesheets().addAll(adminAddScene.class.getResource("style.css").toExternalForm());
 
         /*Admin add scene*/
+    }
+    public static void clear(){
+        nameOfPub.clear();
+        ageOfPub.clear();
+        openTime.clear();
+        closeTime.clear();
+        streetOfPub.clear();
+        studentDiscount.setValue(null);
+        pubFee.setValue(null);
+        city.setValue(null);
+        Rating.setValue(null);
+        typeOfPub.setValue(null);
+        urlImage.clear();
+        lat.clear();
+        lon.clear();
+        nameOfevent.clear();
+        descriptionOfevent.clear();
     }
 }

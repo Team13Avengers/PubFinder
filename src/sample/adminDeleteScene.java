@@ -11,7 +11,7 @@ import javafx.scene.layout.StackPane;
  * Created by Marco on 2015-11-15.
  */
 public class adminDeleteScene {
-    public static Scene deleteScene;
+    public static Scene DeleteScene;
     static StackPane addLayout = new StackPane();
     static Button pubButton;
     static GridPane pubs;
@@ -38,8 +38,8 @@ public class adminDeleteScene {
         addLayout.setAlignment(backBtn, Pos.TOP_LEFT);
         addLayout.setAlignment(deleteLabel, Pos.TOP_CENTER);
         addLayout.getChildren().addAll(pubs, backBtn, deleteLabel);
-        deleteScene = new Scene(addLayout, 1000, 600);
-        deleteScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
+        DeleteScene = new Scene(addLayout, 1000, 600);
+        DeleteScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
     public static void showPubsToDelete(){
         pubs.getChildren().clear();

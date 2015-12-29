@@ -40,6 +40,7 @@ public class welcomeScene {
         layout.setAlignment(warning, Pos.BOTTOM_CENTER);
         layout.setAlignment(btnAdmin, Pos.TOP_RIGHT);
         welcomeScene = new Scene(layout ,1000, 600);
+        adminChoiceScene.welcomeScene = welcomeScene;
         welcomeScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
 }

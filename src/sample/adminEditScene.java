@@ -39,6 +39,7 @@ public class adminEditScene {
         addLayout.setAlignment(deleteLabel, Pos.TOP_CENTER);
         addLayout.getChildren().addAll(pubs, backBtn, deleteLabel);
         editScene = new Scene(addLayout, 1000, 600);
+        editPubScene.editPubScene = editScene;
         editScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
     public static void showPubsToEdit(){
