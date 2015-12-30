@@ -20,7 +20,7 @@ public class editPubScene {
     public static int typeId;
     public static int discount;
     public static int fee;
-    public static int ratingstarts;
+    public static int ratingStars;
     public static Label editLabel;
     public static Button backToAdmin;
     public static GridPane fields;
@@ -129,23 +129,23 @@ public class editPubScene {
                 fee = 1;
             }
             if (Rating.getSelectionModel().isSelected(0)){
-                ratingstarts = 1;
+                ratingStars = 1;
 
             }
             else if (Rating.getSelectionModel().isSelected(1)){
-                ratingstarts = 2;
+                ratingStars = 2;
 
             }
             else if (Rating.getSelectionModel().isSelected(2)) {
-                ratingstarts = 3;
+                ratingStars = 3;
 
             }
             else if (Rating.getSelectionModel().isSelected(3)) {
-                ratingstarts = 4;
+                ratingStars = 4;
 
             }
             else if (Rating.getSelectionModel().isSelected(4)){
-                ratingstarts = 5;
+                ratingStars = 5;
 
             }
             /*
@@ -160,7 +160,7 @@ public class editPubScene {
             System.out.println(eventId);
             PubDataAccessor.editEvent(nameOfevent.getText(), descriptionOfevent.getText(), eventId);
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingstarts, typeId, locationId, eventId, pubID, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, pubID, discount, fee);
             PubDataAccessor.PubDataAccessor();
 
         });
@@ -267,37 +267,37 @@ public class editPubScene {
         else
             typeOfPub.getSelectionModel().select(2);
 
-        if (Pub.getCity(Pub.getIndexById(thisID)).equals("Avenyn")){
+        if (Pub.getArea(Pub.getIndexById(thisID)).equals("Avenyn")){
             city.getSelectionModel().select(0);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Linné")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Linné")){
             city.getSelectionModel().select(1);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Haga")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Haga")){
             city.getSelectionModel().select(2);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Järntorget")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Järntorget")){
             city.getSelectionModel().select(3);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Magasinsgatan")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Magasinsgatan")){
             city.getSelectionModel().select(4);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Vasastaden")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Vasastaden")){
             city.getSelectionModel().select(5);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Gamlestaden")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Gamlestaden")){
             city.getSelectionModel().select(6);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Heden")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Heden")){
             city.getSelectionModel().select(7);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Masthugget")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Masthugget")){
             city.getSelectionModel().select(8);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Stigberget")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Stigberget")){
             city.getSelectionModel().select(9);
         }
-        else if (Pub.getCity(Pub.getIndexById(thisID)).equals("Other")){
+        else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Other")){
             city.getSelectionModel().select(10);
         }
 
@@ -331,7 +331,6 @@ public class editPubScene {
 
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
-//        nameOfevent.getEventName()
     }
     public static void deleteComponents(){
         editLayout.getChildren().removeAll(fields,backToAdmin, editLabel);

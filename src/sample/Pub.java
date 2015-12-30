@@ -14,6 +14,7 @@ public class Pub {
     String type;
     String street;
     String city;
+    String area;
     String eventName;
     String eventDescription;
     int zip;
@@ -25,7 +26,7 @@ public class Pub {
     int location_id;
     int event_id;
 
-    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String city, int zip, double lat, double lon, int nrStars, int hasStudentDiscount, int hasFee, String eventName, String eventDescription, int location_id, int event_id) {
+    public Pub(int id, int age, String open, String close, String name, String picture, String type, String street, String area, int zip, double lat, double lon, int nrStars, int hasStudentDiscount, int hasFee, String eventName, String eventDescription, int location_id, int event_id, String city) {
         this.id = id;
         this.age = age;
         this.open = open;
@@ -34,7 +35,7 @@ public class Pub {
         this.picture = picture;
         this.type = type;
         this.street = street;
-        this.city = city;
+        this.area = area;
         this.zip = zip;
         this.lat = lat;
         this.lon = lon;
@@ -45,6 +46,7 @@ public class Pub {
         this.eventName = eventName;
         this.location_id = location_id;
         this.event_id = event_id;
+        this.city = city;
     }
 
     public int getAge() {
@@ -95,23 +97,8 @@ public class Pub {
         return location_id;
     }
 
-    public static int getIndexById(int id)
-    {
-
-        /*
-        for (int i = 0; i < PubDataAccessor.pubs.size(); i++) {
-            Pub pub = PubDataAccessor.pubs.get(i);
-            if (pub.id == id) {
-                return i;
-            }
-        }
-        return -1;
-        */
-
-
+    public static int getIndexById(int id) {
         int index = 0;
-        // for (int = 0; i < PubDataAccessor.pubs.size(); i++) {
-        //     Pub pub = PubDataAccessor.pubs.get(i);
         for(Pub pub : PubDataAccessor.pubs)
         {
             if (id == pub.id){
@@ -183,4 +170,5 @@ public class Pub {
     public static int getEvent_id(int index) {
         return PubDataAccessor.pubs.get(index).event_id;
     }
+    public static String getArea(int index){ return PubDataAccessor.pubs.get(index).area; }
 }

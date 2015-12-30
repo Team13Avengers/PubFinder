@@ -53,7 +53,7 @@ public class adminLoginScene {
         login.setHalignment(backBtn, HPos.CENTER);
 
         backBtn.setOnAction(e -> {
-            primaryStage.setScene(welcomeScene);
+            primaryStage.setScene(Main.welcomeScene);
         });
 
         login.add(loginLabel,1,1);

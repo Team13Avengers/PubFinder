@@ -43,7 +43,7 @@
 }
 
 #fields{
-    -fx-padding: 85px 0px 0px 0px;
+    -fx-padding: 95px 0px 0px 0px;
 }
 
 #add_fields{
@@ -301,7 +301,6 @@
 #rating{
     -fx-background-color:rgba(255,255,255,0.7);
     -fx-min-width: 1000px;
-    -fx-padding: 10px 10px 10px 10px;
     -fx-min-height: 20px;
 }
 
@@ -338,11 +337,10 @@
 
 #ratingStars{
     -fx-text-fill: #731a2b;
-    -fx-font-size: 20px;
     -fx-font-family: 'FontAwesome';
-    -fx-min-width: 295px;
-    -fx-padding: 15;
-    -fx-background-insets: 10px;
+    -fx-min-width: 300px;
+    -fx-padding: 25;
+    -fx-background-insets: 13px;
     -fx-text-fill: #731a2b;
     -fx-prompt-text-fill: #731a2b;
 }
@@ -360,7 +358,6 @@
       -fx-padding: 15;
       -fx-text-fill: #731a2b;
       -fx-font-size: 20px;
-
 }
 .scroll-bar:horizontal, .scroll-bar:vertical{
     -fx-background-color:transparent;

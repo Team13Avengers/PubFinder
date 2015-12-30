@@ -8,9 +8,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- * Created by Shafiq_Saloum on 12/27/2015.
- */
 public class adminAddScene {
     /*Admin add scene*/
     public static Scene adminAddScene , adminChoiceScene;
@@ -29,7 +26,7 @@ public class adminAddScene {
     static int discount;
     static int fee = 2;
     static int eventId=0;
-    static int ratingstarts =1;
+    static int ratingStars =1;
     static TextField nameOfPub = new TextField();
     static TextField ageOfPub = new TextField();
     static TextField openTime = new TextField();
@@ -98,15 +95,15 @@ public class adminAddScene {
                 fee = 0;
             }
             if (Rating.getSelectionModel().isSelected(0)) {
-                ratingstarts = 1;
+                ratingStars = 1;
             } else if (Rating.getSelectionModel().isSelected(1)) {
-                ratingstarts = 2;
+                ratingStars = 2;
             } else if (Rating.getSelectionModel().isSelected(2)) {
-                ratingstarts = 3;
+                ratingStars = 3;
             } else if (Rating.getSelectionModel().isSelected(3)) {
-                ratingstarts = 4;
+                ratingStars = 4;
             } else if (Rating.getSelectionModel().isSelected(4)) {
-                ratingstarts = 5;
+                ratingStars = 5;
             }
 
             PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
@@ -115,14 +112,14 @@ public class adminAddScene {
 
             System.out.println(eventId);
             PubDataAccessor.addPub(nameOfPub.getText(), urlImage.getText(), Integer.parseInt(ageOfPub.getText()), Integer.parseInt(openTime.getText() + "0000"), Integer.parseInt(closeTime.getText() + "0000"),
-                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingstarts, typeId, locationId, eventId, discount, fee);
+                    streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, discount, fee);
             PubDataAccessor.PubDataAccessor();
         });
 
         addBtn.setId("add_button");
         nameOfPub.setId("add_fields");
         nameOfPub.setPromptText("Name of pub");
-        Rating.setId("addRatingStars");
+        Rating.setId("ratingStars");
         Rating.setPromptText("Rating of the pub");
         ageOfPub.setId("add_fields");
         ageOfPub.setPromptText("Age limit of the pub");
