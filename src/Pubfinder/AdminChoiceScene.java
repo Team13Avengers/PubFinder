@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,18 +8,18 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class adminChoiceScene {
+public class AdminChoiceScene {
     static Scene adminDeleteScene,adminEditScene,editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
     static Stage primaryStage;
 
     public static void adminchoicescene(){
-        sample.adminDeleteScene.adminDeleteScene();
-        sample.adminEditScene.adminEditScene();
-        sample.editPubScene.editPubScene();
-        adminDeleteScene = sample.adminDeleteScene.DeleteScene;
-        adminEditScene = sample.adminEditScene.editScene;
-        editPubScene = sample.editPubScene.editPubScene;
-        adminAddScene = sample.adminAddScene.adminAddScene;
+        AdminDeleteScene.adminDeleteScene();
+        AdminEditScene.adminEditScene();
+        EditPubScene.editPubScene();
+        adminDeleteScene = AdminDeleteScene.DeleteScene;
+        adminEditScene = AdminEditScene.editScene;
+        editPubScene = EditPubScene.editPubScene;
+        adminAddScene = AdminAddScene.adminAddScene;
 
         StackPane adminLayout = new StackPane();
 
@@ -31,17 +31,17 @@ public class adminChoiceScene {
         Label choiceLabel = new Label("Options");
 
         add.setOnAction(e -> {
-            sample.adminAddScene.clear();
+            AdminAddScene.clear();
             primaryStage.setScene(adminAddScene);
         });
         delete.setOnAction(e -> {
             PubDataAccessor.clearCache();
-            sample.adminDeleteScene.showPubsToDelete();
+            AdminDeleteScene.showPubsToDelete();
             primaryStage.setScene(adminDeleteScene);
         });
         edit.setOnAction(e -> {
             PubDataAccessor.clearCache();
-            sample.adminEditScene.showPubsToEdit();
+            AdminEditScene.showPubsToEdit();
             primaryStage.setScene(adminEditScene);
         });
 
@@ -69,10 +69,10 @@ public class adminChoiceScene {
         adminLayout.setAlignment(logOut, Pos.TOP_LEFT);
 
         adminChoiceScene = new Scene(adminLayout, 1000, 600);
-        sample.adminAddScene.adminChoiceScene = adminChoiceScene;
-        sample.adminLoginScene.adminChoiceScene=adminChoiceScene;
+        AdminAddScene.adminChoiceScene = adminChoiceScene;
+        AdminLoginScene.adminChoiceScene=adminChoiceScene;
 
-        adminChoiceScene.getStylesheets().addAll(adminChoiceScene.class.getResource("style.css").toExternalForm());
+        adminChoiceScene.getStylesheets().addAll(AdminChoiceScene.class.getResource("style.css").toExternalForm());
         /*Admin choice scene*/
     }
 }

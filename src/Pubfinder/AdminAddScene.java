@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class adminAddScene {
+public class AdminAddScene {
     /*Admin add scene*/
     public static Scene adminAddScene , adminChoiceScene;
     static TextField nameOfevent;
@@ -189,8 +189,8 @@ public class adminAddScene {
 
         addLayout.getChildren().addAll(fields, backToAdmin, addLabel);
         adminAddScene = new Scene(addLayout, 1000, 600);
-        sample.adminChoiceScene.adminAddScene= adminAddScene;
-        adminAddScene.getStylesheets().addAll(adminAddScene.class.getResource("style.css").toExternalForm());
+        AdminChoiceScene.adminAddScene= adminAddScene;
+        adminAddScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
 
         /*Admin add scene*/
     }

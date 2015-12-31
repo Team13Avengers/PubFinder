@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 public class Controller {
 }

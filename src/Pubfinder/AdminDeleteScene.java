@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,20 +8,20 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 /**
- * Created by Marco on 2015-11-19.
+ * Created by Marco on 2015-11-15.
  */
-public class adminEditScene {
-    public static Scene editScene;
+public class AdminDeleteScene {
+    public static Scene DeleteScene;
     static StackPane addLayout = new StackPane();
     static Button pubButton;
     static GridPane pubs;
     static int x = 1, y = 1;
-    public static int editId;
-    public static int editEventId;
+    static int deleteId;
+    static int deleteEvent;
 
-    public static void adminEditScene(){
+    public static void adminDeleteScene(){
         pubs = new GridPane();
-        Label deleteLabel = new Label("Click a pub to edit");
+        Label deleteLabel = new Label("Click a pub to delete");
         deleteLabel.setId("login_message");
         Button backBtn = new Button("BACK");
         backBtn.setId("button");
@@ -29,7 +29,7 @@ public class adminEditScene {
             Main.primaryStage.setScene(Main.adminChoiceScene);
         });
 
-        showPubsToEdit();
+        showPubsToDelete();
 
         pubs.setHgap(10);
         pubs.setVgap(10);
@@ -38,11 +38,10 @@ public class adminEditScene {
         addLayout.setAlignment(backBtn, Pos.TOP_LEFT);
         addLayout.setAlignment(deleteLabel, Pos.TOP_CENTER);
         addLayout.getChildren().addAll(pubs, backBtn, deleteLabel);
-        editScene = new Scene(addLayout, 1000, 600);
-        editPubScene.editPubScene = editScene;
-        editScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
+        DeleteScene = new Scene(addLayout, 1000, 600);
+        DeleteScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
-    public static void showPubsToEdit(){
+    public static void showPubsToDelete(){
         pubs.getChildren().clear();
         x = 1;
         y = 1;
@@ -56,17 +55,18 @@ public class adminEditScene {
 
             pubButton.textProperty().bind(
                     javafx.beans.binding.Bindings.when(pubButton.hoverProperty())
-                            .then("Edit \uF040")
+                            .then("Delete \uF057")
                             .otherwise(pub.name));
 
             pubs.getChildren().add(pubButton);
 
             pubButton.setOnAction(event -> {
-                editId = pub.id;
-                editEventId = pub.event_id;
-                editPubScene.deleteComponents();
-                editPubScene.updateEditScene();
-                Main.primaryStage.setScene(editPubScene.editPubScene);
+                deleteId = pub.id;
+                deleteEvent = pub.event_id;
+                PubDataAccessor.deletePub(deleteId);
+                PubDataAccessor.deleteEvent(deleteEvent);
+                PubDataAccessor.clearCache();
+                showPubsToDelete();
             });
 
             pubs.setRowIndex(pubButton, y);

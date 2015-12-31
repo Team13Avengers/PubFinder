@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -87,29 +87,29 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         PubDataAccessor.PubDataAccessor();
 
         /*Welcome scene*/
-        sample.welcomeScene.welcomeScene();
-        welcomeScene = sample.welcomeScene.welcomeScene;
+        WelcomeScene.welcomeScene();
+        welcomeScene = WelcomeScene.welcomeScene;
         /*Welcome scene*/
 
         /* Admin add scene*/
-        sample.adminAddScene.primaryStage = primaryStage;
-        sample.adminAddScene.adminAddscene();
-        adminAddScene = sample.adminAddScene.adminAddScene;
+        AdminAddScene.primaryStage = primaryStage;
+        AdminAddScene.adminAddscene();
+        adminAddScene = AdminAddScene.adminAddScene;
         /* Admin add scene*/
 
         /*Admin login scene*/
-        sample.adminLoginScene.primaryStage = primaryStage;
-        sample.adminLoginScene.adminloginscene();
-        adminLoginScene = sample.adminLoginScene.adminLoginScene;
+        AdminLoginScene.primaryStage = primaryStage;
+        AdminLoginScene.adminloginscene();
+        adminLoginScene = AdminLoginScene.adminLoginScene;
          /*Admin login scene*/
 
         /*Admin choice scene*/
-        sample.adminChoiceScene.primaryStage=primaryStage;
-        sample.adminChoiceScene.adminchoicescene();
-        adminChoiceScene = sample.adminChoiceScene.adminChoiceScene;
+        AdminChoiceScene.primaryStage=primaryStage;
+        AdminChoiceScene.adminchoicescene();
+        adminChoiceScene = AdminChoiceScene.adminChoiceScene;
 
         /* Admin Edit Scene*/
-        adminEditScene= sample.adminEditScene.editScene;
+        adminEditScene= AdminEditScene.editScene;
 
 
 

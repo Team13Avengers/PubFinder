@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,7 +10,7 @@ import javafx.scene.layout.StackPane;
 /**
  * Created by Marco on 2015-12-13.
  */
-public class welcomeScene {
+public class WelcomeScene {
     public static StackPane layout = new StackPane();
     public static Scene welcomeScene;
     public static Button btnEnter, btnAdmin;
@@ -40,7 +40,7 @@ public class welcomeScene {
         layout.setAlignment(warning, Pos.BOTTOM_CENTER);
         layout.setAlignment(btnAdmin, Pos.TOP_RIGHT);
         welcomeScene = new Scene(layout ,1000, 600);
-        adminChoiceScene.welcomeScene = welcomeScene;
+        AdminChoiceScene.welcomeScene = welcomeScene;
         welcomeScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
 }

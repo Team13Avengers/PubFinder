@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
@@ -11,7 +11,7 @@ import javafx.scene.control.ComboBox;
 /**
  * Created by Marco on 2015-11-19.
  */
-public class editPubScene {
+public class EditPubScene {
     public static Scene editPubScene;
     static StackPane editLayout = new StackPane();
     public static int pubID;
@@ -150,8 +150,8 @@ public class editPubScene {
             }
 
             String pubNameTmp = nameOfPub.getText();
-            pubID = adminEditScene.editId;
-            eventId = adminEditScene.editEventId;
+            pubID = AdminEditScene.editId;
+            eventId = AdminEditScene.editEventId;
             System.out.println(eventId);
             PubDataAccessor.editEvent(nameOfevent.getText(), descriptionOfevent.getText(), eventId);
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
@@ -232,7 +232,7 @@ public class editPubScene {
         editPubScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
     public static void updateEditScene(){
-        int thisID = adminEditScene.editId;
+        int thisID = AdminEditScene.editId;
         editLabel = new Label("Edit " + Pub.getName(Pub.getIndexById(thisID)));
         editLabel.setId("login_message");
         editLayout.setAlignment(editLabel, Pos.TOP_CENTER);

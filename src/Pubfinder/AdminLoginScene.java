@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * Created by Shafiq_Saloum on 12/28/2015.
  */
-public class adminLoginScene {
+public class AdminLoginScene {
     static StackPane adminLoginLayout;
     static Stage primaryStage;
     static Scene adminChoiceScene, adminLoginScene;
@@ -77,7 +77,7 @@ public class adminLoginScene {
 
         adminLoginLayout.getChildren().addAll(login);
         adminLoginScene = new Scene(adminLoginLayout ,1000, 600);
-        adminLoginScene.getStylesheets().addAll(adminAddScene.class.getResource("style.css").toExternalForm());
+        adminLoginScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
         /*Admin login scene*/
     }
 }

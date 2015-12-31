@@ -7,14 +7,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44d537bb-e8dd-42df-b9e7-a948110dd049" name="Default" comment="Search by rating UI done">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Pub.java" afterPath="$PROJECT_DIR$/src/sample/Pub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/PubDataAccessor.java" afterPath="$PROJECT_DIR$/src/sample/PubDataAccessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/adminAddScene.java" afterPath="$PROJECT_DIR$/src/sample/adminAddScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/adminChoiceScene.java" afterPath="$PROJECT_DIR$/src/sample/adminChoiceScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/adminDeleteScene.java" afterPath="$PROJECT_DIR$/src/sample/adminDeleteScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/adminLoginScene.java" afterPath="$PROJECT_DIR$/src/sample/adminLoginScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/editPubScene.java" afterPath="$PROJECT_DIR$/src/sample/editPubScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminChoiceScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminLoginScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/EditPubScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/Pub.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/PubDataAccessor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/adminDeleteScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/resources/fonts/GreatVibes.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/resources/fonts/fa/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/resources/pictures/image-pubs.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/resources/pictures/image2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/sample.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PubFinder/sample/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/adminAddScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/adminChoiceScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/adminDeleteScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/adminEditScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/adminLoginScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/editPubScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/welcomeScene.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Controller.java" afterPath="$PROJECT_DIR$/src/Pubfinder/Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/Pubfinder/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Pub.java" afterPath="$PROJECT_DIR$/src/Pubfinder/Pub.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/PubDataAccessor.java" afterPath="$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/fonts/GreatVibes.ttf" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/fonts/GreatVibes.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/fonts/fa/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/fonts/fa/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/pictures/background.jpg" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/pictures/background.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/pictures/background.png" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/pictures/background.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/pictures/image-pubs.jpg" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/pictures/image-pubs.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/resources/pictures/image2.jpg" afterPath="$PROJECT_DIR$/src/Pubfinder/Resources/pictures/image2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/sample.fxml" afterPath="$PROJECT_DIR$/src/Pubfinder/sample.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/style.css" afterPath="$PROJECT_DIR$/src/Pubfinder/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PubFinder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,60 +68,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pubfinder/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="463" column="24" selection-start-line="463" selection-start-column="24" selection-end-line="463" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.556701">
+              <caret line="474" column="0" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editPubScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/editPubScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="321" column="9" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pub.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4707904">
-              <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-              <folding>
-                <element signature="method#getIndexById#0;class#Pub#0" expanded="false" />
-                <element signature="method#getOpening#0;class#Pub#0" expanded="false" />
-                <element signature="method#getAdress#0;class#Pub#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="PubDataAccessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+        <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
               <folding>
-                <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-                <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-                <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-                <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-                <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-                <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-                <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-                <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-                <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-                <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+                <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+                <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pub.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding>
+                <element signature="method#getIndexById#0;class#Pub#0" expanded="false" />
+                <element signature="method#getOpening#0;class#Pub#0" expanded="false" />
+                <element signature="method#getAdress#0;class#Pub#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,9 +153,10 @@
         <option value="$PROJECT_DIR$/src/sample/adminDeleteScene.java" />
         <option value="$PROJECT_DIR$/src/sample/adminLoginScene.java" />
         <option value="$PROJECT_DIR$/src/sample/editPubScene.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/PubDataAccessor.java" />
         <option value="$PROJECT_DIR$/src/sample/Pub.java" />
+        <option value="$PROJECT_DIR$/src/sample/PubDataAccessor.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/Pubfinder/Main.java" />
       </list>
     </option>
   </component>
@@ -216,55 +238,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pictures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PubFinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="Pubfinder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,11 +434,11 @@
     <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="Pubfinder.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="Pubfinder.Main" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -609,7 +583,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/adminAddScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
@@ -619,7 +593,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/welcomeScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
@@ -629,7 +603,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/editPubScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/EditPubScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
@@ -639,7 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminEditScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
@@ -647,26 +621,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="121" selection-start-line="17" selection-start-column="111" selection-end-line="17" selection-end-column="121" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminDeleteScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="27" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="27" />
@@ -674,7 +650,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminAddScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
@@ -684,7 +660,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="193" column="46" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="46" />
@@ -694,7 +670,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -704,62 +680,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -769,44 +747,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
@@ -816,131 +796,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
-            <element signature="e#3138#3139#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3199#3200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,7 +952,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -983,45 +969,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/pictures/image-pubs.jpg">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Resources/pictures/image-pubs.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/pictures/image2.jpg">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Resources/pictures/image2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/pictures/background.png">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Resources/pictures/background.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/pictures/background.jpg">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Resources/pictures/background.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/welcomeScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.07648725">
-          <caret line="299" column="1" selection-start-line="299" selection-start-column="1" selection-end-line="299" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminAddScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
@@ -1031,7 +999,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminChoiceScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminChoiceScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
@@ -1039,7 +1007,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminDeleteScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07648725">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
@@ -1047,7 +1015,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminEditScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.038243625">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
@@ -1055,7 +1023,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/adminLoginScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminLoginScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1798866">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
@@ -1065,7 +1033,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07648725">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -1073,7 +1041,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/editPubScene.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/EditPubScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="321" column="9" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
@@ -1083,43 +1051,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="463" column="24" selection-start-line="463" selection-start-column="24" selection-end-line="463" selection-end-column="24" />
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#welcomeScene#0;class#WelcomeScene#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PubDataAccessor.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.871134">
+          <caret line="299" column="1" selection-start-line="299" selection-start-column="1" selection-end-line="299" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding>
-            <marker date="1451556560000" expanded="true" signature="817:971" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451556560000" expanded="true" signature="1929:2051" placeholder="INSERT INTO events... " />
-            <marker date="1451556560000" expanded="true" signature="2477:2559" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="2971:3002" placeholder="SELECT MAX(i... events" />
-            <marker date="1451556560000" expanded="true" signature="3536:3711" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="4209:4719" placeholder="INSERT INTO pubs... " />
-            <marker date="1451556560000" expanded="true" signature="5614:5689" placeholder="DELETE FROM " />
-            <marker date="1451556560000" expanded="true" signature="6166:6263" placeholder="UPDATE Pubs.... " />
-            <marker date="1451556560000" expanded="true" signature="6792:6825" placeholder="SELECT rate pubs" />
-            <marker date="1451556560000" expanded="true" signature="7427:8100" placeholder="UPDATE pubs " />
+            <element signature="method#getConnection#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#PubDataAccessor#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deleteEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addingEventId#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editEvent#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#addPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#deletePub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#updateRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#checkRate#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#editPub#0;class#PubDataAccessor#0" expanded="false" />
+            <element signature="method#clearCache#0;class#PubDataAccessor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Pub.java">
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Pub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4707904">
-          <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
             <element signature="method#getIndexById#0;class#Pub#0" expanded="false" />
             <element signature="method#getOpening#0;class#Pub#0" expanded="false" />
             <element signature="method#getAdress#0;class#Pub#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.556701">
+          <caret line="474" column="0" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

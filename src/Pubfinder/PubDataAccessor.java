@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +21,6 @@ public class PubDataAccessor {
             throw new RuntimeException(e);
         }
     }
-
     public static void PubDataAccessor() {
         try {
             Connection conn = getConnection();
@@ -41,8 +40,6 @@ public class PubDataAccessor {
             e.printStackTrace();
         }
     }
-
-
     public static void addEvent(String eventName, String eventDescription) {
         Connection conn = getConnection();
 
@@ -98,8 +95,6 @@ public class PubDataAccessor {
         }
         return addEventId;
     }
-
-
     public static void editEvent (String eventName, String eventDescription, int eventId) {
         Connection conn = getConnection();
 
@@ -114,8 +109,6 @@ public class PubDataAccessor {
         } catch (SQLException se) {
         }
     }
-
-
     public static void addPub(String name, String picture, int age, int open, int close, String street, double lat, double lon, int nrStars, int type_id,
                               int location_id, int event_id, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
@@ -162,7 +155,6 @@ public class PubDataAccessor {
         } catch (SQLException se) {
         }
     }
-
     public static void deletePub(int idOfPub){
          /* SQL FOR DELETING THE PUB OF ID "idOfPub" */
         Connection conn = getConnection();
@@ -181,13 +173,11 @@ public class PubDataAccessor {
         }
     }
     public static void updateRate(int idOfPub){
-        /* SQL FOR UPDATING the rating of the pub*/
         Connection conn = getConnection();
         String query = "UPDATE Pubs.pubs SET "
                 + " rate = rate+1  WHERE  pubs.id = "
                 + "?;";
         try {
-            // set all the prepared statement parameters
             PreparedStatement st = conn.prepareStatement(query);
 
             st.setInt(1, idOfPub);
@@ -210,9 +200,6 @@ public class PubDataAccessor {
         }
         return 0;
     }
-
-
-    //public static void ratingSearch ()
     public static void editPub (String name, String picture, int age, int open, int close, String street, double lat, double lon, int nrStars,
                                 int type_id, int location_id , int event_id , int pubID, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
@@ -241,7 +228,6 @@ public class PubDataAccessor {
         } catch (SQLException se) {
         }
     }
-
     public static void clearCache(){
         pubs.clear();
         PubDataAccessor();

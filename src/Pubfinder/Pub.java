@@ -1,4 +1,4 @@
-package sample;
+package Pubfinder;
 
 /**
  * Created by Marco on 15-09-27.
