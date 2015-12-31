@@ -35,8 +35,8 @@ public class AdminEditScene {
         pubs.setVgap(10);
         pubs.setAlignment(Pos.CENTER);
         addLayout.setId("welcome");
-        addLayout.setAlignment(backBtn, Pos.TOP_LEFT);
-        addLayout.setAlignment(deleteLabel, Pos.TOP_CENTER);
+        StackPane.setAlignment(backBtn, Pos.TOP_LEFT);
+        StackPane.setAlignment(deleteLabel, Pos.TOP_CENTER);
         addLayout.getChildren().addAll(pubs, backBtn, deleteLabel);
         editScene = new Scene(addLayout, 1000, 600);
         EditPubScene.editPubScene = editScene;
@@ -69,8 +69,8 @@ public class AdminEditScene {
                 Main.primaryStage.setScene(EditPubScene.editPubScene);
             });
 
-            pubs.setRowIndex(pubButton, y);
-            pubs.setColumnIndex(pubButton, x);
+            GridPane.setRowIndex(pubButton, y);
+            GridPane.setColumnIndex(pubButton, x);
             x++;
             if(x > 4){
                 y++;

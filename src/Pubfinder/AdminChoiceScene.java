@@ -63,10 +63,10 @@ public class AdminChoiceScene {
         adminBtnGrid.setAlignment(Pos.CENTER);
 
         adminLayout.setAlignment(Pos.CENTER);
-        adminLayout.setAlignment(choiceLabel,Pos.TOP_CENTER);
+        StackPane.setAlignment(choiceLabel, Pos.TOP_CENTER);
         adminLayout.getChildren().addAll(adminBtnGrid,choiceLabel,logOut);
 
-        adminLayout.setAlignment(logOut, Pos.TOP_LEFT);
+        StackPane.setAlignment(logOut, Pos.TOP_LEFT);
 
         adminChoiceScene = new Scene(adminLayout, 1000, 600);
         AdminAddScene.adminChoiceScene = adminChoiceScene;

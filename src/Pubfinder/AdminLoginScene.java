@@ -32,25 +32,25 @@ public class AdminLoginScene {
         Label error = new Label("Your credentials are invalid. Please try again!");
 
         loginLabel.setId("login_message");
-        login.setHalignment(error, HPos.CENTER);
+        GridPane.setHalignment(error, HPos.CENTER);
         error.setId("error");
 
         TextField username = new TextField();
         username.setId("login_fields");
-        login.setHalignment(username,HPos.CENTER);
+        GridPane.setHalignment(username, HPos.CENTER);
         username.setPromptText("USERNAME");
         PasswordField password = new PasswordField();
         password.setId("login_fields");
-        login.setHalignment(password, HPos.CENTER);
+        GridPane.setHalignment(password, HPos.CENTER);
         password.setPromptText("PASSWORD");
 
         Button loginButton = new Button("LOGIN");
         loginButton.setId("login_button");
-        login.setHalignment(loginButton, HPos.CENTER);
+        GridPane.setHalignment(loginButton, HPos.CENTER);
 
         Button backBtn = new Button("BACK");
         backBtn.setId("adminButton");
-        login.setHalignment(backBtn, HPos.CENTER);
+        GridPane.setHalignment(backBtn, HPos.CENTER);
 
         backBtn.setOnAction(e -> {
             primaryStage.setScene(Main.welcomeScene);

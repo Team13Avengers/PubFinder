@@ -35,8 +35,8 @@ public class AdminDeleteScene {
         pubs.setVgap(10);
         pubs.setAlignment(Pos.CENTER);
         addLayout.setId("welcome");
-        addLayout.setAlignment(backBtn, Pos.TOP_LEFT);
-        addLayout.setAlignment(deleteLabel, Pos.TOP_CENTER);
+        StackPane.setAlignment(backBtn, Pos.TOP_LEFT);
+        StackPane.setAlignment(deleteLabel, Pos.TOP_CENTER);
         addLayout.getChildren().addAll(pubs, backBtn, deleteLabel);
         DeleteScene = new Scene(addLayout, 1000, 600);
         DeleteScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
@@ -69,8 +69,8 @@ public class AdminDeleteScene {
                 showPubsToDelete();
             });
 
-            pubs.setRowIndex(pubButton, y);
-            pubs.setColumnIndex(pubButton, x);
+            GridPane.setRowIndex(pubButton, y);
+            GridPane.setColumnIndex(pubButton, x);
             x++;
             if(x > 4){
                 y++;

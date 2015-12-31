@@ -35,10 +35,10 @@ public class WelcomeScene {
         welcome.setId("welcome_message");
         warning.setId("warning_message");
         layout.getChildren().addAll(btnEnter,welcome,warning, btnAdmin);
-        layout.setAlignment(welcome, Pos.TOP_CENTER);
-        layout.setAlignment(btnEnter, Pos.CENTER);
-        layout.setAlignment(warning, Pos.BOTTOM_CENTER);
-        layout.setAlignment(btnAdmin, Pos.TOP_RIGHT);
+        StackPane.setAlignment(welcome, Pos.TOP_CENTER);
+        StackPane.setAlignment(btnEnter, Pos.CENTER);
+        StackPane.setAlignment(warning, Pos.BOTTOM_CENTER);
+        StackPane.setAlignment(btnAdmin, Pos.TOP_RIGHT);
         welcomeScene = new Scene(layout ,1000, 600);
         AdminChoiceScene.welcomeScene = welcomeScene;
         welcomeScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());

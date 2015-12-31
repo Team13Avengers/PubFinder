@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.ComboBox;
+import jfx.messagebox.MessageBox;
 
 /**
  * Created by Marco on 2015-11-19.
@@ -157,6 +158,7 @@ public class EditPubScene {
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
                     streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, pubID, discount, fee);
             PubDataAccessor.PubDataAccessor();
+            MessageBox.show(Main.primaryStage, "\nThe pub was successfully edited", "Success", MessageBox.OK);
 
         });
 
@@ -222,7 +224,7 @@ public class EditPubScene {
         });
 
         fields.setAlignment(Pos.CENTER);
-        editLayout.setAlignment(backToAdmin, Pos.TOP_LEFT);
+        StackPane.setAlignment(backToAdmin, Pos.TOP_LEFT);
 
         editLayout.setId("welcome");
 
@@ -235,7 +237,7 @@ public class EditPubScene {
         int thisID = AdminEditScene.editId;
         editLabel = new Label("Edit " + Pub.getName(Pub.getIndexById(thisID)));
         editLabel.setId("login_message");
-        editLayout.setAlignment(editLabel, Pos.TOP_CENTER);
+        StackPane.setAlignment(editLabel, Pos.TOP_CENTER);
 
         /*Inputs*/
         nameOfPub.setText(Pub.getName(Pub.getIndexById(thisID)));

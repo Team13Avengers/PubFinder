@@ -301,7 +301,7 @@
 #rating{
     -fx-background-color:rgba(255,255,255,0.7);
     -fx-min-width: 1000px;
-    -fx-min-height: 20px;
+    -fx-min-height: 15px;
 }
 
 #infoLabel{

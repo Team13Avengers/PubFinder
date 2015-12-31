@@ -18,10 +18,12 @@
     </orderEntry>
     <orderEntry type="module-library">
       <library>
-        <CLASSES />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/jfxmessagebox-1.1.0.jar!/" />
+        </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/rterp-GMapsFX-V-1.1.3-0-g40218df (1).zip!/rterp-GMapsFX-40218df/GMapsFX/src/test/java" />
+          <root url="jar://$MODULE_DIR$/jfxmessagebox-1.1.0.jar!/src" />
         </SOURCES>
       </library>
     </orderEntry>

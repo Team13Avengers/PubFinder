@@ -25,8 +25,7 @@ import javafx.scene.control.CheckBox;
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
 
     Label noPub;
-    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene,
-            adminAddScene, adminEditScene,  welcomeScene;
+    public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminEditScene,  welcomeScene;
     public int id;
     public Button pubButton;
     public Button randomPub;
@@ -40,12 +39,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
-
     static Stage primaryStage;
 
     /* PUB SCENE */
     public int numberofStars = 0;
-    public int area =255;
+    public int area = 255;
     public int area_checker = 2;
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
@@ -67,19 +65,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     StackPane events;
     Label eventLabel = new Label("Events");
     Label rates;
-    Label eventDescription = new Label("rgjoeoioejqew efq wfe qwfe ew qfq wfqew");
+    Label eventDescription = new Label("some text");
     Label eventName = new Label("Karaoke");
     StackPane eventPane = new StackPane();
     GridPane eventDescriptionGrid = new GridPane();
     GridPane eventGrid = new GridPane();
     /* PUB SCENE */
 
-   /* ADMIN SCENE */
-
+    /* ADMIN SCENE */
     public int discount;
     public int fee = 2;
-
     /* ADMIN SCENE */
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("PubFinder");
@@ -104,13 +101,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
          /*Admin login scene*/
 
         /*Admin choice scene*/
-        AdminChoiceScene.primaryStage=primaryStage;
+        AdminChoiceScene.primaryStage = primaryStage;
         AdminChoiceScene.adminchoicescene();
         adminChoiceScene = AdminChoiceScene.adminChoiceScene;
+        /*Admin choice scene*/
 
         /* Admin Edit Scene*/
-        adminEditScene= AdminEditScene.editScene;
-
+        adminEditScene = AdminEditScene.editScene;
+        /* Admin Edit Scene*/
 
 
         /*Pub button scene*/
@@ -148,8 +146,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.setHgap(10);
         inputGrid.setVgap(10);
         inputGrid.setId("searchGrid");
-        pubLayout.setAlignment(inputGrid, Pos.TOP_LEFT);
-        pubLayout.setAlignment(search, Pos.TOP_RIGHT);
+        StackPane.setAlignment(inputGrid, Pos.TOP_LEFT);
+        StackPane.setAlignment(search, Pos.TOP_RIGHT);
 
         search.setOnAction(e -> searchForPubs());
         searchNameInput.setOnKeyReleased(event1 -> {
@@ -168,8 +166,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 searchForPubs();
             }
         });
-
-
 
         searchStudentDiscount.setOnAction(event4 -> {
             if (searchStudentDiscount.isSelected()) {
@@ -198,9 +194,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 searchEvent = false;
             }
         });
-
-
-
 
         searchByRating.setOnAction(event7 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
@@ -300,7 +293,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         pubScene = new Scene(pubLayout ,1000, 600);
         pubScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-
         /*Pub button scene*/
 
         /*Pub scene*/
@@ -317,7 +309,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /*Items*/
         xPane.add(back, 1, 1);
         back.setId("button-logout");
-
 
         back.setOnAction((event) ->{
             primaryStage.setScene(pubScene);
@@ -351,7 +342,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         primaryStage.setScene(welcomeScene);
         primaryStage.show();
-        this.primaryStage = primaryStage;
+        Main.primaryStage = primaryStage;
     }
 
     @Override
@@ -426,7 +417,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         description.getChildren().addAll(descriptionGrid);
         eventDescriptionGrid.add(eventLabel, 1, 1);
         eventDescriptionGrid.add(eventPane, 1, 2);
-        eventDescriptionGrid.setHalignment(eventLabel, HPos.CENTER);
+        GridPane.setHalignment(eventLabel, HPos.CENTER);
         eventDescriptionGrid.setAlignment(Pos.CENTER);
 
         events.getChildren().addAll(eventDescriptionGrid);
@@ -451,11 +442,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
 
         pubName.setId("pub_name");
-        xPane.setHalignment(pubName, HPos.CENTER);
-        xPane.setValignment(pubName, VPos.TOP);
-        xPane.setValignment(back, VPos.TOP);
-        xPane.setHalignment(star, HPos.RIGHT);
-        xPane.setValignment(star, VPos.TOP);
+        GridPane.setHalignment(pubName, HPos.CENTER);
+        GridPane.setValignment(pubName, VPos.TOP);
+        GridPane.setValignment(back, VPos.TOP);
+        GridPane.setHalignment(star, HPos.RIGHT);
+        GridPane.setValignment(star, VPos.TOP);
 
         xPane.add(star, 1, 1);
         header.setFitWidth(1000);
@@ -464,7 +455,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         int rate = PubDataAccessor.checkRate(this.id);
         star.setText(rate + " \uF08A");
     }
-
     public void searchForPubs() {
         pubLayout.getChildren().remove(noPub);
         int y = 1;
@@ -495,8 +485,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         randomPub.setAlignment(Pos.CENTER);
         pubs.getChildren().add(randomPub);
 
-        pubs.setRowIndex(randomPub, 1);
-        pubs.setColumnIndex(randomPub, 0);
+        GridPane.setRowIndex(randomPub, 1);
+        GridPane.setColumnIndex(randomPub, 0);
 
         for (Pub pub : PubDataAccessor.pubs) {
             if (searchEvent && pub.eventName.isEmpty()) {
@@ -525,8 +515,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 pubButton.setAlignment(Pos.CENTER);
                 pubs.getChildren().add(pubButton);
 
-                pubs.setRowIndex(pubButton, y);
-                pubs.setColumnIndex(pubButton, x);
+                GridPane.setRowIndex(pubButton, y);
+                GridPane.setColumnIndex(pubButton, x);
 
                 x++;
             }
