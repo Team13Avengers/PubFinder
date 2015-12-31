@@ -8,11 +8,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- * Created by Shafiq_Saloum on 12/28/2015.
- */
 public class adminChoiceScene {
-    static Scene adminDeleteScene,adminEditScene,editPubScene , adminChoiceScene, adminAddScene,welcomeScene;
+    static Scene adminDeleteScene,adminEditScene,editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
     static Stage primaryStage;
 
     public static void adminchoicescene(){

@@ -148,12 +148,7 @@ public class editPubScene {
                 ratingStars = 5;
 
             }
-            /*
-            if(nameOfevent.getText().isEmpty()){
-                event = 0;
-            }
-            */
-            /* EDIT PUB SQL QUERY........*/
+
             String pubNameTmp = nameOfPub.getText();
             pubID = adminEditScene.editId;
             eventId = adminEditScene.editEventId;
@@ -219,9 +214,6 @@ public class editPubScene {
         fields.add(nameOfevent ,2,4);
         fields.add(descriptionOfevent,2,5);
         fields.add(editBtn, 2, 6);
-
-
-
 
         backToAdmin.setId("button-logout");
         backToAdmin.setOnAction(e -> {
@@ -328,7 +320,6 @@ public class editPubScene {
         else if (Pub.getNrStars(Pub.getIndexById(thisID))==(5)) {
             Rating.getSelectionModel().select(4);
         }
-
 
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }

@@ -17,7 +17,6 @@ import javafx.scene.layout.*;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import java.util.Objects;
 import java.util.Random;
 
 import javafx.scene.input.KeyCode;
@@ -75,7 +74,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     GridPane eventGrid = new GridPane();
     /* PUB SCENE */
 
-//    /* ADMIN SCENE */
+   /* ADMIN SCENE */
 
     public int discount;
     public int fee = 2;

@@ -19,11 +19,11 @@ import java.util.Objects;
 public class adminLoginScene {
     static StackPane adminLoginLayout;
     static Stage primaryStage;
-    static Scene welcomeScene ,adminChoiceScene , adminLoginScene;
+    static Scene adminChoiceScene, adminLoginScene;
 
     public static void adminloginscene(){
 
-                /*Admin login scene*/
+        /*Admin login scene*/
         adminLoginLayout = new StackPane();
         adminLoginLayout.setId("welcome");
         GridPane login = new GridPane();

@@ -49,54 +49,6 @@ public class Pub {
         this.city = city;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public String getOpen() {
-        return open;
-    }
-
-    public String getClose() {
-        return close;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public int getZip() {
-        return zip;
-    }
-
-    public int getHasStudentDiscount() {
-        return hasStudentDiscount;
-    }
-
-    public int getLocation_id() {
-        return location_id;
-    }
-
     public static int getIndexById(int id) {
         int index = 0;
         for(Pub pub : PubDataAccessor.pubs)

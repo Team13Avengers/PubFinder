@@ -61,13 +61,10 @@ public class adminDeleteScene {
             pubs.getChildren().add(pubButton);
 
             pubButton.setOnAction(event -> {
-                /* deleteId is the database id that should be deleted --> */
                 deleteId = pub.id;
                 deleteEvent = pub.event_id;
-                /* DELETE METHOD GOES HERE */
                 PubDataAccessor.deletePub(deleteId);
                 PubDataAccessor.deleteEvent(deleteEvent);
-                /*To show the pubs that are left...*/
                 PubDataAccessor.clearCache();
                 showPubsToDelete();
             });

@@ -70,7 +70,6 @@ public class PubDataAccessor {
                 + " id ) = "
                 + "?;";
         try {
-            // set all the prepared statement parameters
             PreparedStatement st = conn.prepareStatement(query);
 
             st.setInt(1, idOfEvent);
@@ -103,7 +102,6 @@ public class PubDataAccessor {
 
     public static void editEvent (String eventName, String eventDescription, int eventId) {
         Connection conn = getConnection();
-        //Statement statement = conn;
 
         String Update = "UPDATE Pubs.events "
                 + "SET eventname =  '" + eventName
@@ -111,7 +109,6 @@ public class PubDataAccessor {
                 + "' WHERE id = '"+eventId+"';";
 
         try {
-            // set all the preparedstatement parameters
             PreparedStatement st = conn.prepareStatement(Update);
             st.executeUpdate(Update);
         } catch (SQLException se) {
@@ -123,7 +120,6 @@ public class PubDataAccessor {
                               int location_id, int event_id, int hasStudentDiscount, int hasFee) {
         Connection conn = getConnection();
 
-        //int id, int age, int open, int close, String name, String picture, String location, String type, String street, String city, int zip
         String query = "INSERT INTO pubs ("
                 + " name,"
                 + " picture,"
@@ -143,7 +139,6 @@ public class PubDataAccessor {
                 + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
-            // set all the preparedstatement parameters
             PreparedStatement st = conn.prepareStatement(query);
 
             st.setString(1, name);
@@ -161,7 +156,6 @@ public class PubDataAccessor {
             st.setInt(13, hasStudentDiscount);
             st.setInt(14, hasFee);
 
-            // execute the prepared statement insert
             st.executeUpdate();
             st.close();
             conn.close();

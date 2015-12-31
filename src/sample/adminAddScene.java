@@ -20,7 +20,6 @@ public class adminAddScene {
     static Stage primaryStage;
 
     /*INPUT FIELDS*/
-    static StackPane adminLoginLayout;
     static int typeId;
     static int locationId;
     static int discount;
