@@ -153,7 +153,6 @@ public class EditPubScene {
             String pubNameTmp = nameOfPub.getText();
             pubID = AdminEditScene.editId;
             eventId = AdminEditScene.editEventId;
-            System.out.println(eventId);
             PubDataAccessor.editEvent(nameOfevent.getText(), descriptionOfevent.getText(), eventId);
             PubDataAccessor.editPub(pubNameTmp,urlImage.getText(),Integer.parseInt(ageOfPub.getText()),Integer.parseInt(openTime.getText() + "0000"),Integer.parseInt(closeTime.getText() + "0000"),
                     streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, pubID, discount, fee);
@@ -220,7 +219,6 @@ public class EditPubScene {
         backToAdmin.setId("button-logout");
         backToAdmin.setOnAction(e -> {
             Main.primaryStage.setScene(Main.adminEditScene);
-            System.out.println("back button ");
         });
 
         fields.setAlignment(Pos.CENTER);

@@ -13,17 +13,12 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-/**
- * Created by Shafiq_Saloum on 12/28/2015.
- */
 public class AdminLoginScene {
     static StackPane adminLoginLayout;
     static Stage primaryStage;
     static Scene adminChoiceScene, adminLoginScene;
 
     public static void adminloginscene(){
-
-        /*Admin login scene*/
         adminLoginLayout = new StackPane();
         adminLoginLayout.setId("welcome");
         GridPane login = new GridPane();
@@ -67,7 +62,6 @@ public class AdminLoginScene {
                 username.clear();
                 password.clear();
                 primaryStage.setScene(adminChoiceScene);
-                System.out.println("login is correct");
             }
             else
             if (!login.getChildren().contains(error)) {
@@ -78,7 +72,6 @@ public class AdminLoginScene {
         adminLoginLayout.getChildren().addAll(login);
         adminLoginScene = new Scene(adminLoginLayout ,1000, 600);
         adminLoginScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
-        /*Admin login scene*/
     }
 }
 

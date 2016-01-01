@@ -10,8 +10,7 @@ import javafx.stage.Stage;
 import jfx.messagebox.MessageBox;
 
 public class AdminAddScene {
-    /*Admin add scene*/
-    public static Scene adminAddScene , adminChoiceScene;
+    public static Scene adminAddScene, adminChoiceScene;
     static TextField nameOfevent;
     static TextField descriptionOfevent;
     static StackPane addLayout = new StackPane();
@@ -25,8 +24,8 @@ public class AdminAddScene {
     static int locationId;
     static int discount;
     static int fee = 2;
-    static int eventId=0;
-    static int ratingStars =1;
+    static int eventId = 0;
+    static int ratingStars = 1;
     static TextField nameOfPub = new TextField();
     static TextField ageOfPub = new TextField();
     static TextField openTime = new TextField();
@@ -37,8 +36,7 @@ public class AdminAddScene {
     static TextField lon = new TextField();
     static ComboBox city = new ComboBox(FXCollections.observableArrayList(
             "Avenyn", "Linné", "Haga", "Järntorget", "Magasinsgatan", "Vasastaden", "Gamlestaden", "Heden", "Masthugget", "Stigberget", "Other"));
-    static ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList(
-            "Sport", "Karaoke", "Club"));
+    static ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList("Sport", "Karaoke", "Club"));
     static ComboBox Rating = new ComboBox(FXCollections.observableArrayList(
             "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
     static ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
@@ -57,27 +55,38 @@ public class AdminAddScene {
             if (isFilled()) {
                 if (city.getSelectionModel().isSelected(0)) {
                     locationId = 0;
-                } else if (city.getSelectionModel().isSelected(1)) {
+                }
+                else if (city.getSelectionModel().isSelected(1)) {
                     locationId = 2;
-                } else if (city.getSelectionModel().isSelected(2)) {
+                }
+                else if (city.getSelectionModel().isSelected(2)) {
                     locationId = 3;
-                } else if (city.getSelectionModel().isSelected(3)) {
+                }
+                else if (city.getSelectionModel().isSelected(3)) {
                     locationId = 4;
-                } else if (city.getSelectionModel().isSelected(4)) {
+                }
+                else if (city.getSelectionModel().isSelected(4)) {
                     locationId = 5;
-                } else if (city.getSelectionModel().isSelected(5)) {
+                }
+                else if (city.getSelectionModel().isSelected(5)) {
                     locationId = 6;
-                } else if (city.getSelectionModel().isSelected(6)) {
+                }
+                else if (city.getSelectionModel().isSelected(6)) {
                     locationId = 7;
-                } else if (city.getSelectionModel().isSelected(7)) {
+                }
+                else if (city.getSelectionModel().isSelected(7)) {
                     locationId = 8;
-                } else if (city.getSelectionModel().isSelected(8)) {
+                }
+                else if (city.getSelectionModel().isSelected(8)) {
                     locationId = 9;
-                } else if (city.getSelectionModel().isSelected(9)) {
+                }
+                else if (city.getSelectionModel().isSelected(9)) {
                     locationId = 10;
-                } else if (city.getSelectionModel().isSelected(10)) {
+                }
+                else if (city.getSelectionModel().isSelected(10)) {
                     locationId = 11;
                 }
+
                 if (typeOfPub.getSelectionModel().isSelected(0)) {
                     typeId = 0;
                 } else if (typeOfPub.getSelectionModel().isSelected(1)) {
@@ -95,6 +104,7 @@ public class AdminAddScene {
                 } else if (pubFee.getSelectionModel().isSelected(1)) {
                     fee = 0;
                 }
+
                 if (Rating.getSelectionModel().isSelected(0)) {
                     ratingStars = 1;
                 } else if (Rating.getSelectionModel().isSelected(1)) {
@@ -108,16 +118,14 @@ public class AdminAddScene {
                 }
 
                 PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
-
                 eventId = PubDataAccessor.addingEventId();
-
                 PubDataAccessor.addPub(nameOfPub.getText(), urlImage.getText(), Integer.parseInt(ageOfPub.getText()), Integer.parseInt(openTime.getText() + "0000"), Integer.parseInt(closeTime.getText() + "0000"),
                         streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, discount, fee);
                 clear();
                 MessageBox.show(primaryStage, "\nThe pub was successfully added to PubFinder.", "Success", MessageBox.OK);
                 PubDataAccessor.clearCache();
-            }
-            else MessageBox.show(primaryStage, "\nPlease fill out all fields which are marked with *", "Error", MessageBox.OK);
+            } else
+                MessageBox.show(primaryStage, "\nPlease fill out all fields which are marked with *", "Error", MessageBox.OK);
         });
 
         addBtn.setId("add_button");
@@ -182,7 +190,6 @@ public class AdminAddScene {
         backToAdmin.setId("button-logout");
         backToAdmin.setOnAction(e -> {
             primaryStage.setScene(adminChoiceScene);
-            System.out.println("backkkk");
         });
 
         fields.setAlignment(Pos.CENTER);
@@ -194,12 +201,10 @@ public class AdminAddScene {
 
         addLayout.getChildren().addAll(fields, backToAdmin, addLabel);
         adminAddScene = new Scene(addLayout, 1000, 600);
-        AdminChoiceScene.adminAddScene= adminAddScene;
+        AdminChoiceScene.adminAddScene = adminAddScene;
         adminAddScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
-
-        /*Admin add scene*/
     }
-    public static void clear(){
+    public static void clear() {
         nameOfPub.clear();
         ageOfPub.clear();
         openTime.clear();
@@ -216,11 +221,12 @@ public class AdminAddScene {
         nameOfevent.clear();
         descriptionOfevent.clear();
     }
-    public static boolean isFilled(){
+    public static boolean isFilled() {
         if (nameOfPub.getText() != "" && ageOfPub.getText() != "" && openTime.getText() != "" && closeTime.getText() != ""
                 && streetOfPub.getText() != "" && urlImage.getText() != "" && lat.getText() != "" && lon.getText() != "" && !studentDiscount.getSelectionModel().isEmpty() && !pubFee.getSelectionModel().isEmpty()
                 && !city.getSelectionModel().isEmpty() && !Rating.getSelectionModel().isEmpty() && !typeOfPub.getSelectionModel().isEmpty()
-                ) { return true; }
-        else return false;
+                ) {
+            return true;
+        } else return false;
     }
 }

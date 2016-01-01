@@ -10,7 +10,6 @@ public class Pub {
     String close;
     String name;
     String picture;
-    String location;
     String type;
     String street;
     String city;

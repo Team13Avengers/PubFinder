@@ -198,23 +198,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByRating.setOnAction(event7 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
                 numberofStars = 1;
-
             }
             else if (searchByRating.getSelectionModel().isSelected(1)){
                 numberofStars = 2;
-
             }
             else if (searchByRating.getSelectionModel().isSelected(2)) {
                 numberofStars = 3;
-
             }
             else if (searchByRating.getSelectionModel().isSelected(3)) {
                 numberofStars = 4;
-
             }
             else if (searchByRating.getSelectionModel().isSelected(4)){
                 numberofStars = 5;
-
             }
         });
         searchByArea.setOnAction(event8 -> {

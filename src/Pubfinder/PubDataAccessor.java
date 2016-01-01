@@ -28,7 +28,6 @@ public class PubDataAccessor {
             ResultSet res = st.executeQuery("SELECT * FROM pubs LEFT OUTER JOIN type ON pubs.type_id = type.id JOIN location ON pubs.location_id = location.id JOIN events ON pubs.event_id = events.id");
 
             while (res.next()) {
-                String name = res.getString("name");
                 pubs.add( new Pub(res.getInt("id"), res.getInt("age"), res.getString("open"), res.getString("close"),
                         res.getString("name"), res.getString("picture"), res.getString("type_of_pub"), res.getString("street"),
                         res.getString("area"), res.getInt("zip"), res.getDouble("lat"),res.getDouble("lon"), res.getInt("nrStars"),

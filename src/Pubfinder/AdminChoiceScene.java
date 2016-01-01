@@ -9,7 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class AdminChoiceScene {
-    static Scene adminDeleteScene,adminEditScene,editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
+    static Scene adminDeleteScene, adminEditScene, editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
     static Stage primaryStage;
 
     public static void adminchoicescene(){
@@ -73,6 +73,5 @@ public class AdminChoiceScene {
         AdminLoginScene.adminChoiceScene=adminChoiceScene;
 
         adminChoiceScene.getStylesheets().addAll(AdminChoiceScene.class.getResource("style.css").toExternalForm());
-        /*Admin choice scene*/
     }
 }
