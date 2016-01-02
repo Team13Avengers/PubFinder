@@ -4,10 +4,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Marco on 15-09-25.
- */
+
+
 public class PubDataAccessor {
+    /** Done by Marco
+     *
+     */
+
     public static List<Pub> pubs = new ArrayList<>();
 
     public static Connection getConnection() {
@@ -39,6 +42,14 @@ public class PubDataAccessor {
             e.printStackTrace();
         }
     }
+
+    /** End of Marco's work
+     */
+
+    /** Done by Shafiq & Antonino
+     *  Including  some Contribution by Aseel  in the DeletePub()+ addPub() methods
+     *
+     */
     public static void addEvent(String eventName, String eventDescription) {
         Connection conn = getConnection();
 
@@ -227,10 +238,18 @@ public class PubDataAccessor {
         } catch (SQLException se) {
         }
     }
+
+    /** End of Shafiq's and Anotonino's work
+     */
+
+    /** Done by Marco
+     */
     public static void clearCache(){
         pubs.clear();
         PubDataAccessor();
     }
 }
+/** End of Marco's Work
+ */
 
 

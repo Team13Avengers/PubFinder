@@ -9,10 +9,14 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class AdminChoiceScene {
+    /** Done by Marco
+     */
     static Scene adminDeleteScene, adminEditScene, editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
     static Stage primaryStage;
 
     public static void adminchoicescene(){
+        /**  Done by Shafiq & Antonino
+         */
         AdminDeleteScene.adminDeleteScene();
         AdminEditScene.adminEditScene();
         EditPubScene.editPubScene();
@@ -20,7 +24,8 @@ public class AdminChoiceScene {
         adminEditScene = AdminEditScene.editScene;
         editPubScene = EditPubScene.editPubScene;
         adminAddScene = AdminAddScene.adminAddScene;
-
+        /** End of Shafiq and Antonino's Work
+         */
         StackPane adminLayout = new StackPane();
 
         adminLayout.setId("welcome");
@@ -69,9 +74,15 @@ public class AdminChoiceScene {
         StackPane.setAlignment(logOut, Pos.TOP_LEFT);
 
         adminChoiceScene = new Scene(adminLayout, 1000, 600);
+        /** Done by Shafiq & Antonino
+         */
         AdminAddScene.adminChoiceScene = adminChoiceScene;
         AdminLoginScene.adminChoiceScene=adminChoiceScene;
+        /** End of Shafiq & Antonino's Work
+         */
 
         adminChoiceScene.getStylesheets().addAll(AdminChoiceScene.class.getResource("style.css").toExternalForm());
     }
+    /** End of Marco's Work
+     */
 }

@@ -11,6 +11,8 @@ import jfx.messagebox.MessageBox;
 
 public class AdminAddScene {
     public static Scene adminAddScene, adminChoiceScene;
+    /** Done by Marco
+     */
     static TextField nameOfevent;
     static TextField descriptionOfevent;
     static StackPane addLayout = new StackPane();
@@ -18,7 +20,8 @@ public class AdminAddScene {
     static Button backToAdmin = new Button("BACK");
     static Label addLabel = new Label("Add a new pub");
     static Stage primaryStage;
-
+    /** End of Marco's Work
+     */
     /*INPUT FIELDS*/
     static int typeId;
     static int locationId;
@@ -50,7 +53,10 @@ public class AdminAddScene {
         fields.setId("fields");
         addLabel.setId("login_message");
         Button addBtn = new Button("ADD PUB");
-
+        /** End of Shafiq and Antonino's Work
+         */
+        /** Done by Marco
+         */
         addBtn.setOnAction(e -> {
             if (isFilled()) {
                 if (city.getSelectionModel().isSelected(0)) {
@@ -116,16 +122,25 @@ public class AdminAddScene {
                 } else if (Rating.getSelectionModel().isSelected(4)) {
                     ratingStars = 5;
                 }
+                /** End of Marco's Work
+                 */
 
+                /** Done by Shafiq & Antonino
+                 */
                 PubDataAccessor.addEvent(nameOfevent.getText(), descriptionOfevent.getText());
                 eventId = PubDataAccessor.addingEventId();
                 PubDataAccessor.addPub(nameOfPub.getText(), urlImage.getText(), Integer.parseInt(ageOfPub.getText()), Integer.parseInt(openTime.getText() + "0000"), Integer.parseInt(closeTime.getText() + "0000"),
                         streetOfPub.getText(), Double.parseDouble(lat.getText()), Double.parseDouble(lon.getText()), ratingStars, typeId, locationId, eventId, discount, fee);
+                /** End of Shafiq & Antonino's Work
+                 */
                 clear();
+                /** Done by Marco
+                 */
                 MessageBox.show(primaryStage, "\nThe pub was successfully added to PubFinder.", "Success", MessageBox.OK);
                 PubDataAccessor.clearCache();
             } else
                 MessageBox.show(primaryStage, "\nPlease fill out all fields which are marked with *", "Error", MessageBox.OK);
+
         });
 
         addBtn.setId("add_button");
@@ -204,6 +219,11 @@ public class AdminAddScene {
         AdminChoiceScene.adminAddScene = adminAddScene;
         adminAddScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
     }
+    /** End of Marco's Work
+     */
+
+    /** Done by shafiq & Antonino
+     */
     public static void clear() {
         nameOfPub.clear();
         ageOfPub.clear();
@@ -221,6 +241,12 @@ public class AdminAddScene {
         nameOfevent.clear();
         descriptionOfevent.clear();
     }
+
+    /** End of Shafiq and Antonino's Work
+     */
+
+    /** Done by Marco
+     */
     public static boolean isFilled() {
         if (nameOfPub.getText() != "" && ageOfPub.getText() != "" && openTime.getText() != "" && closeTime.getText() != ""
                 && streetOfPub.getText() != "" && urlImage.getText() != "" && lat.getText() != "" && lon.getText() != "" && !studentDiscount.getSelectionModel().isEmpty() && !pubFee.getSelectionModel().isEmpty()
@@ -229,4 +255,6 @@ public class AdminAddScene {
             return true;
         } else return false;
     }
+    /** End of Marco's Work
+     */
 }

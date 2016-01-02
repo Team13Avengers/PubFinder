@@ -1,4 +1,6 @@
 package Pubfinder;
+/** done by marco
+ */
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -7,9 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
-/**
- * Created by Marco on 2015-11-19.
- */
 public class AdminEditScene {
     public static Scene editScene;
     static StackPane addLayout = new StackPane();
@@ -17,8 +16,11 @@ public class AdminEditScene {
     static GridPane pubs;
     static int x = 1, y = 1;
     public static int editId;
+    /** done  by shafiq & antonino
+     */
     public static int editEventId;
-
+    /** end of shafiq & antonino's work
+     */
     public static void adminEditScene(){
         pubs = new GridPane();
         Label deleteLabel = new Label("Click a pub to edit");
@@ -63,7 +65,11 @@ public class AdminEditScene {
 
             pubButton.setOnAction(event -> {
                 editId = pub.id;
+                /** done by shafiq & antonino
+                 */
                 editEventId = pub.event_id;
+                /** end of shafiq & antonino's work
+                 */
                 EditPubScene.deleteComponents();
                 EditPubScene.updateEditScene();
                 Main.primaryStage.setScene(EditPubScene.editPubScene);
@@ -79,3 +85,5 @@ public class AdminEditScene {
         }
     }
 }
+/** end of marco's work
+ */

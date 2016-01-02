@@ -17,7 +17,12 @@ public class AdminDeleteScene {
     static GridPane pubs;
     static int x = 1, y = 1;
     static int deleteId;
+    /** Done by Shafiq & Antonino
+     */
     static int deleteEvent;
+
+    /** End of Shafiq & Antonino's work
+     */
 
     public static void adminDeleteScene(){
         pubs = new GridPane();
@@ -61,12 +66,17 @@ public class AdminDeleteScene {
             pubs.getChildren().add(pubButton);
 
             pubButton.setOnAction(event -> {
+
                 deleteId = pub.id;
+                /** Done by Shafiq & Antonino
+                 */
                 deleteEvent = pub.event_id;
                 PubDataAccessor.deletePub(deleteId);
                 PubDataAccessor.deleteEvent(deleteEvent);
                 PubDataAccessor.clearCache();
                 showPubsToDelete();
+                /** End of Shafiq & Antonino's work
+                 */
             });
 
             GridPane.setRowIndex(pubButton, y);

@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+/** Done by Marco
+ */
 public class AdminLoginScene {
     static StackPane adminLoginLayout;
     static Stage primaryStage;
@@ -74,5 +76,7 @@ public class AdminLoginScene {
         adminLoginScene.getStylesheets().addAll(AdminAddScene.class.getResource("style.css").toExternalForm());
     }
 }
+/** End of Marco's Work
+ */
 
 

@@ -1,4 +1,6 @@
 package Pubfinder;
+/** Done by marco
+ */
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -7,9 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 
-/**
- * Created by Marco on 2015-12-13.
- */
 public class WelcomeScene {
     public static StackPane layout = new StackPane();
     public static Scene welcomeScene;
@@ -44,3 +43,5 @@ public class WelcomeScene {
         welcomeScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
 }
+/** End of marco's Work
+ */

@@ -17,34 +17,73 @@ import javafx.scene.layout.*;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+/** Done by Ahmad
+ */
 import java.util.Random;
-
+/** End of Ahmad's Work
+ */
 import javafx.scene.input.KeyCode;
+/** Done by aseel
+ */
 import javafx.scene.control.CheckBox;
+/** End of Aseel's Work
+ */
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
-
+    /** Done by marco
+     */
     Label noPub;
     public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminEditScene,  welcomeScene;
     public int id;
     public Button pubButton;
+    /** Done by Ahmad
+     */
     public Button randomPub;
+    /** End of Ahmad's Work
+     */
     String searchStreet = "";
+    /** Done by Ahmad
+     */
     String searchName = "";
+    /** End of Ahmad's Work
+     */
+
+    /** Done by Shafiq& Antonino
+     */
     boolean searchEvent = false;
+    /** End of Shafiq&Antonino's Work
+     */
+
+    /** Done by Ahmad
+     */
     int searchAge;
+    /** End of Ahmad's Work
+     */
+
     StackPane pubLayout;
     GridPane pubs;
     Button search;
+    /** Done by Ahmad
+     */
     TextField searchStreetInput;
     TextField searchNameInput;
     TextField searchAgeInput;
+    /** End of Ahmad's Work
+     */
     static Stage primaryStage;
 
     /* PUB SCENE */
-    public int numberofStars = 0;
+    /** Done by Shafiq& Antonino
+     */
+    public int numberOfStars = 0;
+    /** End of Shafiq&Antonino's Work
+     */
     public int area = 255;
+    /** Done by Antonino & Aseel
+     */
     public int area_checker = 2;
+    /** End of Antonino & Aseel's Work
+     */
     ImageView header = new ImageView("http://www.thaizeit.de/uploads/tx_thaizeit2/Club_808_02.jpg");
     GridPane xPane = new GridPane();
     GridPane descriptionGrid = new GridPane();
@@ -56,8 +95,12 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     Label age = new Label();
     Label address = new Label();
     Label type = new Label();
+    /** Done by Aseel
+     */
     Label discountForStudents = new Label();
     Label entranceFees = new Label();
+    /** End of aseel's work
+     */
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
     StackPane description;
@@ -73,11 +116,18 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     /* PUB SCENE */
 
     /* ADMIN SCENE */
+    /** Done by Aseel
+     */
     public int discount;
-    public int fee = 2;
-    /* ADMIN SCENE */
+    /** End of aseel's work
+     */
 
-    @Override
+    /** Done by Shafiq & Antonino
+     */
+    public int fee = 2;
+    /** End of Shafiq and Antonino's Work
+     */
+    /* ADMIN SCENE */
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("PubFinder");
         primaryStage.setResizable(false);
@@ -87,7 +137,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         WelcomeScene.welcomeScene();
         welcomeScene = WelcomeScene.welcomeScene;
         /*Welcome scene*/
-
+        /** Done by Shafiq and Anotnino
+         */
         /* Admin add scene*/
         AdminAddScene.primaryStage = primaryStage;
         AdminAddScene.adminAddscene();
@@ -109,19 +160,26 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /* Admin Edit Scene*/
         adminEditScene = AdminEditScene.editScene;
         /* Admin Edit Scene*/
-
+        /** End of Shafiq and Anotonino's Work
+         */
 
         /*Pub button scene*/
         pubLayout = new StackPane();
+        /** Done by Ahmad
+         */
         searchNameInput = new TextField();
         searchNameInput.setId("search-field");
         searchNameInput.setPromptText("NAME");
+        /** End of Ahmad's Work
+         */
         searchStreetInput = new TextField();
         searchStreetInput.setId("search-field");
         searchStreetInput.setPromptText("STREET");
         searchAgeInput = new TextField();
         searchAgeInput.setId("search-field");
         searchAgeInput.setPromptText("AGE");
+        /** Done by aseel
+         */
         CheckBox searchStudentDiscount = new CheckBox("DISCOUNTS");
         CheckBox searchBySpecialEvents = new CheckBox("EVENTS");
         CheckBox searchWithoutFees = new CheckBox("NO FEES");
@@ -138,6 +196,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByArea.setTooltip(new Tooltip("AREA"));
         searchByArea.setPromptText("AREA");
         searchByArea.setId("combo-search");
+        /** End of aseel's Work
+         */
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
@@ -150,23 +210,39 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         StackPane.setAlignment(search, Pos.TOP_RIGHT);
 
         search.setOnAction(e -> searchForPubs());
+        /** Done by Ahmad
+         */
         searchNameInput.setOnKeyReleased(event1 -> {
             if (event1.getCode() == KeyCode.ENTER) {
                 searchForPubs();
             }
         });
+        /** End of Ahmad's Work
+         */
+
+        /** Done by Marco
+         */
         searchStreetInput.setOnKeyReleased(event2 -> {
             if (event2.getCode() == KeyCode.ENTER) {
                 searchForPubs();
             }
         });
+        /** End of Marco's Work
+         */
 
+
+        /** Done by Ahmad
+         */
         searchAgeInput.setOnKeyReleased(event3 -> {
             if (event3.getCode() == KeyCode.ENTER) {
                 searchForPubs();
             }
         });
+        /** End of Ahmad's Work
+         */
 
+        /** Done by Shafiq & Anotnino
+         */
         searchStudentDiscount.setOnAction(event4 -> {
             if (searchStudentDiscount.isSelected()) {
                 discount = 1;
@@ -197,21 +273,26 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         searchByRating.setOnAction(event7 -> {
             if (searchByRating.getSelectionModel().isSelected(0)){
-                numberofStars = 1;
+                numberOfStars = 1;
             }
             else if (searchByRating.getSelectionModel().isSelected(1)){
-                numberofStars = 2;
+                numberOfStars = 2;
             }
             else if (searchByRating.getSelectionModel().isSelected(2)) {
-                numberofStars = 3;
+                numberOfStars = 3;
             }
             else if (searchByRating.getSelectionModel().isSelected(3)) {
-                numberofStars = 4;
+                numberOfStars = 4;
             }
             else if (searchByRating.getSelectionModel().isSelected(4)){
-                numberofStars = 5;
+                numberOfStars = 5;
             }
         });
+        /** End of Shafiq and Anotino's Work
+         */
+
+        /** Done by Aseel and Antonino
+         */
         searchByArea.setOnAction(event8 -> {
             if (searchByArea.getSelectionModel().isSelected(0)){
                 area_checker = 2;
@@ -261,7 +342,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
                 area_checker = 1;
             }
         });
-
+        /** End of Aeel and Antonino's Work
+         */
 
         ScrollPane pubScroll = new ScrollPane();
         pubScroll.setId("scroll");
@@ -273,14 +355,26 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setId("pub-grid");
         pubs.setAlignment(Pos.CENTER);
         pubLayout.getChildren().add(pubScroll);
+        /** Done by marco
+         */
         inputGrid.add(searchNameInput, 1, 1);
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
+        /** End of Marco's work
+         */
+
+        /** Done by Aseel
+         */
         inputGrid.add(searchByRating, 4, 1);
         inputGrid.add(searchByArea, 5, 1);
         inputGrid.add(searchStudentDiscount, 6, 1);
         inputGrid.add(searchBySpecialEvents, 7, 1);
         inputGrid.add(searchWithoutFees, 8, 1);
+        /** End of aseel's work
+         */
+
+        /** Done by marco
+         */
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         noPub = new Label("No pubs found");
@@ -317,9 +411,20 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             star.setText("0 \uF08A");
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
         });
+        /** End of marco's work
+         */
+
+
+        /** Done by Shafiq & Antonino
+         */
         star.setOnAction(event -> {
             int rate = PubDataAccessor.checkRate(this.id);
             int rateUpdate = rate+1;
+            /** End of Shafiq & Antonino's Work
+             */
+
+            /** Done by marco
+             */
             star.setText((rateUpdate) + " \uF004");
             PubDataAccessor.updateRate(this.id);
             star.setStyle("-fx-text-fill: #731a2b;");
@@ -363,10 +468,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         age.setId("infoLabel");
         open = new Label(Pub.getOpening(Pub.getIndexById(this.id)) + " \uF017");
         open.setId("infoLabel");
-        address = new Label(Pub.getAdress(Pub.getIndexById(this.id)) + " \uF124");
+        address = new Label(Pub.getAddress(Pub.getIndexById(this.id)) + " \uF124");
         address.setId("infoLabel");
         type = new Label(Pub.getType(Pub.getIndexById(this.id)) + " \uF005");
         type.setId("infoLabel");
+        /** End of marco's work
+         */
+
+        /** Done by aseel
+         */
         discountForStudents = new Label(Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) + " \uF02D");
         if (Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) == 1) {
             discountForStudents = new Label("Discounts " + " \uF02D");
@@ -384,7 +494,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             entranceFees = new Label("No Fees " + "\uF153");
         }
         entranceFees.setId("infoLabel");
+        /** End of aseel's work
+         */
 
+        /** Done by marco
+         */
         map.setMinWidth(1000);
         map.setMaxHeight(250);
         browser.load("http://locateme.marcokoivisto.me/?lat=" + Pub.getLat(Pub.getIndexById(this.id)) + "&lon=" + Pub.getLon(Pub.getIndexById(this.id)));
@@ -395,9 +509,13 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         for (int i=0; i < nrStars; i++){
             stars += "\uF005 ";
         }
-
+        /** End of marco's work
+         */
         rates = new Label(stars);
+        /** Done by aseel
+         */
         rates.setId("ratingOfStars");
+
         rating.getChildren().add(rates);
         rating.setAlignment(Pos.CENTER);
         xPane.add(pubName, 1, 1);
@@ -407,7 +525,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         descriptionGrid.add(open, 4, 1);
         descriptionGrid.add(type, 5, 1);
         descriptionGrid.add(address, 6, 1);
+        /** End of aseel's work
+         */
 
+        /** Done by marco
+         */
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);
         eventDescriptionGrid.add(eventLabel, 1, 1);
@@ -446,18 +568,25 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(star, 1, 1);
         header.setFitWidth(1000);
         header.setPreserveRatio(true);
+        /** End of marco's work
+         */
 
+        /** Done by Shafiq& Antonino
+         */
         int rate = PubDataAccessor.checkRate(this.id);
         star.setText(rate + " \uF08A");
+        /** End of shafiq & Antonino's WORK
+         *
+         */
     }
     public void searchForPubs() {
         pubLayout.getChildren().remove(noPub);
         int y = 1;
         int x = 1;
-
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();
-
+        /** Done by Ahmad
+         */
         if (!searchAgeInput.getText().equals("")) {
             searchAge = Integer.valueOf(searchAgeInput.getText());
         } else searchAge = 100;
@@ -482,7 +611,11 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
         GridPane.setRowIndex(randomPub, 1);
         GridPane.setColumnIndex(randomPub, 0);
+        /** End of Ahmad's Work
+         */
 
+        /** Done by Shafiq & Antonino & Marco
+         */
         for (Pub pub : PubDataAccessor.pubs) {
             if (searchEvent && pub.eventName.isEmpty()) {
                 continue;
@@ -494,7 +627,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
 
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
                     && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
-                    && pub.age <= searchAge && pub.nrStars >= numberofStars && pub.hasStudentDiscount >= discount
+                    && pub.age <= searchAge && pub.nrStars >= numberOfStars && pub.hasStudentDiscount >= discount
                     && pub.hasFee <= fee) {
 
                 pubButton = new Button("- " + pub.name + " -");
@@ -526,4 +659,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setHgap(30);
 
     }
+    /** End of Shafiq & Antonini & Marco's Work
+     */
 }
