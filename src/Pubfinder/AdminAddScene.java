@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import jfx.messagebox.MessageBox;
 
 public class AdminAddScene {
@@ -19,7 +18,6 @@ public class AdminAddScene {
     static GridPane fields = new GridPane();
     static Button backToAdmin = new Button("BACK");
     static Label addLabel = new Label("Add a new pub");
-    static Stage primaryStage;
     /** End of Marco's Work
      */
     /*INPUT FIELDS*/
@@ -136,10 +134,10 @@ public class AdminAddScene {
                 clear();
                 /** Done by Marco
                  */
-                MessageBox.show(primaryStage, "\nThe pub was successfully added to PubFinder.", "Success", MessageBox.OK);
+                MessageBox.show(Main.primaryStage, "\nThe pub was successfully added to PubFinder.", "Success", MessageBox.OK);
                 PubDataAccessor.clearCache();
             } else
-                MessageBox.show(primaryStage, "\nPlease fill out all fields which are marked with *", "Error", MessageBox.OK);
+                MessageBox.show(Main.primaryStage, "\nPlease fill out all fields which are marked with *", "Error", MessageBox.OK);
 
         });
 
@@ -204,7 +202,7 @@ public class AdminAddScene {
 
         backToAdmin.setId("button-logout");
         backToAdmin.setOnAction(e -> {
-            primaryStage.setScene(adminChoiceScene);
+            Main.primaryStage.setScene(adminChoiceScene);
         });
 
         fields.setAlignment(Pos.CENTER);

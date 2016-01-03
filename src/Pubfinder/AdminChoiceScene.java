@@ -6,13 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 public class AdminChoiceScene {
     /** Done by Marco
      */
     static Scene adminDeleteScene, adminEditScene, editPubScene , adminChoiceScene, adminAddScene, welcomeScene;
-    static Stage primaryStage;
 
     public static void adminchoicescene(){
         /**  Done by Shafiq & Antonino
@@ -37,17 +35,17 @@ public class AdminChoiceScene {
 
         add.setOnAction(e -> {
             AdminAddScene.clear();
-            primaryStage.setScene(adminAddScene);
+            Main.primaryStage.setScene(adminAddScene);
         });
         delete.setOnAction(e -> {
             PubDataAccessor.clearCache();
             AdminDeleteScene.showPubsToDelete();
-            primaryStage.setScene(adminDeleteScene);
+            Main.primaryStage.setScene(adminDeleteScene);
         });
         edit.setOnAction(e -> {
             PubDataAccessor.clearCache();
             AdminEditScene.showPubsToEdit();
-            primaryStage.setScene(adminEditScene);
+            Main.primaryStage.setScene(adminEditScene);
         });
 
 
@@ -57,7 +55,7 @@ public class AdminChoiceScene {
 
         Button logOut = new Button("LOG OUT");
         logOut.setOnAction(e -> {
-            primaryStage.setScene(welcomeScene);
+            Main.primaryStage.setScene(welcomeScene);
         });
         logOut.setId("button-logout");
         choiceLabel.setId("login_message");
@@ -77,7 +75,7 @@ public class AdminChoiceScene {
         /** Done by Shafiq & Antonino
          */
         AdminAddScene.adminChoiceScene = adminChoiceScene;
-        AdminLoginScene.adminChoiceScene=adminChoiceScene;
+        AdminLoginScene.adminChoiceScene = adminChoiceScene;
         /** End of Shafiq & Antonino's Work
          */
 

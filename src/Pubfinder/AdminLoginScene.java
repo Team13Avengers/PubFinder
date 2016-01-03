@@ -9,15 +9,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
 import java.util.Objects;
 
 /** Done by Marco
  */
 public class AdminLoginScene {
     static StackPane adminLoginLayout;
-    static Stage primaryStage;
     static Scene adminChoiceScene, adminLoginScene;
 
     public static void adminloginscene(){
@@ -50,7 +47,7 @@ public class AdminLoginScene {
         GridPane.setHalignment(backBtn, HPos.CENTER);
 
         backBtn.setOnAction(e -> {
-            primaryStage.setScene(Main.welcomeScene);
+            Main.primaryStage.setScene(Main.welcomeScene);
         });
 
         login.add(loginLabel,1,1);
@@ -63,7 +60,7 @@ public class AdminLoginScene {
             if (Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(), "password")){
                 username.clear();
                 password.clear();
-                primaryStage.setScene(adminChoiceScene);
+                Main.primaryStage.setScene(adminChoiceScene);
             }
             else
             if (!login.getChildren().contains(error)) {

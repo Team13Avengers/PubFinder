@@ -129,6 +129,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
      */
     /* ADMIN SCENE */
     public void start(Stage primaryStage) throws Exception{
+        /** Done by Marco
+         */
         primaryStage.setTitle("PubFinder");
         primaryStage.setResizable(false);
         PubDataAccessor.PubDataAccessor();
@@ -137,22 +139,21 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         WelcomeScene.welcomeScene();
         welcomeScene = WelcomeScene.welcomeScene;
         /*Welcome scene*/
+        /** End of Marcos Work
+         */
         /** Done by Shafiq and Anotnino
          */
         /* Admin add scene*/
-        AdminAddScene.primaryStage = primaryStage;
         AdminAddScene.adminAddscene();
         adminAddScene = AdminAddScene.adminAddScene;
         /* Admin add scene*/
 
         /*Admin login scene*/
-        AdminLoginScene.primaryStage = primaryStage;
         AdminLoginScene.adminloginscene();
         adminLoginScene = AdminLoginScene.adminLoginScene;
          /*Admin login scene*/
 
         /*Admin choice scene*/
-        AdminChoiceScene.primaryStage = primaryStage;
         AdminChoiceScene.adminchoicescene();
         adminChoiceScene = AdminChoiceScene.adminChoiceScene;
         /*Admin choice scene*/
