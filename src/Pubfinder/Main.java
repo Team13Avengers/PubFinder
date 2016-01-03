@@ -631,13 +631,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             if (area_checker != 2 && pub.location_id != area) {
                 continue;
             }
-            /** End of Shafiq & Antonini & Marco's Work
-             */
+
 
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
                     && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                     && pub.age <= searchAge && pub.nrStars >= numberOfStars && pub.hasStudentDiscount >= discount
                     && pub.hasFee <= fee) {
+                /** End of Shafiq & Antonini & Marco's Work
+                 */
+
                 /** Done by Marco
                  */
                 pubButton = new Button("- " + pub.name + " -");
