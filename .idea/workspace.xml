@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44d537bb-e8dd-42df-b9e7-a948110dd049" name="Default" comment="Search by rating UI done">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java" afterPath="$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/EditPubScene.java" afterPath="$PROJECT_DIR$/src/Pubfinder/EditPubScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/Main.java" afterPath="$PROJECT_DIR$/src/Pubfinder/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java" afterPath="$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java" afterPath="$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pubfinder/style.css" afterPath="$PROJECT_DIR$/src/Pubfinder/style.css" />
     </list>
     <ignored path="PubFinder.iws" />
@@ -36,13 +32,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminAddScene.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminAddScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.437895">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0370371">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PubDataAccessor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62526315">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <marker date="1451814080000" expanded="true" signature="815:969" placeholder="SELECT * FRO... pubs" />
+                <marker date="1451814080000" expanded="true" signature="2034:2156" placeholder="INSERT INTO events... " />
+                <marker date="1451814080000" expanded="true" signature="2582:2661" placeholder="DELETE FROM " />
+                <marker date="1451814080000" expanded="true" signature="3073:3104" placeholder="SELECT MAX(i... events" />
+                <marker date="1451814080000" expanded="true" signature="3636:3811" placeholder="UPDATE Pubs.... " />
+                <marker date="1451814080000" expanded="true" signature="4307:4817" placeholder="INSERT INTO pubs... " />
+                <marker date="1451814080000" expanded="true" signature="5711:5786" placeholder="DELETE FROM " />
+                <marker date="1451814080000" expanded="true" signature="6211:6308" placeholder="UPDATE Pubs.... " />
+                <marker date="1451814080000" expanded="true" signature="6780:6813" placeholder="SELECT rate pubs" />
+                <marker date="1451814080000" expanded="true" signature="7372:8045" placeholder="UPDATE pubs " />
               </folding>
             </state>
           </provider>
@@ -92,13 +119,13 @@
         <option value="$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/AdminLoginScene.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/AdminDeleteScene.java" />
-        <option value="$PROJECT_DIR$/src/Pubfinder/style.css" />
         <option value="$PROJECT_DIR$/src/Pubfinder/WelcomeScene.java" />
-        <option value="$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/Pub.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/Main.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/EditPubScene.java" />
         <option value="$PROJECT_DIR$/src/Pubfinder/AdminEditScene.java" />
+        <option value="$PROJECT_DIR$/src/Pubfinder/style.css" />
+        <option value="$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java" />
       </list>
     </option>
   </component>
@@ -144,6 +171,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -266,11 +295,31 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pubfinder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubFinder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubFinder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,7 +328,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -766,11 +815,13 @@
       <workItem from="1451739333388" duration="15019000" />
       <workItem from="1451808460469" duration="963000" />
       <workItem from="1451809821933" duration="1899000" />
+      <workItem from="1451812041536" duration="1098000" />
+      <workItem from="1451813591456" duration="618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67999000" />
+    <option name="totallyTimeSpent" value="69715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,7 +848,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18133536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -809,6 +859,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989071" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -879,6 +930,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#14690#14691#0" expanded="true" />
+            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#14806#14807#0" expanded="true" />
+            <element signature="e#14834#14835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -889,6 +944,10 @@
           <caret line="193" column="46" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#14690#14691#0" expanded="true" />
+            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#14806#14807#0" expanded="true" />
+            <element signature="e#14834#14835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -946,6 +1005,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#14690#14691#0" expanded="true" />
+            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#14806#14807#0" expanded="true" />
+            <element signature="e#14834#14835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -978,6 +1041,10 @@
           <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#14690#14691#0" expanded="true" />
+            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#14806#14807#0" expanded="true" />
+            <element signature="e#14834#14835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1153,7 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.2294521">
           <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,33 +1239,6 @@
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32541132">
-          <caret line="394" column="24" selection-start-line="394" selection-start-column="24" selection-end-line="394" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0696864">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-          <folding>
-            <marker date="1451811055000" expanded="true" signature="815:969" placeholder="SELECT * FRO... pubs" />
-            <marker date="1451811055000" expanded="true" signature="2034:2156" placeholder="INSERT INTO events... " />
-            <marker date="1451811055000" expanded="true" signature="2582:2664" placeholder="DELETE FROM " />
-            <marker date="1451811055000" expanded="true" signature="3076:3107" placeholder="SELECT MAX(i... events" />
-            <marker date="1451811055000" expanded="true" signature="3639:3814" placeholder="UPDATE Pubs.... " />
-            <marker date="1451811055000" expanded="true" signature="4310:4820" placeholder="INSERT INTO pubs... " />
-            <marker date="1451811055000" expanded="true" signature="5714:5789" placeholder="DELETE FROM " />
-            <marker date="1451811055000" expanded="true" signature="6214:6311" placeholder="UPDATE Pubs.... " />
-            <marker date="1451811055000" expanded="true" signature="6783:6816" placeholder="SELECT rate pubs" />
-            <marker date="1451811055000" expanded="true" signature="7375:8048" placeholder="UPDATE pubs " />
           </folding>
         </state>
       </provider>
@@ -1276,10 +1315,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pubfinder/AdminAddScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.437895">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0370371">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pubfinder/PubDataAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62526315">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <marker date="1451814080000" expanded="true" signature="815:969" placeholder="SELECT * FRO... pubs" />
+            <marker date="1451814080000" expanded="true" signature="2034:2156" placeholder="INSERT INTO events... " />
+            <marker date="1451814080000" expanded="true" signature="2582:2661" placeholder="DELETE FROM " />
+            <marker date="1451814080000" expanded="true" signature="3073:3104" placeholder="SELECT MAX(i... events" />
+            <marker date="1451814080000" expanded="true" signature="3636:3811" placeholder="UPDATE Pubs.... " />
+            <marker date="1451814080000" expanded="true" signature="4307:4817" placeholder="INSERT INTO pubs... " />
+            <marker date="1451814080000" expanded="true" signature="5711:5786" placeholder="DELETE FROM " />
+            <marker date="1451814080000" expanded="true" signature="6211:6308" placeholder="UPDATE Pubs.... " />
+            <marker date="1451814080000" expanded="true" signature="6780:6813" placeholder="SELECT rate pubs" />
+            <marker date="1451814080000" expanded="true" signature="7372:8045" placeholder="UPDATE pubs " />
           </folding>
         </state>
       </provider>

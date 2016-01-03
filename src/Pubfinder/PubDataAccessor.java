@@ -69,8 +69,8 @@ public class PubDataAccessor {
     }
     public static void deleteEvent(int idOfEvent) {
         Connection conn = getConnection();
-        String query = "DELETE FROM Pubs.events WHERE ("
-                + " id ) = "
+        String query = "DELETE FROM Pubs.events WHERE "
+                + " id = "
                 + "?;";
         try {
             PreparedStatement st = conn.prepareStatement(query);

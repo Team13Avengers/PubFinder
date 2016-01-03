@@ -1,20 +1,20 @@
 /** Done by Marco
 */
 @font-face {
- src: url("resources/fonts/GreatVibes.ttf");
+ src: url("Resources/Fonts/GreatVibes.ttf");
 }
 @font-face {
-   src: url("resources/fonts/fa/fontawesome-webfont.ttf");
+   src: url("Resources/Fonts/fa/fontawesome-webfont.ttf");
 }
 #welcome{
-    -fx-background-image: url("resources/pictures/image2.jpg");
+    -fx-background-image: url("Resources/Pictures/image2.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 1000 600;
     -fx-background-position: center center;
     -fx-padding: 10px;
 }
 #pubs{
-    -fx-background-image: url("resources/pictures/image-pubs.jpg");
+    -fx-background-image: url("Resources/Pictures/image-pubs.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 1000 600;
     -fx-background-position: center center;
@@ -371,7 +371,7 @@
 #eventField{
     -fx-padding: 30 20 30 20;
     -fx-background-color: #731a2b;
-    -fx-background-image: url("resources/pictures/background.png");
+    -fx-background-image: url("Resources/Pictures/background.png");
     -fx-background-position: top center;
 }
 #eventLabel{
