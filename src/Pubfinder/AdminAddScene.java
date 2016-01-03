@@ -40,11 +40,14 @@ public class AdminAddScene {
     static ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList("Sport", "Karaoke", "Club"));
     static ComboBox Rating = new ComboBox(FXCollections.observableArrayList(
             "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
+    /* Done by Aseel
+     */
     static ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
             "No", "Yes"));
     static ComboBox pubFee = new ComboBox(FXCollections.observableArrayList(
             "No", "Yes"));
-
+/* End of Aseel's word
+ */
     public static void adminAddscene() {
         nameOfevent = new TextField();
         descriptionOfevent = new TextField();
@@ -98,6 +101,11 @@ public class AdminAddScene {
                 } else if (typeOfPub.getSelectionModel().isSelected(2)) {
                     typeId = 2;
                 }
+                /** End of Marco's Work
+                 */
+
+                /* Done by Aseel
+                 */
                 if (studentDiscount.getSelectionModel().isSelected(0)) {
                     discount = 0;
                 } else if (studentDiscount.getSelectionModel().isSelected(1)) {
@@ -108,7 +116,11 @@ public class AdminAddScene {
                 } else if (pubFee.getSelectionModel().isSelected(1)) {
                     fee = 0;
                 }
+                /* End of Aseel's work
+                 */
 
+                /** Done by Marco
+                 */
                 if (Rating.getSelectionModel().isSelected(0)) {
                     ratingStars = 1;
                 } else if (Rating.getSelectionModel().isSelected(1)) {
@@ -172,6 +184,9 @@ public class AdminAddScene {
         typeOfPub.setTooltip(new Tooltip("Select the type of pub *"));
         typeOfPub.setPromptText("Select the type of pub *");
         typeOfPub.setId("comboBox");
+
+        /* Done by Aseel
+         */
         studentDiscount.setTooltip(new Tooltip("We offer student discounts *"));
         studentDiscount.setPromptText("We offer student discounts *");
         studentDiscount.setId("comboBox");
@@ -180,14 +195,24 @@ public class AdminAddScene {
         pubFee.setPromptText("Entrance Fee *");
         pubFee.setId("comboBox");
 
+        /* End of Aseel's
+         */
+
 
         fields.add(nameOfPub, 0, 1);
         fields.add(ageOfPub, 0, 2);
         fields.add(openTime, 0, 3);
         fields.add(closeTime, 0, 4);
         fields.add(streetOfPub, 0, 5);
+
+        /* Done by Aseel
+         */
         fields.add(studentDiscount, 1, 1);
         fields.add(pubFee, 1, 2);
+
+         /* End of Aseel's
+         */
+
         fields.add(city, 1, 3);
         fields.add(Rating, 1, 4);
         fields.add(typeOfPub, 1, 5);

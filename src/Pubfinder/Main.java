@@ -23,14 +23,14 @@ import java.util.Random;
 /** End of Ahmad's Work
  */
 import javafx.scene.input.KeyCode;
-/** Done by aseel
+/** Done by Aseel
  */
 import javafx.scene.control.CheckBox;
 /** End of Aseel's Work
  */
 
 public class Main extends Application implements EventHandler<javafx.event.ActionEvent> {
-    /** Done by marco
+    /** Done by Marco
      */
     Label noPub;
     public static Scene pubScene, pubPage, adminLoginScene, adminChoiceScene, adminAddScene, adminEditScene,  welcomeScene;
@@ -48,10 +48,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     /** End of Ahmad's Work
      */
 
-    /** Done by Shafiq& Antonino
+    /** Done by Shafiq & Antonino
      */
     boolean searchEvent = false;
-    /** End of Shafiq&Antonino's Work
+    /** End of Shafiq & Antonino's Work
      */
 
     /** Done by Ahmad
@@ -73,10 +73,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     static Stage primaryStage;
 
     /* PUB SCENE */
-    /** Done by Shafiq& Antonino
+    /** Done by Shafiq & Antonino
      */
     public int numberOfStars = 0;
-    /** End of Shafiq&Antonino's Work
+    /** End of Shafiq & Antonino's Work
      */
     public int area = 255;
     /** Done by Antonino & Aseel
@@ -99,7 +99,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
      */
     Label discountForStudents = new Label();
     Label entranceFees = new Label();
-    /** End of aseel's work
+    /** End of Aseel's work
      */
     WebView map = new WebView();
     WebEngine browser = map.getEngine();
@@ -120,7 +120,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     /** Done by Aseel
      */
     public int discount;
-    /** End of aseel's work
+    /** End of Aseel's work
      */
 
     /** Done by Shafiq & Antonino
@@ -180,7 +180,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchAgeInput = new TextField();
         searchAgeInput.setId("search-field");
         searchAgeInput.setPromptText("AGE");
-        /** Done by aseel
+        /** Done by Aseel
          */
         CheckBox searchStudentDiscount = new CheckBox("DISCOUNTS");
         CheckBox searchBySpecialEvents = new CheckBox("EVENTS");
@@ -198,8 +198,9 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByArea.setTooltip(new Tooltip("AREA"));
         searchByArea.setPromptText("AREA");
         searchByArea.setId("combo-search");
-        /** End of aseel's Work
+        /** End of Aseel's Work
          */
+
         /** Done by Marco
          * */
         pubLayout.setId("pubs");
@@ -408,7 +409,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             star.setText("0 \uF08A");
             star.setStyle("#starButton{-fx-text-fill: #fff;}  #starButton:hover{-fx-text-fill: #fff;}");
         });
-        /** End of marco's work
+        /** End of Marco's work
          */
 
 
@@ -477,10 +478,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         address.setId("infoLabel");
         type = new Label(Pub.getType(Pub.getIndexById(this.id)) + " \uF005");
         type.setId("infoLabel");
-        /** End of marco's work
+        /** End of Marco's work
          */
 
-        /** Done by aseel
+        /** Done by Aseel
          */
         discountForStudents = new Label(Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) + " \uF02D");
         if (Pub.getHasStudentDiscount(Pub.getIndexById(this.id)) == 1) {
@@ -499,10 +500,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             entranceFees = new Label("No Fees " + "\uF153");
         }
         entranceFees.setId("infoLabel");
-        /** End of aseel's work
+        /** End of Aseel's work
          */
 
-        /** Done by marco
+        /** Done by Marco
          */
         map.setMinWidth(1000);
         map.setMaxHeight(250);
@@ -569,14 +570,14 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         xPane.add(star, 1, 1);
         header.setFitWidth(1000);
         header.setPreserveRatio(true);
-        /** End of marco's work
+        /** End of Marco's work
          */
 
-        /** Done by Shafiq& Antonino
+        /** Done by Shafiq & Antonino
          */
         int rate = PubDataAccessor.checkRate(this.id);
         star.setText(rate + " \uF08A");
-        /** End of shafiq & Antonino's WORK
+        /** End of Shafiq & Antonino's WORK
          *
          */
     }
@@ -666,7 +667,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /* new elements */
 
         pubs.setHgap(30);
-        /** End of marco's work
+        /** End of Marco's work
          */
 
     }

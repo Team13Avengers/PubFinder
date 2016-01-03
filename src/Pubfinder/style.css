@@ -346,6 +346,8 @@
     -fx-text-fill: #731a2b;
     -fx-prompt-text-fill: #731a2b;
 }
+/* Done by Aseel */
+
 #addRatingStars{
      -fx-min-width: 300px;
      -fx-padding: 20;
@@ -361,6 +363,8 @@
       -fx-text-fill: #731a2b;
       -fx-font-size: 20px;
 }
+/* End of Aseel's word*/
+
 .scroll-bar:horizontal, .scroll-bar:vertical{
     -fx-background-color:transparent;
 }

@@ -16,10 +16,10 @@ public class AdminEditScene {
     static GridPane pubs;
     static int x = 1, y = 1;
     public static int editId;
-    /** done  by shafiq & antonino
+    /** done  by Shafiq & Antonino
      */
     public static int editEventId;
-    /** end of shafiq & antonino's work
+    /** end of Shafiq & Antonino's work
      */
     public static void adminEditScene(){
         pubs = new GridPane();
@@ -65,10 +65,10 @@ public class AdminEditScene {
 
             pubButton.setOnAction(event -> {
                 editId = pub.id;
-                /** done by shafiq & antonino
+                /** done by Shafiq & Antonino
                  */
                 editEventId = pub.event_id;
-                /** end of shafiq & antonino's work
+                /** end of Shafiq & Antonino's work
                  */
                 EditPubScene.deleteComponents();
                 EditPubScene.updateEditScene();

@@ -42,7 +42,7 @@ public class EditPubScene {
     public static TextField nameOfevent;
     public static TextField descriptionOfevent;
 
-    /** End of shafiq & Antonino & aseel & marco's work
+    /** End of shafiq & Antonino & Aseel & Marco's work
      */
 
     /** Done by Marco
@@ -70,21 +70,21 @@ public class EditPubScene {
         /** End of marco's work
          */
 
-        /** Done by Shafiq& Anotnino
+        /** Done by Shafiq & Anotnino
          */
         Rating = new ComboBox(FXCollections.observableArrayList(
                 "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
         /** End of shafiq & antonino's work
          */
 
-        /** Done by aseel
+        /** Done by Aseel
          */
         studentDiscount = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
-        /** End of aseel's work
+        /** End of Aseel's work
          */
 
-        /** Done by Shafiq& Anotnino
+        /** Done by Shafiq & Anotnino
          */
         pubFee = new ComboBox(FXCollections.observableArrayList(
                 "No", "Yes"));
@@ -93,7 +93,7 @@ public class EditPubScene {
         /** End of shafiq & antonino's work
          */
         Button editBtn = new Button("EDIT PUB");
-        /** Done by Antonino & aseel
+        /** Done by Antonino & Aseel
          */
         editBtn.setOnAction(e -> {
             if (city.getSelectionModel().isSelected(0)){
@@ -129,10 +129,10 @@ public class EditPubScene {
             else if (city.getSelectionModel().isSelected(10)){
                 locationId = 11;
             }
-            /** End of Antonino and aseel's work
+            /** End of Antonino and Aseel's work
              */
 
-            /**Done by marco
+            /**Done by Marco
              */
             if (typeOfPub.getSelectionModel().isSelected(0)){
                 typeId = 0;
@@ -143,10 +143,10 @@ public class EditPubScene {
             else if (typeOfPub.getSelectionModel().isSelected(2)){
                 typeId = 2;
             }
-            /** End of marco's work
+            /** End of Marco's work
              */
 
-            /** Done by shafiq & antonino
+            /** Done by Shafiq & Antonino
              */
             if (studentDiscount.getSelectionModel().isSelected(0)){
                 discount = 0;
@@ -202,11 +202,11 @@ public class EditPubScene {
         nameOfPub.setPromptText("Name of pub");
         /** End of Marco's work
          */
-        /** Done by shafiq & antonino
+        /** Done by Shafiq & Antonino
          */
         Rating.setId("ratingStars");
         Rating.setPromptText("Rating of the pub");
-        /** end of shafiq & antonino's work
+        /** end of Shafiq & Antonino's work
          */
 
         /**done by Marco
@@ -229,11 +229,11 @@ public class EditPubScene {
         /** End of Marco's work
          */
 
-        /** Done by antonino & shafiq
+        /** Done by Antonino & Shafiq
          */
         city.setTooltip(new Tooltip("Select the Area"));
         city.setPromptText("Select the Area");
-        /** End of shafiq & antonino's work
+        /** End of Shafiq & Antonino's work
          */
         /** Done by Marco
          */
@@ -243,15 +243,15 @@ public class EditPubScene {
         typeOfPub.setId("comboBox");
         /** End of Marco's work
          */
-        /** Done by aseel
+        /** Done by Aseel
          */
         studentDiscount.setTooltip(new Tooltip("We offer student discounts."));
         studentDiscount.setPromptText("We offer student discounts.");
         studentDiscount.setId("comboBox");
-        /** End of aseel's work
+        /** End of Aseel's work
          */
 
-        /** Done by antonino & shafiq
+        /** Done by Antonino & Shafiq
          */
         pubFee.setTooltip(new Tooltip("Entrance Fee"));
         pubFee.setPromptText("Entrance Fee");
@@ -340,7 +340,7 @@ public class EditPubScene {
         /** End of marco's work
          */
 
-        /** Done by aseel & antonino
+        /** Done by Aseel & Antonino
          */
         if (Pub.getArea(Pub.getIndexById(thisID)).equals("Avenyn")){
             city.getSelectionModel().select(0);
@@ -375,10 +375,10 @@ public class EditPubScene {
         else if (Pub.getArea(Pub.getIndexById(thisID)).equals("Other")){
             city.getSelectionModel().select(10);
         }
-        /** End of aseel and antonino's work
+        /** End of Aseel and antonino's work
          */
 
-        /** Done by ahmad
+        /** Done by Ahmad & Aseel
          */
         if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)) == 0){
             studentDiscount.getSelectionModel().select(0);
@@ -386,10 +386,10 @@ public class EditPubScene {
         else {
             studentDiscount.getSelectionModel().select(1);
         }
-        /** End of ahmad's work
+        /** End of Ahmad & Aseel's work
          */
 
-        /**done by shafiq & antonino
+        /**done by Shafiq & Antonino
          */
         if (Pub.getHasFee(Pub.getIndexById(thisID)) == 0){
             pubFee.getSelectionModel().select(0);
@@ -397,10 +397,10 @@ public class EditPubScene {
         else {
             pubFee.getSelectionModel().select(1);
         }
-        /** END of shafiq & antonino's work
+        /** END of Shafiq & Antonino's work
          */
 
-        /**done by aseel
+        /**done by Aseel
          */
         if (Pub.getNrStars(Pub.getIndexById(thisID))==(1)){
             Rating.getSelectionModel().select(0);
@@ -417,10 +417,10 @@ public class EditPubScene {
         else if (Pub.getNrStars(Pub.getIndexById(thisID))==(5)) {
             Rating.getSelectionModel().select(4);
         }
-        /** end of aseel's work
+        /** end of Aseel's work
          */
 
-        /** done by marco
+        /** done by Marco
          */
         editLayout.getChildren().addAll(fields, backToAdmin, editLabel);
     }
@@ -428,5 +428,5 @@ public class EditPubScene {
         editLayout.getChildren().removeAll(fields,backToAdmin, editLabel);
     }
 }
-/** end of marco's work
+/** end of Marco's work
  */
