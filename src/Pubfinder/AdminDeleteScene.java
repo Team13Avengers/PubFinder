@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 /**
- * Created by Marco on 2015-11-15.
+ * Done by Marco
  */
 public class AdminDeleteScene {
     public static Scene DeleteScene;
@@ -89,3 +89,6 @@ public class AdminDeleteScene {
         }
     }
 }
+/**
+ * End of Marcos work
+ */

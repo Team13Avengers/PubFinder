@@ -4,13 +4,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class PubDataAccessor {
     /** Done by Marco
      *
      */
-
     public static List<Pub> pubs = new ArrayList<>();
 
     public static Connection getConnection() {
@@ -47,8 +44,7 @@ public class PubDataAccessor {
      */
 
     /** Done by Shafiq & Antonino
-     *  Including  some Contribution by Aseel  in the DeletePub()+ addPub() methods
-     *
+     *  Including some contribution by Aseel in the DeletePub()+ addPub() methods
      */
     public static void addEvent(String eventName, String eventDescription) {
         Connection conn = getConnection();

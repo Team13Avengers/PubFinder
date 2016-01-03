@@ -13,7 +13,7 @@ import jfx.messagebox.MessageBox;
 public class EditPubScene {
     public static Scene editPubScene;
     static StackPane editLayout = new StackPane();
-    /**Done by Shafiq& Antonino & Aseel & Marco
+    /**Done by Shafiq & Antonino & Aseel & Marco
      */
 
     public static int pubID;
@@ -200,6 +200,8 @@ public class EditPubScene {
         editBtn.setId("add_button");
         nameOfPub.setId("add_fields");
         nameOfPub.setPromptText("Name of pub");
+        /** End of Marco's work
+         */
         /** Done by shafiq & antonino
          */
         Rating.setId("ratingStars");
@@ -208,7 +210,6 @@ public class EditPubScene {
          */
 
         /**done by Marco
-         *
          */
         ageOfPub.setId("add_fields");
         ageOfPub.setPromptText("Age limit of the pub");
@@ -234,10 +235,14 @@ public class EditPubScene {
         city.setPromptText("Select the Area");
         /** End of shafiq & antonino's work
          */
+        /** Done by Marco
+         */
         city.setId("comboBox");
         typeOfPub.setTooltip(new Tooltip("Select the type of pub"));
         typeOfPub.setPromptText("Select the type of pub");
         typeOfPub.setId("comboBox");
+        /** End of Marco's work
+         */
         /** Done by aseel
          */
         studentDiscount.setTooltip(new Tooltip("We offer student discounts."));
@@ -254,7 +259,7 @@ public class EditPubScene {
         /** End of shafiq & antonino's work
          */
 
-        /** Done by Antonino &shafiq
+        /** Done by Antonino & shafiq
          */
         nameOfevent.setId("add_fields");
         descriptionOfevent.setId("add_fields");
@@ -378,7 +383,6 @@ public class EditPubScene {
         if (Pub.getHasStudentDiscount(Pub.getIndexById(thisID)) == 0){
             studentDiscount.getSelectionModel().select(0);
         }
-
         else {
             studentDiscount.getSelectionModel().select(1);
         }

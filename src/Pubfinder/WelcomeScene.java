@@ -1,7 +1,6 @@
 package Pubfinder;
-/** Done by marco
+/** Done by Marco
  */
-
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -43,5 +42,5 @@ public class WelcomeScene {
         welcomeScene.getStylesheets().addAll(Main.class.getResource("style.css").toExternalForm());
     }
 }
-/** End of marco's Work
+/** End of Marco's Work
  */

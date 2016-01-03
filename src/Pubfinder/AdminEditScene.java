@@ -1,7 +1,7 @@
 package Pubfinder;
-/** done by marco
- */
 
+/** Done by Marco
+ */
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -85,5 +85,5 @@ public class AdminEditScene {
         }
     }
 }
-/** end of marco's work
+/** end of Marco's work
  */

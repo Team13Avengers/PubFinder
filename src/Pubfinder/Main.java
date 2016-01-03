@@ -114,7 +114,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
     GridPane eventDescriptionGrid = new GridPane();
     GridPane eventGrid = new GridPane();
     /* PUB SCENE */
-
+    /** End of Marco's Work
+     */
     /* ADMIN SCENE */
     /** Done by Aseel
      */
@@ -199,6 +200,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         searchByArea.setId("combo-search");
         /** End of aseel's Work
          */
+        /** Done by Marco
+         * */
         pubLayout.setId("pubs");
         search = new Button("SEARCH");
         search.setId("button-search");
@@ -209,7 +212,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         inputGrid.setId("searchGrid");
         StackPane.setAlignment(inputGrid, Pos.TOP_LEFT);
         StackPane.setAlignment(search, Pos.TOP_RIGHT);
-
+        /** End of Marco's Work
+         */
         search.setOnAction(e -> searchForPubs());
         /** Done by Ahmad
          */
@@ -230,7 +234,6 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         });
         /** End of Marco's Work
          */
-
 
         /** Done by Ahmad
          */
@@ -346,6 +349,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /** End of Aeel and Antonino's Work
          */
 
+        /** Done by marco
+         */
         ScrollPane pubScroll = new ScrollPane();
         pubScroll.setId("scroll");
         pubScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
@@ -356,26 +361,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         pubs.setId("pub-grid");
         pubs.setAlignment(Pos.CENTER);
         pubLayout.getChildren().add(pubScroll);
-        /** Done by marco
-         */
+
         inputGrid.add(searchNameInput, 1, 1);
         inputGrid.add(searchStreetInput, 2, 1);
         inputGrid.add(searchAgeInput, 3, 1);
-        /** End of Marco's work
-         */
 
-        /** Done by Aseel
-         */
         inputGrid.add(searchByRating, 4, 1);
         inputGrid.add(searchByArea, 5, 1);
         inputGrid.add(searchStudentDiscount, 6, 1);
         inputGrid.add(searchBySpecialEvents, 7, 1);
         inputGrid.add(searchWithoutFees, 8, 1);
-        /** End of aseel's work
-         */
 
-        /** Done by marco
-         */
         pubLayout.getChildren().add(inputGrid);
         pubLayout.getChildren().add(search);
         noPub = new Label("No pubs found");
@@ -444,19 +440,27 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         primaryStage.setScene(welcomeScene);
         primaryStage.show();
         Main.primaryStage = primaryStage;
+        /** End of Marcos work
+         */
     }
 
     @Override
     public void handle(javafx.event.ActionEvent event) {
 
     }
+    /** Done by Marco
+     */
     public void idOfButton(int idOfButton){
         this.id = idOfButton;
     }
+    /** End of Marcos work
+     */
     public static void main(String[] args) {
         launch(args);
     }
     public void setPubScene(){
+        /** Done by Marco
+         */
         xPane.setStyle("-fx-background-image: url(" + "\"" + Pub.getImage(Pub.getIndexById(this.id)) + "\"" + "); ");
         description = new StackPane();
         events = new StackPane();
@@ -510,11 +514,7 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         for (int i=0; i < nrStars; i++){
             stars += "\uF005 ";
         }
-        /** End of marco's work
-         */
         rates = new Label(stars);
-        /** Done by aseel
-         */
         rates.setId("ratingOfStars");
 
         rating.getChildren().add(rates);
@@ -526,10 +526,10 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         descriptionGrid.add(open, 4, 1);
         descriptionGrid.add(type, 5, 1);
         descriptionGrid.add(address, 6, 1);
-        /** End of aseel's work
+        /** End of Marco's work
          */
 
-        /** Done by marco
+        /** Done by Marco
          */
         descriptionGrid.setAlignment(Pos.CENTER);
         description.getChildren().addAll(descriptionGrid);
@@ -580,12 +580,17 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
          *
          */
     }
+    /** Done by Marco
+     */
     public void searchForPubs() {
         pubLayout.getChildren().remove(noPub);
         int y = 1;
         int x = 1;
         searchName = searchNameInput.getText();
         searchStreet = searchStreetInput.getText();
+        /** End of marco's work
+         */
+
         /** Done by Ahmad
          */
         if (!searchAgeInput.getText().equals("")) {
@@ -625,12 +630,15 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
             if (area_checker != 2 && pub.location_id != area) {
                 continue;
             }
+            /** End of Shafiq & Antonini & Marco's Work
+             */
 
             if (pub.name != null && (pub.name.toLowerCase().contains(searchName.toLowerCase()))
                     && pub.street != null && (pub.street.toLowerCase().contains(searchStreet.toLowerCase()))
                     && pub.age <= searchAge && pub.nrStars >= numberOfStars && pub.hasStudentDiscount >= discount
                     && pub.hasFee <= fee) {
-
+                /** Done by Marco
+                 */
                 pubButton = new Button("- " + pub.name + " -");
                 pubButton.setId("pub-button");
                 pubButton.setMinWidth(230);
@@ -658,8 +666,8 @@ public class Main extends Application implements EventHandler<javafx.event.Actio
         /* new elements */
 
         pubs.setHgap(30);
+        /** End of marco's work
+         */
 
     }
-    /** End of Shafiq & Antonini & Marco's Work
-     */
 }
