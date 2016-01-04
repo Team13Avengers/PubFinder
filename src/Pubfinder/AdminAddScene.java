@@ -40,13 +40,13 @@ public class AdminAddScene {
     static ComboBox typeOfPub = new ComboBox(FXCollections.observableArrayList("Sport", "Karaoke", "Club"));
     static ComboBox Rating = new ComboBox(FXCollections.observableArrayList(
             "\uF005", "\uF005\uF005", "\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005", "\uF005\uF005\uF005\uF005\uF005"));
-    /* Done by Aseel
+    /** Done by Aseel
      */
     static ComboBox studentDiscount = new ComboBox(FXCollections.observableArrayList(
             "No", "Yes"));
     static ComboBox pubFee = new ComboBox(FXCollections.observableArrayList(
             "No", "Yes"));
-/* End of Aseel's word
+/** End of Aseel's work
  */
     public static void adminAddscene() {
         nameOfevent = new TextField();
